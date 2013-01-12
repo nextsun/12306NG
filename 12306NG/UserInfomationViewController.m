@@ -433,16 +433,18 @@
     if (!mainTableView.isEditing) {
         //[segControlTop setEnabled:NO];
        
-        [mainTableView setEditing:!mainTableView.isEditing animated:userInfoKey==UserInfoOther ];
-        
-        self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
         
         
         
         if (userInfoKey==UserInfoMe) {
             
-             
             
+            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"暂不支持此功能，请访问官方网站http://www.12306.cn修改" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+            return;
+            
+           /*
             segControlTop.hidden=YES;
             NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
             [subButton addTarget:self action:@selector(editCancle) forControlEvents:UIControlEventTouchUpInside];
@@ -454,8 +456,13 @@
                  
              }completion:nil];
             mainTableView.frame=CGRectMake(0, 0, mainTableView.frame.size.width, mainTableView.frame.size.height+50);
+            */
         }
         else {
+            [mainTableView setEditing:!mainTableView.isEditing animated:userInfoKey==UserInfoOther ];
+            
+            self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
+            
             [UIView animateWithDuration:0.3 animations:^{
                 segControlTop.hidden=YES;
                 mainTableView.frame=CGRectMake(0, 0, mainTableView.frame.size.width, mainTableView.frame.size.height+50);

@@ -264,6 +264,11 @@
         
         [self.view endEditing:YES];
         
+        
+        if (![self checkInput]) {
+            return;
+        } 
+        
         MBProgressHUD* HUD=[[MBProgressHUD alloc] initWithView:self.view];
         HUD.mode = MBProgressHUDModeIndeterminate;
         HUD.labelText = @"  提交中，请稍后...    ";
@@ -343,6 +348,31 @@
 //    }
     
 }
+-(BOOL)checkInput
+{
+    
+    if (![self.dataDict objectForKey:@"idName"]||[[self.dataDict objectForKey:@"idName"] isEqualToString:@""]) {
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"姓名不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return NO;
+    }
+    if (((NSString*)[self.dataDict objectForKey:@"idName"]).length>20) {
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"姓名长度超出" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return NO;
+    }
+    if (![self.dataDict objectForKey:@"idNumber"]||[[self.dataDict objectForKey:@"idNumber"] isEqualToString:@""]) {
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"证件号码不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

@@ -52,7 +52,7 @@
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"性       别",@"title",@"sex",@"id",@"M",@"value",@"",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"出生日期",@"title",@"birthday",@"id",@"1970-01-01",@"value",@"",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"证件类型",@"title",@"idType",@"id",@"1",@"value",@"",@"mask", nil],
-                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"证件号码",@"title",@"idNumber",@"id",@"",@"value",@"",@"mask", nil],
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"证件号码",@"title",@"idNumber",@"id",@"",@"value",@"请输入证件号码",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"手机号码",@"title",@"phone",@"id",@"",@"value",@"接受订票信息",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"电子邮件",@"title",@"email",@"id",@"",@"value",@"激活账号，接受订单信息",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"旅客类型",@"title",@"userType",@"id",@"1",@"value",@"",@"mask", nil],
@@ -92,7 +92,9 @@
 ////  
 //    
     
-    
+    if (![self checkInput]) {
+        return;
+    };
     
   
     
@@ -107,6 +109,32 @@
     [HUD release];
     
    
+}
+
+
+-(BOOL)checkInput
+{
+    
+    if (![self.dataDict objectForKey:@"idName"]||[[self.dataDict objectForKey:@"idName"] isEqualToString:@""]) {
+         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"姓名不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];        
+        return NO;
+    }
+    if (((NSString*)[self.dataDict objectForKey:@"idName"]).length>20) {
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"姓名长度超出" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return NO;
+    }
+    if (![self.dataDict objectForKey:@"idNumber"]||[[self.dataDict objectForKey:@"idNumber"] isEqualToString:@""]) {
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"证件号码不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return NO;
+    }
+    
+    return YES;
 }
 -(void)doRequestData
 {    
@@ -523,7 +551,13 @@
     }
     
 }
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
+    
+    return TRUE;
+    
+}
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     activeField = nil;
