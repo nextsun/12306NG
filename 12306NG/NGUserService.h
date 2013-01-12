@@ -25,7 +25,6 @@
 -(NSMutableDictionary*)getUserInfo;
 
 -(NSString*)addPassenger:(NSMutableDictionary*)info;
-
 -(NSString*)modifyPassengerInfo:(NSMutableDictionary*)info;
 -(NSString*)getAddPassengerToken;//For rest;
 @end

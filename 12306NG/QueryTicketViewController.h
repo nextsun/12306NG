@@ -7,7 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
+#import "MBProgressHUD.h"
+#import "PickerView.h"
+#import "StationListWithCodeController.h"
+#import "TFHpple.h" 
+#import <libxml/xpathInternals.h>   
+@interface QueryTicketViewController : UIViewController<PickerViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
-@interface QueryTicketViewController : UIViewController
+{
+	UITableView* mainTableView;
+	
+	//UITextField* text;
+	//UIButton* imgBtn;
+	ASIHTTPRequest* requestImg;
+	MBProgressHUD* HUD;
+	//TFHpple *xpathParser;
+	
+	NSString* queryDate;
+	NSString* queryTimeString;
+	StationInfo* beginStation;
+	StationInfo* endStatation;
+	
+	
+}
+
+@property(nonatomic,retain)NSMutableArray* trainNumberArray;
+@property(nonatomic,retain)MBProgressHUD* HUD;
+@property(nonatomic,retain)TFHpple *xpathParser;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "PickerView.h"
 
 @interface RegisterViewController ()
 @property(nonatomic,retain) NSMutableArray* tableArray;
@@ -42,11 +43,11 @@
                          
                          [NSMutableArray arrayWithObjects:
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"姓       名",@"title",@"idName",@"id",@"",@"value",@"请输入姓名",@"mask", nil],
-                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"性       别",@"title",@"sex",@"id",@"",@"value",@"",@"mask", nil],
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"性       别",@"title",@"sex",@"id",@"M",@"value",@"",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"出生日期",@"title",@"birthday",@"id",@"1970-01-01",@"value",@"",@"mask", nil],
-                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"证件类型",@"title",@"idType",@"id",@"二代身份证",@"value",@"",@"mask", nil],
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"证件类型",@"title",@"idType",@"id",@"1",@"value",@"",@"mask", nil],
                           [NSMutableDictionary dictionaryWithObjectsAndKeys:@"证件号码",@"title",@"idNumber",@"id",@"",@"value",@"请输入证件号码",@"mask", nil],
-                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"旅客类型",@"title",@"userType",@"id",@"成人",@"value",@"",@"mask", nil],
+                          [NSMutableDictionary dictionaryWithObjectsAndKeys:@"旅客类型",@"title",@"userType",@"id",@"1",@"value",@"",@"mask", nil],
                           nil],
                          nil];
         self.dataDict=[NSMutableDictionary dictionary];
@@ -80,9 +81,11 @@
 //    
 //    @"" canBeConvertedToEncoding:NSUnicodeStringEncoding
     
-    NSString* msg=[self replaceUnicode:self.dataDict.debugDescription ];
+   // NSString* msg=[self replaceUnicode:self.dataDict.debugDescription ];
 //    
-//    
+//
+    
+    NSString* msg=@"稍后上线，尽请期待";
         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
@@ -172,7 +175,7 @@
             segSexControl.frame=CGRectMake(10, 15, 180, 30);
             segSexControl.segmentedControlStyle=UISegmentedControlStylePlain;
             [segSexControl addTarget:self action:@selector(changeSex:) forControlEvents:UIControlEventValueChanged];
-            segSexControl.selectedSegmentIndex=[[self.dataDict objectForKey:[cellDict objectForKey:@"id"]] isEqualToString:@"男"]?0:1;
+            segSexControl.selectedSegmentIndex=[[self.dataDict objectForKey:[cellDict objectForKey:@"id"]] isEqualToString:@"M"]?0:1;
             cell.accessoryView=segSexControl;
             //[segControl release];
             
@@ -187,12 +190,21 @@
             UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 30)];
             labelValue.textAlignment=UITextAlignmentRight;
             labelValue.textColor=[UIColor greenColor];
-            labelValue.text=[self.dataDict objectForKey:[cellDict objectForKey:@"id"]];
+            labelValue.tag=101;
+            if ([itemID isEqualToString:@"birthday"]) {
+                labelValue.text=[self.dataDict objectForKey:itemID];
+            }else
+            {
+                labelValue.text=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+            }
+            
+            
             labelValue.backgroundColor=[UIColor clearColor];
             [v addSubview:labelValue];
             [labelValue release];
             
             UIButton* btn=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            [btn setUserInteractionEnabled:NO];
             btn.frame=CGRectMake(170, 0, 30, 30);
             [v addSubview:btn];
             
@@ -200,7 +212,6 @@
             
             cell.accessoryView=v;
             [v release];
-            
         }
         
         else {
@@ -268,69 +279,70 @@
 
 #pragma mark -
 #pragma mark  tableViewAction
-
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     
-    /***********************************************************************/     
-    if (indexPath.section==0&&indexPath.row==0) 
-    {
-        //        UserInfomationViewController* controller=[[UserInfomationViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
-    }
-    else if (indexPath.section==0&&indexPath.row==1)
-    {
+    NSMutableDictionary* cellDict=[[tableArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    NSString* itemID=[cellDict objectForKey:@"id"];
+    
+   
+    
+    BOOL shouldScroll=NO;
+    
+    if ([itemID isEqualToString:@"birthday"]) {
         
-    }
-    /***********************************************************************/   
-    if (indexPath.section==1&&indexPath.row==0) 
-    {
-        //        QueryTicketViewController* controller=[[QueryTicketViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
-    }
-    else if (indexPath.section==1&&indexPath.row==1)
-    {
-        //        OrderListViewController* controller=[[OrderListViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
-    }
-    /***********************************************************************/ 
-    if (indexPath.section==2&&indexPath.row==0) 
-    {
-        //        ResidualTicketInformViewController* controller=[[ResidualTicketInformViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
-    }
-    else if (indexPath.section==2&&indexPath.row==1)
-    {
-        //        UserInfomationViewController* controller=[[UserInfomationViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
-    }
-    /***********************************************************************/ 
-    if (indexPath.section==3&&indexPath.row==0) 
-    {
-        //        FeedbackViewController* controller=[[FeedbackViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
-    }
-    else if (indexPath.section==3&&indexPath.row==1)
-    {
-    }
-    else if (indexPath.section==3&&indexPath.row==2)
-    {
-        //        [iVersion sharedInstance].ignoredVersion=@"1.1";
-        //        [[iVersion sharedInstance] checkForNewVersion];
+        shouldScroll=YES;
+        activeLabel=(UILabel*)[[tableView cellForRowAtIndexPath:indexPath].accessoryView viewWithTag:101];
         
-    }
-    else if (indexPath.section==3&&indexPath.row==3)
-    {
-        //        AboutUsViewController* controller=[[AboutUsViewController alloc] init];
-        //        [self.navigationController pushViewController:controller animated:YES];
-        //        [controller release];
+        DatePickerView *pickerView=[[DatePickerView alloc] initWithTitle:@"出生日期" delegate:self];
+        pickerView.tag=101;
+        //pickerView.dataArray=[NSMutableArray arrayWithObjects:@"二代身份证",@"15分钟",@"30分钟",@"1小时",@"2小时",@"6小时",@"12小时",@"24小时",nil];
         
+        [pickerView setCurrentDate:[NSDate dateFromString:[self.dataDict objectForKey:itemID] withFormat:@"YYYY-MM-dd"]];
+        [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+        [pickerView release];
+    }else
+        
+        if ([itemID isEqualToString:@"idType"]) {
+            
+            shouldScroll=YES;
+            activeLabel=(UILabel*)[[tableView cellForRowAtIndexPath:indexPath].accessoryView viewWithTag:101];
+            
+            
+            PickerView *pickerView=[[PickerView alloc] initWithTitle:@"证件类型" delegate:self];
+            pickerView.tag=102;
+            
+            pickerView.currentValue=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+            
+            pickerView.dataArray=[NSMutableArray arrayWithObjects:@"二代身份证",@"一代身份证 ",@"港澳通行证",@"台湾通行证",@"护照",nil];
+            pickerView.currentValue=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+            [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+            [pickerView release];
+        }else
+            if ([itemID isEqualToString:@"userType"]) {
+                
+                shouldScroll=YES;
+                activeLabel=(UILabel*)[[tableView cellForRowAtIndexPath:indexPath].accessoryView viewWithTag:101];
+                
+                PickerView *pickerView=[[PickerView alloc] initWithTitle:@"旅客类型" delegate:self];
+              
+                
+                pickerView.tag=103;
+                pickerView.dataArray=[NSMutableArray arrayWithObjects:@"成人",@"儿童",@"学生",@"伤残军人",nil];
+                 pickerView.currentValue=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+                [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+                [pickerView release];
+            }
+    
+    if (shouldScroll) {
+         [self.view endEditing:YES];
+        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 260, 0.0);
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+        
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -481,16 +493,88 @@
     }
 
 }
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    return YES;
+}
 
 -(void)changeSex:(UISegmentedControl*)segControl
 {
     if(segControl.selectedSegmentIndex==0)
     {
-        [self.dataDict setObject:@"男" forKey:@"sex"];
+        [self.dataDict setObject:@"M" forKey:@"sex"];
         
     }else {
-        [self.dataDict setObject:@"女" forKey:@"sex"];
+        [self.dataDict setObject:@"M" forKey:@"sex"];
     }
 }
+
+-(void)pickerView:(PickerView*)picker didPickedWithValue:(NSObject*)value;
+{
+    
+    if (activeLabel) {
+        activeLabel.text=(NSString*)value;
+    }
+    
+    
+    if (picker.tag==101) {
+        [self.dataDict setObject:value forKey:@"birthday"];
+    }else
+        
+        if (picker.tag==102) {
+            [self.dataDict setObject:[DDHelper codeForName:(NSString*)value withKey:@"idType"] forKey:@"idType"];
+        }
+        else
+            if (picker.tag==103) {
+                [self.dataDict setObject:[DDHelper codeForName:(NSString*)value withKey:@"userType"] forKey:@"userType"];
+            }
+    
+    activeLabel=nil;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+}
+-(void)pickerViewCancle:(PickerView*)picker;
+{
+    activeLabel=nil;
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+}
+-(void)datePickerView:(DatePickerView*)picker didPickedWithDate:(NSDate*)date
+{
+    
+    [date stringWithFormat:@"YYYY-MM-dd"];
+    if (activeLabel) {
+        activeLabel.text=[date stringWithFormat:@"YYYY-MM-dd"];
+    }
+    if (picker.tag==101) {
+        [self.dataDict setObject:[date stringWithFormat:@"YYYY-MM-dd"] forKey:@"birthday"];
+    }
+    activeLabel=nil;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+}
+-(void)datePickerViewCancle:(PickerView*)picker
+{
+    activeLabel=nil;
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+}
+
 
 @end

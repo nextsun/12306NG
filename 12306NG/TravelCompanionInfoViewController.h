@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PickerView.h"
+#import "DatePickerView.h"
+#import "DDHelper.h"
+#import "NSDate-Helper.h"
+
 
 @interface TravelCompanionInfoViewController : UIViewController<UITextFieldDelegate>
 {
@@ -22,6 +27,9 @@
     
     NSMutableDictionary* userDataDict;
     NSString* titleName;
+    
+    UILabel* activeLabel;
+
     
 }
 @property(nonatomic,retain)NSMutableDictionary* userDataDict;

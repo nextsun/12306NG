@@ -10,7 +10,8 @@
 #import "HTMLParser.h"
 #import "ASIDownloadCache.h"
 #import "NSString+SBJSON.h"
-
+#import "DDHelper.h"
+#import "NSDate-Helper.h"
 
 static NGUserService* _sharedNGUserServiceIntance;
 
@@ -55,6 +56,60 @@ static NGUserService* _sharedNGUserServiceIntance;
 {
     
 }
+
+-(NSString*)getRegistUserToken
+{
+    
+    ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/passengerAction.do?method=initAddPassenger"]];
+    [request setCachePolicy:ASIUseDefaultCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
+    [request setValidatesSecureCertificate:NO];
+    [request addRequestHeader:@"Host" value:@"dynamic.12306.cn"];
+    [request addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,*/*"];
+    [request addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/passengerAction.do?method=initAddPassenger"];
+    [request addRequestHeader:@"Accept-Language" value:@"zh-CN"];
+    [request addRequestHeader:@"User-Agent" value:@" Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"];
+    [request addRequestHeader:@"Content-Type" value:@"application/x-www-form-urlencoded"];
+    [request addRequestHeader:@"Accept-Encoding" value:@" gzip, deflate"];
+    [request addRequestHeader:@"Connection" value:@" Keep-Alive"];
+    
+    [request startSynchronous];
+    
+    //<input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="7464e55fe3305bfd4805669e14bff9ce">
+    
+    NSString* retString=request.responseString;
+    
+    NSRegularExpression* regexAlert=[[NSRegularExpression alloc] initWithPattern:@"<input type=[\"]hidden[\"] name=[\"]org.apache.struts.taglib.html.TOKEN[\"] value=[\"](.*)[\"]>" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSTextCheckingResult* rAlert=  [regexAlert firstMatchInString:retString options:0 range:(NSRange){0,retString.length}];
+    [regexAlert release];
+    
+    if (rAlert.range.length>0) {
+        
+        int pos=70+1;
+        NSString* msg=[retString substringWithRange:(NSRange){rAlert.range.location+pos,rAlert.range.length-pos-2}];
+        if (![msg isEqualToString:@""]) {
+            
+            
+            return  msg;
+            
+        }
+    }
+    
+    return @"";
+    
+    
+    
+    
+
+    
+}
+
+
+-(NSString*)registUser:(NSMutableDictionary*)info
+{
+    
+}
+
+
 -(NSString*)getAddPassengerToken
 {
 //(Request-Line)	POST /otsweb/passengerAction.do?method=initAddPassenger& HTTP/1.1
@@ -407,6 +462,16 @@ static NGUserService* _sharedNGUserServiceIntance;
         if (arr) {
              LogInfo(@"returnArray:%@",arr);
             //[arr removeLastObject];
+            
+            NSDictionary* dic;
+            for (NSDictionary* dict in arr) {
+                if ([[dict objectForKey:@"isUserSelf"] isEqualToString:@"Y"]) {
+                    dic=dict;
+                    break;
+                }
+            }
+            [arr removeObject:dic];
+            
             return arr;
             
         }
@@ -531,7 +596,11 @@ static NGUserService* _sharedNGUserServiceIntance;
                 NSString* key=[self getkeyByKeyCNName:name];
                 if (key) {
                     if(value==nil)value=@"";
-                    [dict setValue:value forKey:key];
+                    
+                    if ([key isEqualToString:@"userType"]||[key isEqualToString:@"idType"]) {
+                        value=[DDHelper codeForName:[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]  withKey:key];
+                    }
+                    [dict setValue:[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:key];
                 }
             }
             nodeTR=nodeTR.nextSibling;
@@ -543,6 +612,8 @@ static NGUserService* _sharedNGUserServiceIntance;
     
     
 }
+
+
 -(NSString*)getkeyByKeyCNName:(NSString*)cnName
 {
     

@@ -9,6 +9,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QueryTicketResultViewController : UIViewController
+@interface QueryTicketResultViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    	UITableView* mainTableView;
+}
+
+@property(nonatomic,retain)NSMutableArray* trainNumberArray;
 
 @end

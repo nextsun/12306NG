@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DatePickerView.h"
+#import "NSDate-Helper.h"
 @interface AddTravelCompanionViewController : UIViewController<UITextFieldDelegate>
 {
     
@@ -20,6 +21,8 @@
     NSInteger tagIndex;
     
     UITextField* activeField;
+    
+    UILabel* activeLabel;
     
 }
 

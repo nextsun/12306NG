@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Flurry.h"
+
 #import "HTMLParser.h"
 #import "ASIHTTPRequest.h"
 
@@ -31,7 +31,7 @@
 {
     
     [self test2];
-    [Flurry startSession:@"HMPD8ZD9D9RZ67J7SP7T"];
+  
     
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAutoLogin"];
 //    [[NSUserDefaults standardUserDefaults] synchronize];

@@ -10,6 +10,11 @@
 #import "UIViewController+backButtonAction.h"
 #import "NGCustomButton.h"
 
+#import "PickerView.h"
+#import "DatePickerView.h"
+#import "DDHelper.h"
+#import "NSDate-Helper.h"
+
 @interface RegisterViewController : UIViewController<UITextFieldDelegate>
 {
     
@@ -22,6 +27,7 @@
     NSInteger tagIndex;
     
     UITextField* activeField;
+    UILabel* activeLabel;
     
 }
 

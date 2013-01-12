@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+backButtonAction.h"
-
+#import "PickerView.h"
+#import "DDHelper.h"
+#import "DatePickerView.h"
+#import "NSDate-Helper.h"
 
 
 typedef enum
@@ -34,6 +37,7 @@ typedef enum
     BOOL isUserListTableLoaded;
     
     NSMutableDictionary* dataDict;
+    NSMutableDictionary* dataDictOrigin;
     
     UISegmentedControl* segControlTop;
     
@@ -46,7 +50,7 @@ typedef enum
     
     BOOL isNeedsToReLoadWhileViewWillAppear;
     
-    
+    UILabel* activeLabel;
 
 }
 -(id)initWithUserInfoKey:(UserInfoKey)userInfoKey;

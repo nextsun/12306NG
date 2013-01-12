@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 12306NG. All rights reserved.
 //
 
+#import <MessageUI/MessageUI.h>
+
 #import "AppDelegate.h"
 #import "NGCustomButton.h"
+
 
 #import "UserCenterViewController.h"
 
@@ -188,11 +191,22 @@
     if (indexPath.section==3&&indexPath.row==0) 
     {
         
+        if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController* mail=[[MFMailComposeViewController alloc] init];
         
+        ;
+        [mail setToRecipients:@[@"920043287@qq.com"]];
+        mail.mailComposeDelegate=(id<MFMailComposeViewControllerDelegate>)self;
+         mail.navigationBar.tintColor=[UIColor blackColor];
         
-        FeedbackViewController* controller=[[FeedbackViewController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
-        [controller release];
+        //[mail.topViewController showCustomBackButton];
+        
+        [self presentModalViewController:mail animated:YES];
+        
+        }
+//        FeedbackViewController* controller=[[FeedbackViewController alloc] init];
+//        [self.navigationController pushViewController:controller animated:YES];
+//        [controller release];
     }
     else if (indexPath.section==3&&indexPath.row==1)
     {
@@ -229,5 +243,12 @@
 -(void)swithChanged:(UISwitch*)sender
 {
     
+}
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    if (result==MFMailComposeResultFailed) {
+        
+    }
+    [controller dismissModalViewControllerAnimated:YES];
 }
 @end

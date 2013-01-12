@@ -9,6 +9,7 @@
 #import "UserInfomationViewController.h"
 #import "NGUserService.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MBProgressHUD.h"
 
 #import "AddTravelCompanionViewController.h"
 #import "TravelCompanionInfoViewController.h"
@@ -18,7 +19,7 @@
 @property(nonatomic,retain)NSMutableArray* tableArray;
 @property(nonatomic,retain)UITableView* mainTableView;
 @property(nonatomic,retain)NSMutableDictionary* dataDict;
-
+@property(nonatomic,retain)NSMutableDictionary* dataDictOrigin;
 @property(nonatomic,retain)NSMutableArray* userListArray;
 @property(nonatomic,retain)UITableView* userListTableView;
 
@@ -33,7 +34,7 @@
 
 @synthesize tableArray,mainTableView;
 
-@synthesize dataDict;
+@synthesize dataDict,dataDictOrigin;
 
 @synthesize userListArray,userListTableView;
 
@@ -80,6 +81,7 @@
                        @"110@1.com",@"email",
                        @"0",@"userType",
                        nil];
+        self.dataDictOrigin=self.dataDict;
         
     }
     return self;
@@ -116,6 +118,7 @@
     mainTableView.dataSource=(id<UITableViewDataSource>)self;
     mainTableView.delegate=(id<UITableViewDelegate>)self;
     mainTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    mainTableView.allowsSelectionDuringEditing=YES;
     
     [self registerForKeyboardNotifications];
     //    self.userListTableView=[[[UITableView alloc] initWithFrame:CGRectMake(rect.size.width, 0, rect.size.width, rect.size.height) style:UITableViewStyleGrouped] autorelease]  ;
@@ -153,8 +156,8 @@
     
     [mainTableView setEditing:NO animated:YES];
     
-//    [UIView transitionWithView:mainTableView duration:0.6 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:nil];
-//    
+    //    [UIView transitionWithView:mainTableView duration:0.6 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:nil];
+    //
     if (seg.selectedSegmentIndex==0) {
         
         userInfoKey=UserInfoMe;
@@ -379,6 +382,8 @@
 {
     dispatch_async(dispatch_queue_create("getListWithUsers", nil), ^{
         self.dataDict=[[NGUserService sharedService] getUserInfo];
+        
+        self.dataDictOrigin=[self.dataDict mutableCopy];
         dispatch_async(dispatch_get_main_queue(),^{
             
             
@@ -424,24 +429,25 @@
 -(void)editContent
 {
     
-    [mainTableView setEditing:!mainTableView.isEditing animated:userInfoKey==UserInfoOther ];
     //selectedSegmentIndex
-    if (mainTableView.isEditing) {
+    if (!mainTableView.isEditing) {
         //[segControlTop setEnabled:NO];
+       
+        [mainTableView setEditing:!mainTableView.isEditing animated:userInfoKey==UserInfoOther ];
+        
         self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
         
         
         
         if (userInfoKey==UserInfoMe) {
             
+             
+            
             segControlTop.hidden=YES;
-            
-           
-            
             NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
             [subButton addTarget:self action:@selector(editCancle) forControlEvents:UIControlEventTouchUpInside];
             subButton.titleLabel.text=@"取消";
-             self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:subButton];
+            self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:subButton];
             [subButton release];
             [UIView transitionWithView:self.view duration:0.6 options:UIViewAnimationOptionTransitionFlipFromRight animations:^
              {
@@ -460,44 +466,104 @@
         //[segControlTop setEnabled:YES];
         
         
-        self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
-        if (userInfoKey==UserInfoMe) {
-            segControlTop.hidden=NO;
+         if (userInfoKey==UserInfoMe) {
+          
             
-            [self showCustomBackButton];
-            
-            
+              
             [self.view endEditing:YES];
-            [mainTableView reloadData];
+             
+            MBProgressHUD* HUD=[[MBProgressHUD alloc] initWithView:self.view];
+            HUD.mode = MBProgressHUDModeIndeterminate;
+            HUD.labelText = @"  提交中，请稍后...    ";
+            HUD.margin = 30.f;
+            HUD.yOffset = -45.f;
+            [self.view addSubview:HUD];
+            [HUD showWhileExecuting:@selector(doRequestData) onTarget:self withObject:nil animated:YES];
+            
+            [HUD release];
             
             
-            [UIView transitionWithView:self.view duration:0.6 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^
-             {
-                 
-             }completion:nil];
-            mainTableView.frame=CGRectMake(0, 50, mainTableView.frame.size.width, mainTableView.frame.size.height-50);
-        }else {
-            [UIView animateWithDuration:0.3 animations:^{
-                segControlTop.hidden=NO;
-                mainTableView.frame=CGRectMake(0, 50, mainTableView.frame.size.width, mainTableView.frame.size.height-50);
-            }];
+            
         }
-        
+         else {
+             
+             [mainTableView setEditing:!mainTableView.isEditing animated:userInfoKey==UserInfoOther ];
+             
+             self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
+             
+             [UIView animateWithDuration:0.3 animations:^{
+                 segControlTop.hidden=NO;
+                 mainTableView.frame=CGRectMake(0, 50, mainTableView.frame.size.width, mainTableView.frame.size.height+50);
+             }];
+         }
+        //
     }
-    //
+    
 }
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return YES;
-//}
 
-// Moving/reordering
+-(void)doRequestData
+{
+    
+    
+    
+    NSString* msg=nil;
+    
+    //NSString* ResponeString= [[NGUserService sharedService] modifyPassengerInfo:self.dataDict];
+    sleep(3);
+    NSString* ResponeString= @"";
+    NSRegularExpression* regexAlert=[[NSRegularExpression alloc] initWithPattern:@"var message = [\"](.*)[\"]" options:NSRegularExpressionCaseInsensitive error:nil];
+    if (false&&ResponeString) {
+        
+        NSTextCheckingResult* rAlert=  [regexAlert firstMatchInString:ResponeString options:0 range:(NSRange){0,ResponeString.length}];
+        
+        
+        if (rAlert.range.length>0) {
+            
+            msg=[ResponeString substringWithRange:(NSRange){rAlert.range.location+15,rAlert.range.length-15-1}];
+            if (![msg isEqualToString:@""]) {
+                
+                
+                
+                if ([msg rangeOfString:@"成功"].length>0) {
+                    if (self.navigationController.childViewControllers&&[self.navigationController.viewControllers count]>1) {
+                        UserInfomationViewController* controller=(UserInfomationViewController*)[self.navigationController.viewControllers objectAtIndex:1];
+                        if (controller) {
+                            controller.isNeedsToReLoadWhileViewWillAppear=YES;
+                        }
+                        
+                    }
+                    
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [alert show];
+                    [alert release];
+                    
+                });
+                
+                
+                
+                // return;
+                
+            }
+        }
+    }
+    
+   [mainTableView setEditing:!mainTableView.isEditing animated:userInfoKey==UserInfoOther ];
+    
+    self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
+    [self showCustomBackButton];
+    segControlTop.hidden=NO;
+    [UIView transitionWithView:self.view duration:0.6 options:UIViewAnimationOptionTransitionFlipFromLeft animations:nil completion:nil];
+    mainTableView.frame=CGRectMake(0, 50, mainTableView.frame.size.width, mainTableView.frame.size.height+50);
 
-// Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
-//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return YES;
-//}
+    [mainTableView reloadData];
+    [regexAlert release];
+    
+    
+}
+
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -584,18 +650,37 @@
         else if ([itemID isEqualToString:@"birthday"]||[itemID isEqualToString:@"idType"]||[itemID isEqualToString:@"userType"])  {
             
             
+            if (![itemID isEqualToString:@"birthday"]) {
+                UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
+                //labelName.textAlignment=UITextAlignmentCenter;
+                labelValue.text=labelValue.text=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+                labelValue.backgroundColor=[UIColor clearColor];
+                cell.accessoryView=labelValue;
+                [labelValue release];
+            }
+            
+            
+            
             
             UIView* v=[[UIView alloc] initWithFrame:CGRectMake(0, 0,200, 30)];
             
             UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 30)];
             labelValue.textAlignment=UITextAlignmentRight;
             labelValue.textColor=[UIColor greenColor];
-            labelValue.text=[self.dataDict objectForKey:[cellDict objectForKey:@"id"]];
+            labelValue.tag=101;
+            if ([itemID isEqualToString:@"birthday"]) {
+                labelValue.text=[self.dataDict objectForKey:itemID];
+            }else
+            {
+                labelValue.text=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+            }
+            
             labelValue.backgroundColor=[UIColor clearColor];
             [v addSubview:labelValue];
             [labelValue release];
             
             UIButton* btn=[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            [btn setUserInteractionEnabled:NO];
             btn.frame=CGRectMake(170, 0, 30, 30);
             [v addSubview:btn];
             
@@ -757,6 +842,15 @@
         
     }
 }
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"暂不支持此功能，稍后上线" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    
+    //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -764,9 +858,77 @@
     if (userInfoKey==UserInfoOther) {
         TravelCompanionInfoViewController* controller=[[TravelCompanionInfoViewController alloc] init];
         controller.userDataDict=[self.userListArray objectAtIndex:indexPath.row];
-       // controller.title=[self.userListArray
+        // controller.title=[self.userListArray
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];
+        return;
+    }
+    
+    if (!tableView.isEditing) {
+        return;
+    }
+    
+    NSMutableDictionary* cellDict=[[tableArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    NSString* itemID=[cellDict objectForKey:@"id"];
+    
+    //    [self.view endEditing:YES];
+    //    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 260, 0.0);
+    //    mainTableView.contentInset = contentInsets;
+    //    mainTableView.scrollIndicatorInsets = contentInsets;
+    //
+    //    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    
+    BOOL shouldScroll=NO;
+    
+    if ([itemID isEqualToString:@"birthday"]) {
+        
+        shouldScroll=YES;
+        activeLabel=(UILabel*)[[tableView cellForRowAtIndexPath:indexPath].editingAccessoryView viewWithTag:101];
+        
+        DatePickerView *pickerView=[[DatePickerView alloc] initWithTitle:@"出生日期" delegate:self];
+        pickerView.tag=101;
+        [pickerView setCurrentDate:[NSDate dateFromString:[self.dataDict objectForKey:itemID] withFormat:@"YYYY-MM-dd"]];
+        [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+        [pickerView release];
+    }else
+        
+        if ([itemID isEqualToString:@"idType"]) {
+            
+            shouldScroll=YES;
+            activeLabel=(UILabel*)[[tableView cellForRowAtIndexPath:indexPath].editingAccessoryView viewWithTag:101];
+            
+            
+            PickerView *pickerView=[[PickerView alloc] initWithTitle:@"证件类型" delegate:self];
+            pickerView.tag=102;
+            
+            
+            pickerView.dataArray=[NSMutableArray arrayWithObjects:@"二代身份证",@"一代身份证 ",@"港澳通行证",@"台湾通行证",@"护照",nil];
+            pickerView.currentValue=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+            
+            [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+            [pickerView release];
+        }else
+            if ([itemID isEqualToString:@"userType"]) {
+                
+                shouldScroll=YES;
+                activeLabel=(UILabel*)[[tableView cellForRowAtIndexPath:indexPath].editingAccessoryView viewWithTag:101];
+                
+                PickerView *pickerView=[[PickerView alloc] initWithTitle:@"旅客类型" delegate:self];
+                pickerView.tag=103;
+                pickerView.dataArray=[NSMutableArray arrayWithObjects:@"成人",@"儿童",@"学生",@"伤残军人",nil];
+                pickerView.currentValue=[DDHelper nameForCode:[self.dataDict objectForKey:itemID] withKey:itemID];
+                [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+                [pickerView release];
+            }
+    if (shouldScroll) {
+        [self.view endEditing:YES];
+        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 260, 0.0);
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+        
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        
     }
 }
 
@@ -789,11 +951,15 @@
     [subButton addTarget:self action:@selector(editContent) forControlEvents:UIControlEventTouchUpInside];
     subButton.titleLabel.text=mainTableView.isEditing?@"完成":@"编辑";
     UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];
+    [subButton release];
     return [btn autorelease];
 }
 
 -(void)editCancle
 {
+    
+    self.dataDict=[self.dataDictOrigin mutableCopy];
+    
     [mainTableView setEditing:!mainTableView.isEditing animated:NO ];
     
     [UIView transitionWithView:self.view duration:0.6 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^
@@ -802,10 +968,77 @@
      }completion:nil];
     segControlTop.hidden=NO;
     mainTableView.frame=CGRectMake(0, 50, mainTableView.frame.size.width, mainTableView.frame.size.height-50);
-
+    
     
     [self showCustomBackButton];
     self.navigationItem.rightBarButtonItem=[self myEditButtonItem];
-
+    
 }
+-(void)pickerView:(PickerView*)picker didPickedWithValue:(NSObject*)value;
+{
+    
+    if (activeLabel) {
+        activeLabel.text=(NSString*)value;
+    }
+    
+    
+    if (picker.tag==101) {
+        [self.dataDict setObject:value forKey:@"birthday"];
+    }else
+        
+        if (picker.tag==102) {
+            [self.dataDict setObject:[DDHelper codeForName:(NSString*)value withKey:@"idType"] forKey:@"idType"];
+        }
+        else
+            if (picker.tag==103) {
+                [self.dataDict setObject:[DDHelper codeForName:(NSString*)value withKey:@"userType"] forKey:@"userType"];
+            }
+    
+    activeLabel=nil;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+}
+-(void)pickerViewCancle:(PickerView*)picker;
+{
+    activeLabel=nil;
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+}
+-(void)datePickerView:(DatePickerView*)picker didPickedWithDate:(NSDate*)date
+{
+    
+    [date stringWithFormat:@"YYYY-MM-dd"];
+    if (activeLabel) {
+        activeLabel.text=[date stringWithFormat:@"YYYY-MM-dd"];
+    }
+    if (picker.tag==101) {
+        [self.dataDict setObject:[date stringWithFormat:@"YYYY-MM-dd"] forKey:@"birthday"];
+    }
+    activeLabel=nil;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+}
+-(void)datePickerViewCancle:(PickerView*)picker
+{
+    activeLabel=nil;
+    [UIView animateWithDuration:0.3 animations:^{
+        UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+        mainTableView.contentInset = contentInsets;
+        mainTableView.scrollIndicatorInsets = contentInsets;
+    }];
+}
+
 @end

@@ -1,5 +1,34 @@
 
 
+/初始化常用旅客类型
+var passengerType = [{code:'1',value:'成人'}, {code:'2',value:'儿童'}, {code:'3',value:'学生'}, {code:'4',value:'伤残军人'}];
+//var passengerType = [{code:'1',value:'成人'}, {code:'2',value:'儿童'}];
+
+function getPassengerTypeOption(type_code) {
+	jQuery.each(passengerType,function(index,data){
+		if(type_code==data.code) {
+			$("#passengerType").append("<option value=\""+data.code+"\" selected>"+data.value+"</option>");
+		}else {
+			$("#passengerType").append("<option value=\""+data.code+"\">"+data.value+"</option>");
+		}
+	});
+}
+
+//初始化常用入学年份
+var enterYear = [{code:'2002',value:'2002'}, {code:'2003',value:'2003'}, {code:'2004',value:'2004'}, {code:'2005',value:'2005'}, {code:'2006',value:'2006'}, {code:'2007',value:'2007'}, {code:'2008',value:'2008'}, {code:'2009',value:'2009'}, {code:'2010',value:'2010'}, {code:'2011',value:'2011'},{code:'2012',value:'2012'}];
+
+function getEnterYearOption(type_code) {
+	jQuery.each(enterYear,function(index,data){
+		if(type_code==data.code) {
+			$("#enter_year").append("<option value=\""+data.code+"\" selected>"+data.value+"</option>");
+		}else {
+			$("#enter_year").append("<option value=\""+data.code+"\">"+data.value+"</option>");
+		}
+	});
+}
+
+
+
 证件类型:
 
 <select name="loginUser.id_type_code" id="cardType" style="width:220px;"><option value="1">二代身份证</option>
