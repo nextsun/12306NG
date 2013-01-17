@@ -20,8 +20,12 @@
 #import "HTMLParser.h"
 #import "TicketModel.h"
 #import "QueryTicketResultViewController.h"
+
+#import "GlobalClass.h"
+#import "NSDate-Helper.h"
+
 @interface QueryTicketViewController ()
-- (void) jsonpaste:(NSDictionary *)results;
+//- (void) jsonpaste:(NSDictionary *)results;
 -(void)CheckAndProcessResponeData:(NSData*)data;
 @end
 
@@ -51,10 +55,13 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	self.view.backgroundColor=[UIColor whiteColor];
+	//self.view.backgroundColor=[UIColor whiteColor];
 	//[self.navigationController setNavigationBarHidden:YES];
 	self.title=@"查询";
     
+    
+    beginStation=[GlobalClass sharedClass].startStation;
+    endStatation=[GlobalClass sharedClass].endStation ;
     
     NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     [subButton addTarget:self action:@selector(queryTickets:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,6 +84,7 @@
 	mainTableView.delegate=(id<UITableViewDelegate>)self;
 	mainTableView.backgroundView=nil;
 	mainTableView.backgroundColor=[UIColor clearColor];
+    mainTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
 	
 	UITapGestureRecognizer* tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
 	[mainTableView addGestureRecognizer:tap];
@@ -179,11 +187,11 @@
 {
 	
 
-	ASIFormDataRequest* req=[[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://dynamic.12306.cn/otsquery/query/queryRemanentTicketAction.do?method=queryLeftTicket"]];    
+	ASIFormDataRequest* req=[[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryLeftTicket"]];    
 	req.delegate=(id<ASIHTTPRequestDelegate>)self;
 	[req setValidatesSecureCertificate:NO];
 	[req addRequestHeader:@"Accept" value:@"application/json,text/javascript,*/*"];
-	[req addRequestHeader:@"Referer" value:@"http://dynamic.12306.cn/otsquery/query/queryRemanentTicketAction.do?method=init"];
+//	[req addRequestHeader:@"Referer" value:@"http://dynamic.12306.cn/otsquery/query/queryRemanentTicketAction.do?method=init"];
 	[req addRequestHeader:@"Accept-Language" value:@"zh-CN"];
 	[req addRequestHeader:@"User-Agent" value:@" Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"];
 	[req addRequestHeader:@"Content-Type" value:@"application/x-www-form-urlencoded; charset=UTF-8"];
@@ -200,10 +208,14 @@
 //
 //	LogInfo(@"requestCookies %@ ",req.requestCookies);
 	//53174e1302ff09f8
-	NSString* str=@"orderRequest.train_date=2013-01-10&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=SHH&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00";
+	//NSString* str=@"orderRequest.train_date=2013-01-10&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=SHH&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00";
 	
+    
+    NSString* strF=@"orderRequest.train_date=%@&orderRequest.from_station_telecode=%@&orderRequest.to_station_telecode=%@&orderRequest.train_no=&trainPassType=QB&trainClass=QB#D#Z#T#K#QT#&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00:00--24:00";
+	
+
 	//NSString* strF=@"date=%@&fromstation=%@&tostation=%@&starttime=%@";
-	//NSString* str=[NSString stringWithFormat:strF,queryDate,beginStation.stationCode,endStatation.stationCode,queryTimeString];
+	NSString* str=[NSString stringWithFormat:strF,queryDate,beginStation.stationCode,endStatation.stationCode];
 	//NSString* str=[NSString stringWithFormat:strF,@"2012-12-31",@"00:00--24:00"];
 	
 //	str=[str stringByReplacingOccurrencesOfString:@":" withString:@"%3A"];
@@ -223,6 +235,9 @@
 //{"datas":"0,<span id='id_240000K5070J' class='base_txtdiv' onmouseover=javascript:onStopHover('240000K5070J#BXP#CUW') onmouseout='onStopOut()'>K507<\/span>,<img src='/otsquery/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;北京西&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;21:35,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重庆北&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;00:36,27:01,--,--,--,--,--,<font color='darkgray'>无<\/font>,<font color='darkgray'>无<\/font>,--,<font color='darkgray'>无<\/font>,<font color='darkgray'>无<\/font>,--,\\n1,<span id='id_240000K61907' class='base_txtdiv' onmouseover=javascript:onStopHover('240000K61907#BXP#CUW') onmouseout='onStopOut()'>K619<\/span>,<img src='/otsquery/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;北京西&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;23:11,<img src='/otsquery/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;重庆北&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:03,31:52,--,--,--,--,--,<font color='darkgray'>无<\/font>,<font color='darkgray'>无<\/font>,--,<font color='darkgray'>无<\/font>,<font color='darkgray'>无<\/font>,--,","time":"16:39"}
 // K507 北京西 21:35 重庆北 00:36 27:01
 // K507 北京西 23:11 重庆北 07:03 31:52
+
+
+
 -(void)CheckAndProcessResponeData:(NSData*)data
 {
 	
@@ -235,31 +250,47 @@
 	}
 	
 	
-//	LogDebug(@"\n\n==================================ResponeString==================\n%@\n==================================EndResponeString==================\n",ResponeString);
+	LogDebug(@"\n\n==================================ResponeString==================\n%@\n==================================EndResponeString==================\n",ResponeString);
     
-    id results = [[[[SBJsonParser alloc] init] autorelease] objectWithString:ResponeString];
+    //id results = [[[[SBJsonParser alloc] init] autorelease] objectWithString:ResponeString];
     
-    [self jsonpaste:results];
+    [self jsonpaste:ResponeString];
 	
 		
 	
 }
 
 
-- (void) jsonpaste:(NSDictionary *)results
+- (void) jsonpaste:(NSString *)results
 {
+    if ([results hasPrefix:@"0,"]) {
+        return;
+    }
 
     //解析数据 
-    //1,<span id='id_240000G10506' class='base_txtdiv' onmouseover=javascript:onStopHover('240000G10506#VNP#AOH') onmouseout='onStopOut()'>G105<\/span>,<img src='/otsquery/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;北京南&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:30,<img src='/otsquery/images/tips/last.gif'>&nbsp;&nbsp;上海虹桥&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;13:07,05:37,24,--,145,454,--,--,--,--,--,--,--,\\n
+    //1,G105,北京南07:30,上海虹桥13:07,05:37,24,--,145,454,--,--,--,--,--,--,--,\\n
 
     //获取返回数据转换成NSData格式
-    NSString *htmlString = [results valueForKey:@"datas"]; 
-    NSData *htmlData=[htmlString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    //0,<span id='id_330000K5980K' class='base_txtdiv' onmouseover=javascript:onStopHover('330000K5980K#BXP#XGN') onmouseout='onStopOut()'>K599</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京西&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;05:25,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;孝感&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:23,13:58,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>
+    
+    
+   // 0,<span id='id_330000K5980K' class='base_txtdiv' onmouseover=javascript:onStopHover('330000K5980K#BXP#XGN') onmouseout='onStopOut()'>K599</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京西&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;05:25,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;孝感&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:23,13:58,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n1,<span id='id_240000G50700' class='base_txtdiv' onmouseover=javascript:onStopHover('240000G50700#BXP#XJN') onmouseout='onStopOut()'>G507</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;北京西&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:00,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;孝感北&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:49,04:49,1,--,19,<font color='darkgray'>无</font>,--,--,--,--,--,--,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('G507#04:49#07:00#240000G50700#BXP#XJN#11:49#北京西#孝感北#01#09#O*****0001M*****00209*****0001#29FB7E37FD14CF548081EECA5DF73F7BBE75962C4CF835ADED09F1BA#P3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>
+    
+    
+    [self.trainNumberArray removeAllObjects];
+    
+//    NSString *htmlString = [results valueForKey:@"datas"];
+//    
+//    if ([[htmlString stringByReplacingOccurrencesOfString:@" " withString:@"" ] isEqualToString:@""]) {
+//        return;
+//    }
+   NSData *htmlData=[results dataUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableString *mstr = [[NSMutableString alloc] init];  
     NSRange substr;  
     //对\\n进行分隔获取列表数据
-    NSArray *trainNumArray = [htmlString componentsSeparatedByString:@"\\n"]; 
+    NSArray *trainNumArray = [results componentsSeparatedByString:@"\\n"]; 
     int trainNumCount = trainNumArray.count;
     
     self.xpathParser = [[TFHpple alloc] initWithHTMLData:htmlData]; 
@@ -272,15 +303,15 @@
         //TFHpple 解析有规律的HTML数据,抓取span标签获取 车次
         TFHppleElement *element = [elements objectAtIndex:i]; 
         NSString *elementContent = [element text];
-        ticketModel.trainCode = elementContent;
+        ticketModel.trainCode = elementContent ;
         
         //根据字符串的分隔 解析每一行的数据
-        NSArray *trainNumChildArray = [[trainNumArray objectAtIndex:i] componentsSeparatedByString:@","];
+        NSArray *trainNumChildArray = [[[[trainNumArray objectAtIndex:i] stringByReplacingOccurrencesOfString:@"<font color='darkgray'>无</font>" withString:@"无"] stringByReplacingOccurrencesOfString:@"<font color='#008800'>有</font>" withString:@"有"] componentsSeparatedByString:@","];
         
         //解析发站和发站时间
         NSString *childTitle1 = [trainNumChildArray objectAtIndex:2];
         mstr = [NSMutableString stringWithString:childTitle1];  
-        substr = [mstr rangeOfString:@"<img src='/otsquery/images/tips/first.gif'>"];  
+        substr = [mstr rangeOfString:@"<img src='/otsweb/images/tips/first.gif'>"];  
         if (substr.location != NSNotFound) {  
             ticketModel.isFrom = 1;
             [mstr deleteCharactersInRange:substr];  
@@ -291,13 +322,13 @@
                 [mstr deleteCharactersInRange:substr];  
             } 
         }
-        ticketModel.fromLocation = [[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:0];
+        ticketModel.fromLocation = [[[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:0]stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
         ticketModel.fromTime = [[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:1];
         
         //解析发站和发站时间
         NSString *childTitle2 = [trainNumChildArray objectAtIndex:3];
         mstr = [NSMutableString stringWithString:childTitle2];  
-        substr = [mstr rangeOfString:@"<img src='/otsquery/images/tips/last.gif'>"];  
+        substr = [mstr rangeOfString:@"<img src='/otsweb/images/tips/last.gif'>"];  
         if (substr.location != NSNotFound) {  
              ticketModel.isTO = 1;
             [mstr deleteCharactersInRange:substr];  
@@ -322,8 +353,8 @@
         
 
         
-        ticketModel.toLocation = [[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:0];
-        ticketModel.toTime = [[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:1];
+        ticketModel.toLocation = [[[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:0] stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
+        ticketModel.toTime = [[[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:1] stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
         
         //历时
         ticketModel.duration = [trainNumChildArray objectAtIndex:4];
@@ -336,19 +367,55 @@
         //二等座
         ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:8];
         //高级软卧
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:9];
+        ticketModel.advancedSoftBed = [trainNumChildArray objectAtIndex:9];
         //软卧
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:10];
+        ticketModel.softBed = [trainNumChildArray objectAtIndex:10];
         //硬卧
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:11];
+        ticketModel.hardBed = [trainNumChildArray objectAtIndex:11];
         //软座
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:12];
+        ticketModel.softSeat = [trainNumChildArray objectAtIndex:12];
         //硬座
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:13];
+        ticketModel.hardSeat = [trainNumChildArray objectAtIndex:13];
         //无座
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:14];
+        ticketModel.noSeat = [trainNumChildArray objectAtIndex:14];
         //其它
-        ticketModel.BOneSeat = [trainNumChildArray objectAtIndex:15];
+        ticketModel.otherSeat = [trainNumChildArray objectAtIndex:15];
+        
+        
+        NSString* tmpOrderString=[trainNumChildArray objectAtIndex:16];
+        
+        
+        
+        
+        NSRegularExpression* regexAlert=[[NSRegularExpression alloc] initWithPattern:@"[(][\'](.*)[\'][)]" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSTextCheckingResult* rAlert=  [regexAlert firstMatchInString:tmpOrderString options:0 range:(NSRange){0,tmpOrderString.length}];
+        [regexAlert release];
+        
+        if (rAlert.range.length>0) {
+            
+            int pos=2;
+            NSString* msg=[tmpOrderString substringWithRange:(NSRange){rAlert.range.location+pos,rAlert.range.length-pos-3}];
+            
+             ticketModel.orderString=msg;
+        
+       
+    }else
+    {
+         ticketModel.orderString=@"";
+    }
+        
+        
+//        if (<#condition#>) {
+//            <#statements#>
+//        }
+        
+        
+      //  <a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D321#11:42#21:22#240000D32120#VNP#SHH#09:04#北京南#上海#01#04#O*****00004*****0153O*****3008#77ADDD8CE7F36E90E16A18FE04FE2D05224FF4E1E2F7D188659C4F9A#P2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>
+        
+        
+        
+        //<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>
+        
         
         [self.trainNumberArray addObject:ticketModel];
         [ticketModel release];
@@ -477,11 +544,19 @@
 	
 	
 	if (section==0&&row==1) {
+        [beginStation release];
 		beginStation=[stationInfo retain];
+        
+        [GlobalClass sharedClass].startStation=beginStation;
+         [[GlobalClass sharedClass] SaveConfig];
+        
 		NSLog(@"beginStation %@",beginStation.stationName);
 		
 	}else if (section==0&&row==2) {
+        [endStatation release];
 		endStatation=[stationInfo retain];
+        [GlobalClass sharedClass].endStation=endStatation;
+         [[GlobalClass sharedClass] SaveConfig];
 		NSLog(@"endStatation %@",endStatation.stationName);
 	}
 	UITableViewCell* cell= [mainTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section]];
@@ -492,6 +567,8 @@
 			[(UILabel*)[cell.contentView viewWithTag:1001 ] setText:stationInfo.stationName];
 		} 
 	}
+    
+   
 	
 	
 }
@@ -530,7 +607,7 @@
 				
 				NSDateFormatter *formater = [[NSDateFormatter alloc] init];
 				formater.dateFormat = @"yyyy-MM-dd";
-				queryDate=[formater stringFromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+				queryDate=[formater stringFromDate:[[NSDate dateWithTimeIntervalSinceNow:0] dateAfterDay:19]];
 				[cellValue setText:queryDate];
 				
 				//[cellValue sizeToFit];
@@ -547,7 +624,7 @@
 				[cellTitle setText:@"起点站"];
 				[cell.contentView addSubview:cellTitle];
 				
-				//[cellValue setText:@"北京"];
+				[cellValue setText:beginStation.stationName];
 				[cell.contentView addSubview:cellValue];
 				
 				
@@ -559,7 +636,7 @@
 				[cellTitle setText:@"终点站"];
 				[cell.contentView addSubview:cellTitle];
 				
-				//[cellValue setText:@"上海"];
+				[cellValue setText:endStatation.stationName];
 				[cell.contentView addSubview:cellValue];
 				
 				break;
@@ -620,9 +697,10 @@
 		case 1:
 		{
 			StationListWithCodeController* list=[[StationListWithCodeController alloc]init];
+            list.infoStart=[GlobalClass sharedClass].startStation;
 			NSLog(@"tag %d ",10000+indexPath.section*100+indexPath.row);
 			list.tag=10000+indexPath.section*100+indexPath.row;
-			list.delegate=(id<StationListWithCodeControllerDelegate>)self;            
+			list.delegate=(id<StationListWithCodeControllerDelegate>)self;
 			[self.navigationController pushViewController:list animated:YES]; 
 			[list release];
 			break;
@@ -632,6 +710,7 @@
 			
 			StationListWithCodeController* list=[[StationListWithCodeController alloc]init];
 			list.tag=10000+indexPath.section*100+indexPath.row;
+            list.infoEnd=[GlobalClass sharedClass].endStation;
 			list.delegate=(id<StationListWithCodeControllerDelegate>)self;            
 			[self.navigationController pushViewController:list animated:YES]; 
 			[list release];
@@ -687,7 +766,7 @@
 				
 				
 			}
-			
+			[stationShowArray insertObject:@"全部" atIndex:0];
 			
 			
 			
@@ -773,6 +852,7 @@
 	if (picker.tag==101) {
 		indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
 		
+        [queryTimeString release];
 		queryTimeString=[(NSString*)value retain];
 		
 		

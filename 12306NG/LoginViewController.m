@@ -89,10 +89,10 @@
     [btnRegist addSubview:lineView];
     [lineView release];
     
-    UIButton* btnAutoLogin=[UIButton buttonWithType:UIButtonTypeCustom];
+    btnAutoLogin=[UIButton buttonWithType:UIButtonTypeCustom];
     btnAutoLogin.frame=CGRectMake(220-50, OffsetY+280, 130, 40);
     btnAutoLogin.titleLabel.font=[UIFont boldSystemFontOfSize:15];
-    [btnAutoLogin setTitle:@"允许自动登录" forState:UIControlStateNormal];
+    [btnAutoLogin setTitle:@"记住密码" forState:UIControlStateNormal];
     [btnAutoLogin setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     //btnAutoLogin.showsTouchWhenHighlighted=YES;
     [btnAutoLogin setImage:[UIImage imageNamed:@"auto_login_frame"] forState:UIControlStateNormal];
@@ -410,13 +410,25 @@
         [alert show];
         [alert release];  
         //[self changeImg:nil]; 
-        [self.navigationController dismissModalViewControllerAnimated:YES];        
-        return;
+        //[self.navigationController dismissModalViewControllerAnimated:YES];
+        //return;
     }
     
     NSString* nameStr=[ResponeString substringWithRange:(NSRange){r.range.location+14,r.range.length-14-2}];
     
     [[NSUserDefaults standardUserDefaults] setObject:nameStr forKey:@"userName"];
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:textName.text forKey:@"textName"];
+    
+    if (btnAutoLogin.selected) {
+        [[NSUserDefaults standardUserDefaults] setObject:textPwd.text forKey:@"textPWD"];
+    }else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"textPWD"];
+    }
+    
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 //    [GlobalClass sharedClass].userName=nameStr;     
 //    [GlobalClass sharedClass].isLoginIn=YES;
@@ -458,7 +470,7 @@
         cell.textLabel.text=@"用户名";
             textName=[[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             textName.placeholder=@"请输入12306注册账号";
-            textName.text=@"iphonetest";
+            textName.text=[[NSUserDefaults standardUserDefaults] stringForKey:@"textName"];
             textName.autocapitalizationType=UITextAutocapitalizationTypeNone;
             textName.autocorrectionType=UITextAutocorrectionTypeNo;
             textName.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
@@ -474,7 +486,7 @@
             textPwd=[[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             textPwd.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
             textPwd.placeholder=@"请输入12306密码";
-            textPwd.text=@"iphone123";
+            textPwd.text=[[NSUserDefaults standardUserDefaults] stringForKey:@"textPWD"];
             textPwd.secureTextEntry=YES;
             textPwd.delegate=self;
             textPwd.returnKeyType=UIReturnKeyNext;
@@ -498,8 +510,11 @@
         
         
         imgBtn=[[UIButton alloc] initWithFrame:CGRectMake(120, 0, 60, 40)];
+        //imgBtn.backgroundColor=[UIColor grayColor];
         [cell.contentView addSubview:imgBtn];
+        //[imgBtn setImage:[] forState:UIControlStateNormal];
         [imgBtn addTarget:self action:@selector(changeImg:) forControlEvents:UIControlEventTouchUpInside];
+        
         [self performSelectorInBackground:@selector(changeImg:) withObject:nil];
         
         [v addSubview:imgBtn];

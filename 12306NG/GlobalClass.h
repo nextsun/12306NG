@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StationListWithCodeController.h"
 //#import "WBEngine.h"
 
 @interface GlobalClass : NSObject{
@@ -18,8 +19,12 @@
    // WBEngine* weiBoEngine;
     BOOL isLoginIn;
     NSString* userName;
+    NSString* userPWD;
     UIColor* themeColor;
     BOOL isEnableBaiduInput;
+    
+    StationInfo* startStation;
+    StationInfo* endStation;
 }
 @property(nonatomic,strong)NSMutableArray* dataArray;
 @property(nonatomic,strong)NSMutableArray* towerDataArray;
@@ -32,6 +37,8 @@
 @property(nonatomic,retain)UIColor* themeColor;
 @property(nonatomic,assign)BOOL isEnableBaiduInput;
 
+@property(nonatomic,retain)StationInfo* startStation;
+@property(nonatomic,retain)StationInfo* endStation;
 +(GlobalClass*)sharedClass;
 +(void)showHTMLDoc:(NSString*)htmlString;
 -(void)loadConfig;

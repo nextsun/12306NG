@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookingTicketViewController : UIViewController
+@interface BookingTicketViewController : UITableViewController
+{
+    NSMutableArray* tableArray;
+    //UITableView* mainTableView;
+    NSMutableDictionary* dataDict;
+    
+    BOOL isKeyBoardShow;
+    
+     
+    NSMutableArray* userListArray;
+    //UITableView* userListTableView;
+    BOOL isUserListTableLoaded;
+    
+    NSString* orderString;
 
+
+}
+@property(nonatomic,retain)NSString* orderString;
 @end

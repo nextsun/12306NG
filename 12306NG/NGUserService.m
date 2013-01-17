@@ -427,7 +427,23 @@ static NGUserService* _sharedNGUserServiceIntance;
     
     
     
-    ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/passengerAction.do?method=queryPagePassenger"]];
+   // (Request-Line)	POST /otsweb/passengerAction.do?method=getPagePassenger HTTP/1.1
+//        Host	dynamic.12306.cn
+//        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+//        Accept	application/json, text/javascript, */*
+//         Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+//         Accept-Encoding	gzip, deflate
+//         Connection	keep-alive
+//         Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+//         X-Requested-With	XMLHttpRequest
+//         Referer	https://dynamic.12306.cn/otsweb/passengerAction.do?method=initUsualPassenger
+//         Content-Length	137
+//         Cookie	JSESSIONID=8916B41BAD791A76AAF263063F089E51; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2161377546.36895.0000
+//         Pragma	no-cache
+//         Cache-Control	no-cache
+    
+    
+    ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/passengerAction.do?method=getPagePassenger"]];
     
     [request setCachePolicy:ASIUseDefaultCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
     
@@ -444,8 +460,8 @@ static NGUserService* _sharedNGUserServiceIntance;
     [request addRequestHeader:@"Cache-Control" value:@" no-cache"];
     
     [request addPostValue:@"0" forKey:@"pageIndex"];
-    [request addPostValue:@"7" forKey:@"pageSize"];
-    [request addPostValue:@"请输入汉字或拼音首字母" forKey:@"passenger_name"];
+    [request addPostValue:@"10" forKey:@"pageSize"];
+    [request addPostValue:@"" forKey:@"passenger_name"];
     
     
     [request startSynchronous];

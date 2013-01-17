@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PaymentDoneViewController : UIViewController
+@interface PaymentDoneViewController : UIViewController{
+    NSDictionary *orderDict;
+    UITableView  *successTable;
+}
+
+@property (nonatomic ,retain) NSDictionary *orderDict;
+@property (nonatomic ,retain) UITableView  *successTable;
+
+// init data
+- (void)initData;
 
 @end

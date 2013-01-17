@@ -16,6 +16,12 @@
     [backButton addTarget:self action:@selector(backButtonAction) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem=[[[UIBarButtonItem alloc ] initWithCustomView:backButton] autorelease];;
 }
+-(void)showCustomDismissButton
+{
+    NGBackButton* backButton=[NGBackButton button];
+    [backButton addTarget:self action:@selector(dismissAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem=[[[UIBarButtonItem alloc ] initWithCustomView:backButton] autorelease];;
+}
 -(void)backButtonActionAnimated:(BOOL)animated
 {
     if (self.navigationController) {
@@ -38,6 +44,16 @@
         }
     }
 }
+-(void)dismissAction
+{
+    if (self.navigationController) {
+       if ([self.navigationController respondsToSelector:@selector(dismissModalViewControllerAnimated:)])
+        {
+            [self.navigationController dismissModalViewControllerAnimated:YES];
+        }
+    }
+}
+
 @end
 //@implementation UINavigationBar (backButtonAction)
 //@end

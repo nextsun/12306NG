@@ -11,6 +11,7 @@
 
 @interface UIViewController (backButtonAction)
 -(void)showCustomBackButton;
+-(void)showCustomDismissButton;
 //-(void)backButtonActionAnimated:(BOOL)animate;
 @end
 //@interface UINavigationBar (backButtonAction)

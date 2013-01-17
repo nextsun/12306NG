@@ -17,6 +17,56 @@
 @synthesize stationCode;
 @synthesize stationPinYin;
 @synthesize stationIndex;
+
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        stationCode=@"";
+        stationName=@"";
+        stationPinYin=@"";
+        stationIndex=@"";
+        
+        
+    }
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:stationCode forKey:@"CODE"];
+    [aCoder encodeObject:stationName forKey:@"NAME"];
+    [aCoder encodeObject:stationPinYin forKey:@"PINYIN"];
+    [aCoder encodeObject:stationIndex forKey:@"INDEX"];
+    
+}
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    
+    if ((self=[self init])) {
+    self.stationCode=[aDecoder decodeObjectForKey:@"CODE"];
+    self.stationName=[aDecoder decodeObjectForKey:@"NAME"];
+    self.stationPinYin=[aDecoder decodeObjectForKey:@"PINYIN"];
+    self.stationIndex=[aDecoder decodeObjectForKey:@"INDEX"];
+    }
+    return self;
+   
+}
+
+- (void)dealloc
+{
+    stationCode=nil;
+    stationName=nil;
+    stationPinYin=nil;
+    stationIndex=nil;
+    [super dealloc];
+}
+-(NSString*)debugDescription
+{
+    return [NSString stringWithFormat:@"\n\nstationName=%@\nstationCode=%@\nstationPinYin%@\nstationIndex=%@\n\n",stationName,stationCode,stationPinYin,stationIndex];
+}
 @end
 
 
@@ -59,6 +109,8 @@
     [super viewDidLoad];
 	
 	NSLog(@"tags is %d ",self.tag);
+    
+    [self showCustomBackButton];
 	
 	// Do any additional setup after loading the view.
     
@@ -78,9 +130,10 @@
     //[segCtl setEnabled:NO];
 //    [segCtl setWidth:50 forSegmentAtIndex:1];
 //    [segCtl setEnabled:NO forSegmentAtIndex:1];
-     segCtl.segmentedControlStyle=UISegmentedControlStyleBar;
+     segCtl.segmentedControlStyle=UISegmentedControlStyleBordered;
     [segCtl addTarget:self action:@selector(segChanged:) forControlEvents:UIControlEventValueChanged];
-    self.navigationItem.titleView=segCtl;
+    //self.navigationItem.titleView=segCtl;
+    [segCtl setSelectedSegmentIndex:0];
     
     
     

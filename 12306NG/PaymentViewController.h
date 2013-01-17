@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderModel.h"
 
-@interface PaymentViewController : UIViewController
+@interface PaymentViewController : UIViewController{
+    NSDictionary *paymentDict;
+    NSDictionary *epayDict;
+    NSArray      *paymentArray;
+    UITableView  *paymentTable;
+}
+
+@property(nonatomic, retain) NSDictionary *paymentDict;
+@property(nonatomic, retain) NSDictionary *epayDict;
+@property(nonatomic, retain) NSArray      *paymentArray;
+@property(nonatomic, retain) UITableView  *paymentTable;
+
+//init data
+- (void) initData;
 
 @end

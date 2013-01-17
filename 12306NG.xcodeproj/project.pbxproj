@@ -10,22 +10,16 @@
 		0C58003E167963BC006786CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C58003D167963BC006786CF /* UIKit.framework */; };
 		0C580040167963BC006786CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C58003F167963BC006786CF /* Foundation.framework */; };
 		0C580042167963BC006786CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C580041167963BC006786CF /* CoreGraphics.framework */; };
-		0C580048167963BC006786CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C580046167963BC006786CF /* InfoPlist.strings */; };
 		0C58004A167963BC006786CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C580049167963BC006786CF /* main.m */; };
 		0C58004E167963BC006786CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58004D167963BC006786CF /* AppDelegate.m */; };
 		0C580050167963BC006786CF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C58004F167963BC006786CF /* Default.png */; };
 		0C580052167963BC006786CF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C580051167963BC006786CF /* Default@2x.png */; };
 		0C580054167963BC006786CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C580053167963BC006786CF /* Default-568h@2x.png */; };
-		0C58008116796C05006786CF /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58007F16796C05006786CF /* UserCenterViewController.m */; };
 		0C58008816796D9C006786CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58008616796D9B006786CF /* RegisterViewController.m */; };
 		0C58008F16796DF8006786CF /* UserInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58008D16796DF7006786CF /* UserInfomationViewController.m */; };
 		0C58009616796F66006786CF /* AddTravelCompanionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58009416796F65006786CF /* AddTravelCompanionViewController.m */; };
 		0C58009D167970EE006786CF /* QueryTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58009B167970EE006786CF /* QueryTicketViewController.m */; };
-		0C58009E167970EE006786CF /* QueryTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C58009C167970EE006786CF /* QueryTicketViewController.xib */; };
-		0C5800A016797112006786CF /* QueryTicketViewController_ip5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C58009F16797112006786CF /* QueryTicketViewController_ip5.xib */; };
 		0C5800A416797137006786CF /* QueryTicketResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5800A216797137006786CF /* QueryTicketResultViewController.m */; };
-		0C5800A516797137006786CF /* QueryTicketResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5800A316797137006786CF /* QueryTicketResultViewController.xib */; };
-		0C5800A716797145006786CF /* QueryTicketResultViewController_ip5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5800A616797145006786CF /* QueryTicketResultViewController_ip5.xib */; };
 		0C5800AB167971E9006786CF /* BookingTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5800A9167971E9006786CF /* BookingTicketViewController.m */; };
 		0C5800AC167971E9006786CF /* BookingTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5800AA167971E9006786CF /* BookingTicketViewController.xib */; };
 		0C5800AE16797209006786CF /* BookingTicketViewController_ip5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5800AD16797209006786CF /* BookingTicketViewController_ip5.xib */; };
@@ -133,13 +127,13 @@
 		A408A408168D77E30059EA6A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A408A407168D77E30059EA6A /* libxml2.2.dylib */; };
 		A408A40A168D77EC0059EA6A /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A408A409168D77EC0059EA6A /* libz.1.1.3.dylib */; };
 		A408A40C168D78420059EA6A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A408A40B168D78420059EA6A /* MobileCoreServices.framework */; };
+		A40DA56F16A70065004FC5A2 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40DA56E16A70065004FC5A2 /* UserCenterViewController.m */; };
 		A41D86DF169293E30053FC41 /* UIViewController+backButtonAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D86DE169293E30053FC41 /* UIViewController+backButtonAction.m */; };
 		A443230916928D5A009A32C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A443230816928D5A009A32C4 /* LoginViewController.m */; };
 		A443231216928ED7009A32C4 /* NGBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A443231116928ED7009A32C4 /* NGBackButton.m */; };
 		A452987F16953DA000E1F81B /* blue_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A452987E16953DA000E1F81B /* blue_btn@2x.png */; };
 		A452988B1695CBA300E1F81B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A45298891695CBA300E1F81B /* Icon.png */; };
 		A452988C1695CBA300E1F81B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A452988A1695CBA300E1F81B /* Icon@2x.png */; };
-		A459D18916906E9100604A61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A459D18B16906E9100604A61 /* Localizable.strings */; };
 		A459D1AF16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A459D1AE16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.m */; };
 		A459D1B116907D2C00604A61 /* banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A459D1B016907D2C00604A61 /* banner@2x.png */; };
 		A4B0468516A0E6E600DF7C15 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B0468416A0E6E600DF7C15 /* MessageUI.framework */; };
@@ -151,6 +145,8 @@
 		A4CBE74E168EB96A00499E12 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBE746168EB96A00499E12 /* SBJsonParser.m */; };
 		A4CBE74F168EB96A00499E12 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBE748168EB96A00499E12 /* SBJsonWriter.m */; };
 		A4CBE762168EBD0900499E12 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBE761168EBCD300499E12 /* RegexKitLite.m */; };
+		A4D70B1F16A7096F0099D6CA /* 12306NG-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4D70B1E16A7096F0099D6CA /* 12306NG-Info.plist */; };
+		A4D70B2216A709E30099D6CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4D70B2416A709E30099D6CA /* InfoPlist.strings */; };
 		A4E9115F168F24830081E66E /* NGUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9115E168F24830081E66E /* NGUserService.m */; };
 		A4E9116A168F2FEB0081E66E /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E91166168F2FEB0081E66E /* HTMLNode.m */; };
 		A4E9116B168F2FEB0081E66E /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E91168168F2FEB0081E66E /* HTMLParser.m */; };
@@ -192,7 +188,6 @@
 		0C58003D167963BC006786CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C58003F167963BC006786CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0C580041167963BC006786CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0C580045167963BC006786CF /* 12306NG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "12306NG-Info.plist"; sourceTree = "<group>"; };
 		0C580049167963BC006786CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C58004B167963BC006786CF /* 12306NG-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "12306NG-Prefix.pch"; sourceTree = "<group>"; };
 		0C58004C167963BC006786CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -202,7 +197,6 @@
 		0C580053167963BC006786CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0C58007716796699006786CF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0C58007E16796C05006786CF /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterViewController.h; sourceTree = "<group>"; };
-		0C58007F16796C05006786CF /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewController.m; sourceTree = "<group>"; };
 		0C58008516796D9B006786CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		0C58008616796D9B006786CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		0C58008C16796DF7006786CF /* UserInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfomationViewController.h; sourceTree = "<group>"; };
@@ -211,12 +205,8 @@
 		0C58009416796F65006786CF /* AddTravelCompanionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTravelCompanionViewController.m; sourceTree = "<group>"; };
 		0C58009A167970EE006786CF /* QueryTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryTicketViewController.h; sourceTree = "<group>"; };
 		0C58009B167970EE006786CF /* QueryTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryTicketViewController.m; sourceTree = "<group>"; };
-		0C58009C167970EE006786CF /* QueryTicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryTicketViewController.xib; sourceTree = "<group>"; };
-		0C58009F16797112006786CF /* QueryTicketViewController_ip5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryTicketViewController_ip5.xib; sourceTree = "<group>"; };
 		0C5800A116797137006786CF /* QueryTicketResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryTicketResultViewController.h; sourceTree = "<group>"; };
 		0C5800A216797137006786CF /* QueryTicketResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryTicketResultViewController.m; sourceTree = "<group>"; };
-		0C5800A316797137006786CF /* QueryTicketResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryTicketResultViewController.xib; sourceTree = "<group>"; };
-		0C5800A616797145006786CF /* QueryTicketResultViewController_ip5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueryTicketResultViewController_ip5.xib; sourceTree = "<group>"; };
 		0C5800A8167971E9006786CF /* BookingTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingTicketViewController.h; sourceTree = "<group>"; };
 		0C5800A9167971E9006786CF /* BookingTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingTicketViewController.m; sourceTree = "<group>"; };
 		0C5800AA167971E9006786CF /* BookingTicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingTicketViewController.xib; sourceTree = "<group>"; };
@@ -356,9 +346,9 @@
 		A408A407168D77E30059EA6A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		A408A409168D77EC0059EA6A /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		A408A40B168D78420059EA6A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		A408A40D168D78AB0059EA6A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "/Users/sun/Development/12306IOS/12306NG/12306NG/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		A408A40E168D797F0059EA6A /* Docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Docs; sourceTree = "<group>"; };
 		A408A411168DA6A50059EA6A /* AppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefine.h; sourceTree = "<group>"; };
+		A40DA56E16A70065004FC5A2 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewController.m; sourceTree = "<group>"; };
 		A41D86DD169293E30053FC41 /* UIViewController+backButtonAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+backButtonAction.h"; path = "../../UIViewController+backButtonAction.h"; sourceTree = "<group>"; };
 		A41D86DE169293E30053FC41 /* UIViewController+backButtonAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+backButtonAction.m"; path = "../../UIViewController+backButtonAction.m"; sourceTree = "<group>"; };
 		A443230816928D5A009A32C4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -367,8 +357,6 @@
 		A452987E16953DA000E1F81B /* blue_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue_btn@2x.png"; path = "img/blue_btn@2x.png"; sourceTree = "<group>"; };
 		A45298891695CBA300E1F81B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = img/Icon.png; sourceTree = "<group>"; };
 		A452988A1695CBA300E1F81B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "img/Icon@2x.png"; sourceTree = "<group>"; };
-		A459D18A16906E9100604A61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A459D18C16906EA300604A61 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A459D1AD16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CustomBackgroundColor.h"; sourceTree = "<group>"; };
 		A459D1AE16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomBackgroundColor.m"; sourceTree = "<group>"; };
 		A459D1B016907D2C00604A61 /* banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "banner@2x.png"; path = "img/banner@2x.png"; sourceTree = "<group>"; };
@@ -401,7 +389,9 @@
 		A4CBE75F168EBCD300499E12 /* RegexKitLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		A4CBE760168EBCD300499E12 /* RegexKitLite.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = RegexKitLite.html; sourceTree = "<group>"; };
 		A4CBE761168EBCD300499E12 /* RegexKitLite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		A4E9115A168F10940081E66E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = /Users/sun/Development/12306IOS/12306NG/12306NG/en.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
+		A4D70B1E16A7096F0099D6CA /* 12306NG-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "12306NG-Info.plist"; sourceTree = "<group>"; };
+		A4D70B2316A709E30099D6CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A4D70B2516A709E70099D6CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9115D168F24830081E66E /* NGUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGUserService.h; sourceTree = "<group>"; };
 		A4E9115E168F24830081E66E /* NGUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGUserService.m; sourceTree = "<group>"; };
 		A4E91165168F2FEB0081E66E /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
@@ -543,11 +533,10 @@
 			isa = PBXGroup;
 			children = (
 				0C58006B1679653E006786CF /* img */,
-				0C580045167963BC006786CF /* 12306NG-Info.plist */,
 				A4FBD2F41698730C007E8743 /* Station_Names.plist */,
-				0C580046167963BC006786CF /* InfoPlist.strings */,
-				A459D18B16906E9100604A61 /* Localizable.strings */,
 				0C580049167963BC006786CF /* main.m */,
+				A4D70B2416A709E30099D6CA /* InfoPlist.strings */,
+				A4D70B1E16A7096F0099D6CA /* 12306NG-Info.plist */,
 				0C58004B167963BC006786CF /* 12306NG-Prefix.pch */,
 				0C58004F167963BC006786CF /* Default.png */,
 				0C580051167963BC006786CF /* Default@2x.png */,
@@ -648,12 +637,8 @@
 			children = (
 				0C58009A167970EE006786CF /* QueryTicketViewController.h */,
 				0C58009B167970EE006786CF /* QueryTicketViewController.m */,
-				0C58009C167970EE006786CF /* QueryTicketViewController.xib */,
-				0C58009F16797112006786CF /* QueryTicketViewController_ip5.xib */,
 				0C5800A116797137006786CF /* QueryTicketResultViewController.h */,
 				0C5800A216797137006786CF /* QueryTicketResultViewController.m */,
-				0C5800A316797137006786CF /* QueryTicketResultViewController.xib */,
-				0C5800A616797145006786CF /* QueryTicketResultViewController_ip5.xib */,
 				0C5800A8167971E9006786CF /* BookingTicketViewController.h */,
 				0C5800A9167971E9006786CF /* BookingTicketViewController.m */,
 				0C5800AA167971E9006786CF /* BookingTicketViewController.xib */,
@@ -684,7 +669,7 @@
 				0C58008516796D9B006786CF /* RegisterViewController.h */,
 				0C58008616796D9B006786CF /* RegisterViewController.m */,
 				0C58007E16796C05006786CF /* UserCenterViewController.h */,
-				0C58007F16796C05006786CF /* UserCenterViewController.m */,
+				A40DA56E16A70065004FC5A2 /* UserCenterViewController.m */,
 				0C58008C16796DF7006786CF /* UserInfomationViewController.h */,
 				0C58008D16796DF7006786CF /* UserInfomationViewController.m */,
 				0C58009316796F65006786CF /* AddTravelCompanionViewController.h */,
@@ -1046,6 +1031,7 @@
 			knownRegions = (
 				en,
 				"zh-Hant",
+				ja,
 			);
 			mainGroup = 0C58002E167963BC006786CF;
 			productRefGroup = 0C58003A167963BC006786CF /* Products */;
@@ -1062,14 +1048,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C580048167963BC006786CF /* InfoPlist.strings in Resources */,
 				0C580050167963BC006786CF /* Default.png in Resources */,
 				0C580052167963BC006786CF /* Default@2x.png in Resources */,
 				0C580054167963BC006786CF /* Default-568h@2x.png in Resources */,
-				0C58009E167970EE006786CF /* QueryTicketViewController.xib in Resources */,
-				0C5800A016797112006786CF /* QueryTicketViewController_ip5.xib in Resources */,
-				0C5800A516797137006786CF /* QueryTicketResultViewController.xib in Resources */,
-				0C5800A716797145006786CF /* QueryTicketResultViewController_ip5.xib in Resources */,
 				0C5800AC167971E9006786CF /* BookingTicketViewController.xib in Resources */,
 				0C5800AE16797209006786CF /* BookingTicketViewController_ip5.xib in Resources */,
 				0C5800B316797296006786CF /* ChooseTravelCompanionViewController.xib in Resources */,
@@ -1146,7 +1127,6 @@
 				0C58018116799BD7006786CF /* up.png in Resources */,
 				A4E9116C168F2FEB0081E66E /* README.md in Resources */,
 				A4E9116E168F4FAD0081E66E /* userinfo.html in Resources */,
-				A459D18916906E9100604A61 /* Localizable.strings in Resources */,
 				A459D1B116907D2C00604A61 /* banner@2x.png in Resources */,
 				A452987F16953DA000E1F81B /* blue_btn@2x.png in Resources */,
 				A452988B1695CBA300E1F81B /* Icon.png in Resources */,
@@ -1159,6 +1139,8 @@
 				A4F855791696ACBD00E86ED5 /* btn_021.press@2x.png in Resources */,
 				A4F8557A1696ACBD00E86ED5 /* btn_021@2x.png in Resources */,
 				A4FBD2F51698730C007E8743 /* Station_Names.plist in Resources */,
+				A4D70B1F16A7096F0099D6CA /* 12306NG-Info.plist in Resources */,
+				A4D70B2216A709E30099D6CA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,7 +1155,6 @@
 				A4CBE762168EBD0900499E12 /* RegexKitLite.m in Sources */,
 				0C58004A167963BC006786CF /* main.m in Sources */,
 				0C58004E167963BC006786CF /* AppDelegate.m in Sources */,
-				0C58008116796C05006786CF /* UserCenterViewController.m in Sources */,
 				0C58008816796D9C006786CF /* RegisterViewController.m in Sources */,
 				0C58008F16796DF8006786CF /* UserInfomationViewController.m in Sources */,
 				0C58009616796F66006786CF /* AddTravelCompanionViewController.m in Sources */,
@@ -1240,28 +1221,20 @@
 				A4FBD2EB16987256007E8743 /* StationListController.m in Sources */,
 				A4FBD2F116987296007E8743 /* NSDataAdditions.m in Sources */,
 				A4FBD2F216987296007E8743 /* TBXML.m in Sources */,
+				A40DA56F16A70065004FC5A2 /* UserCenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0C580046167963BC006786CF /* InfoPlist.strings */ = {
+		A4D70B2416A709E30099D6CA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A408A40D168D78AB0059EA6A /* zh-Hant */,
-				A4E9115A168F10940081E66E /* en */,
+				A4D70B2316A709E30099D6CA /* zh-Hant */,
+				A4D70B2516A709E70099D6CA /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A459D18B16906E9100604A61 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A459D18A16906E9100604A61 /* en */,
-				A459D18C16906EA300604A61 /* zh-Hant */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1291,8 +1264,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1316,8 +1289,8 @@
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1338,8 +1311,8 @@
 				);
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1359,8 +1332,8 @@
 				);
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7E9D70CF-0A97-4300-A41A-2F98CF3A723B";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -9,9 +9,10 @@
 #import "TicketModel.h"
 
 @implementation TicketModel
-@synthesize number,trainCode,fromLocation,toLocation,fromTime,toTime,duration,hardSeat,softSeat,hardBed,softBed,noSeat,advancedSoftBed;
+@synthesize number,trainCode,fromLocation,toLocation,fromTime,toTime,duration,hardSeat,softSeat,hardBed,softBed,noSeat,otherSeat,advancedSoftBed;
 @synthesize businessSeat,specialSeat,AOneSeat,BOneSeat,isFrom,isTO;
 
+@synthesize orderString;
 - (void)dealloc 
 {
     self.number = nil;
@@ -26,11 +27,13 @@
     self.hardBed = nil;
     self.softBed = nil;
     self.noSeat = nil;
+    self.otherSeat=nil;
     self.advancedSoftBed = nil;
     self.businessSeat = nil;
     self.specialSeat = nil;
     self.AOneSeat = nil;
     self.BOneSeat = nil;
+    self.orderString=nil;
     
     [super dealloc];
 

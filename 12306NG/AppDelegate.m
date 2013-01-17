@@ -11,6 +11,8 @@
 #import "HTMLParser.h"
 #import "ASIHTTPRequest.h"
 
+#import "GlobalClass.h"
+
 #import "LoginViewController.h"
 #import "UserCenterViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -30,7 +32,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [self test2];
+    //[self test2];
   
     
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAutoLogin"];
@@ -38,7 +40,8 @@
 //    [self test1];
     
 
-         
+    
+    [[GlobalClass sharedClass] loadConfig];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     self.window.backgroundColor=MAIN_BG_COLOR;

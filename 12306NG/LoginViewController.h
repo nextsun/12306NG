@@ -27,6 +27,8 @@
     
     BOOL isCodeLoaded;
     
+    UIButton* btnAutoLogin;
+    
     ASIHTTPRequest* requestImg;
 }
 

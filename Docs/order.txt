@@ -1,0 +1,78 @@
+
+(Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=2013-02-04&train_no=270000260441&station=2601&seat=3&from=BJP&to=LFP&ticket=1001053128400935001310010500793006150064 HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Cookie	JSESSIONID=5533CC1E687540F36EE7E2CA0C7D7FD2; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2127823114.48160.0000
+
+
+{"countT":0,"count":11,"ticket":"1001053128400935001310010500793006150064","op_1":true,"op_2":false}
+
+
+(Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=checkOrderInfo&rand=86jk HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Content-Length	1220
+Cookie	JSESSIONID=5533CC1E687540F36EE7E2CA0C7D7FD2; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2127823114.48160.0000
+Pragma	no-cache
+Cache-Control	no-cache
+
+
+
+org.apache.struts.taglib.html.TOKEN=ee2420fcec0f6ace0479038450305782&leftTicketStr=1001053128400935001310010500793006150064&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&checkbox1=1&orderRequest.train_date=2013-02-04&orderRequest.train_no=270000260441&orderRequest.station_train_code=2601&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=LFP&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=04%3A22&orderRequest.end_time=05%3A15&orderRequest.from_station_name=%E5%8C%97%E4%BA%AC&orderRequest.to_station_name=%E5%BB%8A%E5%9D%8A%E5%8C%97&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=3%2Cundefined%2C1%2C%E9%93%81%E8%B7%AF%2C1%2C110101198011111114%2C18912345678%2CY&oldPassengers=%E9%93%81%E8%B7%AF%2C1%2C110101198011111114&passenger_1_seat=3&passenger_1_ticket=1&passenger_1_name=%E9%93%81%E8%B7%AF&passenger_1_cardtype=1&passenger_1_cardno=110101198011111114&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=86jk&orderRequest.reserve_flag=A&tFlag=dc
+
+
+{"checkHuimd":"Y","check608":"Y","msg":"","errMsg":"Y"}
+
+
+
+(Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=2013-02-04&train_no=270000260441&station=2601&seat=3&from=BJP&to=LFP&ticket=1001053128400935001310010500793006150064 HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Cookie	JSESSIONID=5533CC1E687540F36EE7E2CA0C7D7FD2; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2127823114.48160.0000
+
+
+{"countT":0,"count":11,"ticket":"1001053128400935001310010500793006150064","op_1":true,"op_2":false}
+
+
+
+(Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueueOrder HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Content-Length	1211
+Cookie	JSESSIONID=5533CC1E687540F36EE7E2CA0C7D7FD2; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2127823114.48160.0000
+Pragma	no-cache
+Cache-Control	no-cache
+
+
+org.apache.struts.taglib.html.TOKEN=ee2420fcec0f6ace0479038450305782&leftTicketStr=1001053128400935001310010500793006150064&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&checkbox1=1&orderRequest.train_date=2013-02-04&orderRequest.train_no=270000260441&orderRequest.station_train_code=2601&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=LFP&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=04%3A22&orderRequest.end_time=05%3A15&orderRequest.from_station_name=%E5%8C%97%E4%BA%AC&orderRequest.to_station_name=%E5%BB%8A%E5%9D%8A%E5%8C%97&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=3%2Cundefined%2C1%2C%E9%93%81%E8%B7%AF%2C1%2C110101198011111114%2C18912345678%2CY&oldPassengers=%E9%93%81%E8%B7%AF%2C1%2C110101198011111114&passenger_1_seat=3&passenger_1_ticket=1&passenger_1_name=%E9%93%81%E8%B7%AF&passenger_1_cardtype=1&passenger_1_cardno=110101198011111114&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=86jk&orderRequest.reserve_flag=A
+
+{"errMsg":"Y"}
+

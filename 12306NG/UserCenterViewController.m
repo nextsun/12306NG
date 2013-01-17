@@ -194,7 +194,7 @@
         if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController* mail=[[MFMailComposeViewController alloc] init];
         
-        ;
+        
         [mail setToRecipients:@[@"920043287@qq.com"]];
         mail.mailComposeDelegate=(id<MFMailComposeViewControllerDelegate>)self;
          mail.navigationBar.tintColor=[UIColor blackColor];

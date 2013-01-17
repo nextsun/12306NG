@@ -37,7 +37,10 @@ static GlobalClass* _localStatusInstance;
 @synthesize isLoginIn=_isLoginIn;
 @synthesize userName=_userName;
 @synthesize themeColor=_themeColor;
-@synthesize isEnableBaiduInput=_isEnableBaiduInput;;
+@synthesize isEnableBaiduInput=_isEnableBaiduInput;
+
+@synthesize startStation=_startStation;
+@synthesize endStation=_endStation;
 
 +(GlobalClass*)sharedClass;
 {
@@ -62,6 +65,18 @@ static GlobalClass* _localStatusInstance;
         _themeColor=[UIColor colorWithHexString:@"000000"];
         _isEnableBaiduInput=true;
         
+        _startStation=[[StationInfo alloc] init];
+        _startStation.stationCode=@"BJP";
+        _startStation.stationName=@"北京";
+        _startStation.stationIndex=@"2";
+        _startStation.stationPinYin=@"bji";
+        
+        _endStation=[[StationInfo alloc] init];
+        
+        _endStation.stationCode=@"SHH";
+        _endStation.stationName=@"上海";
+        _endStation.stationIndex=@"8";
+        _endStation.stationPinYin=@"sha";
         
  /*
         _weiBoEngine = [[WBEngine alloc] initWithAppKey:kWBSDKDemoAppKey appSecret:kWBSDKDemoAppSecret];
@@ -69,6 +84,8 @@ static GlobalClass* _localStatusInstance;
 //        [_weiBoEngine setDelegate:(id<WBEngineDelegate>)self];
         [_weiBoEngine setRedirectURI:@"http://"];
         [_weiBoEngine setIsUserExclusive:NO];
+  
+        
 
   */
     }
@@ -84,11 +101,17 @@ static GlobalClass* _localStatusInstance;
 {
   
     if (_lanchtimes>1) {
-        _showHelp=[[NSUserDefaults standardUserDefaults] boolForKey:@"showHelp"];
-        _showLoading=[[NSUserDefaults standardUserDefaults] boolForKey:@"showLoading"]; 
-        _isEnableBaiduInput=[[NSUserDefaults standardUserDefaults] boolForKey:@"enableBaiduInput"];
-        _themeColor=[UIColor colorWithHexString:[[NSUserDefaults standardUserDefaults] stringForKey:@"themeColor" ]];
+//        _showHelp=[[NSUserDefaults standardUserDefaults] boolForKey:@"showHelp"];
+//        _showLoading=[[NSUserDefaults standardUserDefaults] boolForKey:@"showLoading"]; 
+//        _isEnableBaiduInput=[[NSUserDefaults standardUserDefaults] boolForKey:@"enableBaiduInput"];
+//        _themeColor=[UIColor colorWithHexString:[[NSUserDefaults standardUserDefaults] stringForKey:@"themeColor" ]];
+        _startStation=[[NSKeyedUnarchiver unarchiveObjectWithFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/start.txt"]] retain];
         
+        
+        LogInfo(@"%@",_startStation.debugDescription);
+        
+        
+        _endStation=[[NSKeyedUnarchiver unarchiveObjectWithFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/end.txt"]] retain];
         
     }else {
         [self SaveConfig];
@@ -156,10 +179,17 @@ static GlobalClass* _localStatusInstance;
 
 -(void)SaveConfig
 {
-    [[NSUserDefaults standardUserDefaults] setBool:_showHelp forKey:@"showHelp"];
-    [[NSUserDefaults standardUserDefaults] setBool:_showLoading forKey:@"showLoading"];
-    [[NSUserDefaults standardUserDefaults] setObject:[UIColor colorToHexString:_themeColor] forKey:@"themeColor"];
-    [[NSUserDefaults standardUserDefaults] setBool:_isEnableBaiduInput forKey:@"enableBaiduInput"];
+//    [[NSUserDefaults standardUserDefaults] setBool:_showHelp forKey:@"showHelp"];
+//    [[NSUserDefaults standardUserDefaults] setBool:_showLoading forKey:@"showLoading"];
+//    [[NSUserDefaults standardUserDefaults] setObject:[UIColor colorToHexString:_themeColor] forKey:@"themeColor"];
+//    [[NSUserDefaults standardUserDefaults] setBool:_isEnableBaiduInput forKey:@"enableBaiduInput"];
+    
+    
+    
+    [NSKeyedArchiver archiveRootObject:_startStation toFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/start.txt"]];
+    [NSKeyedArchiver archiveRootObject:_endStation toFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/end.txt"]];
+    
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

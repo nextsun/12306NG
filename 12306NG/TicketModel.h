@@ -24,6 +24,7 @@
 @property(nonatomic, retain)NSString *hardBed; //硬卧
 @property(nonatomic, retain)NSString *softBed; //软卧
 @property(nonatomic, retain)NSString *noSeat; //无座
+@property(nonatomic, retain)NSString *otherSeat; //其他
 @property(nonatomic, retain)NSString *advancedSoftBed; //高级软卧
 
 @property(nonatomic, retain)NSString *businessSeat; //商务座
@@ -35,6 +36,8 @@
 
 @property(nonatomic, assign)int isFrom; //是否是起点
 @property(nonatomic, assign)int isTO; //是否是终点
+
+@property(nonatomic, retain)NSString* orderString; //
 
 
 @end
