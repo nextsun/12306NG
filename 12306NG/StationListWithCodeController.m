@@ -98,10 +98,15 @@
     if (self) {
         // Custom initialization
         self.stationArray=[[DDHelper allStations] mutableCopy];
-        infoStart=[[StationInfo alloc] init];
-        infoEnd=[[StationInfo alloc] init];
+        self.infoStart=[[[StationInfo alloc] init] autorelease];
+        self.infoEnd=[[[StationInfo alloc] init] autorelease];
     }
     return self;
+}
+- (void)dealloc
+{
+    
+    [super dealloc];
 }
 
 - (void)viewDidLoad

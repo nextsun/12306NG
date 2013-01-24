@@ -109,7 +109,7 @@
         
         UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(60, 0, 200, 40)];
         labelValue.textAlignment=UITextAlignmentLeft;
-        labelValue.textColor=[UIColor whiteColor];
+        //labelValue.textColor=[UIColor whiteColor];
         labelValue.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
         labelValue.text=[self.paymentArray objectAtIndex:indexPath.section];
         labelValue.backgroundColor=[UIColor clearColor];
@@ -118,7 +118,7 @@
         
         UILabel* labelValue1=[[UILabel alloc] initWithFrame:CGRectMake(60, 35, 200, 15)];
         labelValue1.textAlignment=UITextAlignmentLeft;
-        labelValue1.textColor=[UIColor whiteColor];
+        //labelValue1.textColor=[UIColor whiteColor];
         labelValue1.font = [UIFont fontWithName:@"Helvetica" size:14];
         labelValue1.text=@"支持手机支付";
         labelValue1.backgroundColor=[UIColor clearColor];
@@ -152,7 +152,7 @@
         
         UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(60, 0, 200, 40)];
         labelValue.textAlignment=UITextAlignmentLeft;
-        labelValue.textColor=[UIColor whiteColor];
+        //labelValue.textColor=[UIColor whiteColor];
         labelValue.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
         labelValue.text=[self.paymentArray objectAtIndex:indexPath.section];
         labelValue.backgroundColor=[UIColor clearColor];
@@ -161,7 +161,7 @@
         
         UILabel* labelValue1=[[UILabel alloc] initWithFrame:CGRectMake(60, 35, 200, 15)];
         labelValue1.textAlignment=UITextAlignmentLeft;
-        labelValue1.textColor=[UIColor whiteColor];
+        //labelValue1.textColor=[UIColor whiteColor];
         labelValue1.font = [UIFont fontWithName:@"Helvetica" size:14];
         labelValue1.text=@"支持账号支付.可到建设银行官网开通";
         labelValue1.backgroundColor=[UIColor clearColor];
@@ -194,7 +194,7 @@
         
         UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(60, 15, 200, 30)];
         labelValue.textAlignment=UITextAlignmentLeft;
-        labelValue.textColor=[UIColor whiteColor];
+        //labelValue.textColor=[UIColor whiteColor];
         labelValue.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
         labelValue.text=[self.paymentArray objectAtIndex:indexPath.section];
         labelValue.backgroundColor=[UIColor clearColor];
@@ -227,7 +227,7 @@
         
         UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(60, 15, 200, 30)];
         labelValue.textAlignment=UITextAlignmentLeft;
-        labelValue.textColor=[UIColor whiteColor];
+        //labelValue.textColor=[UIColor whiteColor];
         labelValue.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
         labelValue.text=[self.paymentArray objectAtIndex:indexPath.section];
         labelValue.backgroundColor=[UIColor clearColor];
@@ -260,7 +260,7 @@
         
         UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(60, 15, 200, 30)];
         labelValue.textAlignment=UITextAlignmentLeft;
-        labelValue.textColor=[UIColor whiteColor];
+        //labelValue.textColor=[UIColor whiteColor];
         labelValue.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
         labelValue.text=[self.paymentArray objectAtIndex:indexPath.section];
         labelValue.backgroundColor=[UIColor clearColor];

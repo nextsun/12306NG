@@ -22,6 +22,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    [super drawRect:rect];
     [[UIColor colorWithRed:0x75/255.0 green:0x75/255.0 blue:0x75/255.0 alpha:1] set];
     //    }
     UIBezierPath * squarePath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:4.];
@@ -34,6 +35,5 @@
     CGRect newRect= CGRectInset(rect, (rect.size.width-size.width)/2,  (rect.size.height-size.height)/2);
     [backStr drawInRect:newRect withFont:[UIFont systemFontOfSize:15] lineBreakMode:UILineBreakModeWordWrap  alignment:UITextAlignmentCenter];
 }
-
 
 @end

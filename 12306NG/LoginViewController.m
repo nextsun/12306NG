@@ -34,16 +34,38 @@
     }
     return self;
 }
+-(void)checkVersion
+{
+    
+    NSDate* dateEnd= [NSDate dateFromString:@"2013-02-05" withFormat:@"YYYY-MM-dd"];
+    
+    
+    NSDate* dateNow=  [NSDate dateWithTimeIntervalSinceNow:0];
+    
+    if ([dateNow timeIntervalSinceDate:dateEnd]>=0) {
+        
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"测试版已到期，请联系作者" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        alert.tag=2013;
+        
+        [alert show];
+        [alert release];
+        
+    }
+    
+    
 
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [ASIHTTPRequest clearSession];
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_black"]];
     
-   
+   // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkVersion) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     
     
@@ -54,6 +76,7 @@
     UIImageView* logoView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
     logoView.frame=CGRectMake(20, OffsetY, 280, 70);
     [self.view addSubview:logoView];
+    [logoView release];
     
     
     CGRect rect=CGRectMake(10, OffsetY+80, self.view.bounds.size.width-20,150);
@@ -119,6 +142,10 @@
     tapGesture.delegate=(id<UIGestureRecognizerDelegate>)self;
     [self.view addGestureRecognizer:tapGesture];
     
+    
+    
+      
+    //[self checkVersion];
 
 
 }
@@ -174,10 +201,11 @@
 {
     
     
-#if (DEBUG_MODE==1)    
+if (DEBUG_MODE==1)
+{
     [((AppDelegate*)[UIApplication sharedApplication].delegate) didLoginIn];
     return;
-#endif
+}
     
         
         if (!textCode||!textCode.text
@@ -235,7 +263,7 @@
     [self.view endEditing:YES];
     HUD=[[MBProgressHUD alloc] initWithView:self.view];
     HUD.mode = MBProgressHUDModeIndeterminate;
-    HUD.labelText = @"  亲，正在登录中，请稍后...    ";
+    HUD.labelText = @" 亲，正在登录中，请稍后... ";
     HUD.margin = 30.f;
     HUD.yOffset = -45.f;
     [self.view addSubview:HUD];
@@ -249,8 +277,10 @@
     
     ASIFormDataRequest* loginAysnSuggest=[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/loginAction.do?method=loginAysnSuggest"]];    
     //loginAysnSuggest.delegate=(id<ASIHTTPRequestDelegate>)self;
-    loginAysnSuggest.useCookiePersistence=YES;
+    
     [loginAysnSuggest setValidatesSecureCertificate:NO];
+    [loginAysnSuggest setUseSessionPersistence:YES];
+    [loginAysnSuggest applyCookieHeader];
     /*    
      x-requested-with: XMLHttpRequest
      Accept-Language: zh-cn
@@ -293,8 +323,13 @@
     
     ASIFormDataRequest* req=[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/loginAction.do?method=login"]];    
 //    req.delegate=(id<ASIHTTPRequestDelegate>)self;
-    req.useCookiePersistence=YES;
+
     [req setValidatesSecureCertificate:NO];
+    [req setUseSessionPersistence:YES];
+    [req applyCookieHeader];
+
+    
+    
     [req addRequestHeader:@"Accept" value:@"text/html,application/xhtml+xml,*/*"];
     [req addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/loginAction.do?method=init"];
     [req addRequestHeader:@"Accept-Language" value:@"zh-CN"];
@@ -320,7 +355,7 @@
         return;
     }
    
-    [req applyCookieHeader];
+    //[req applyCookieHeader];
     
     
      LogInfo(@"%@",req.responseCookies);
@@ -377,6 +412,18 @@
     }
     
     
+    if ([ResponeString rangeOfString:@"网络可能存在问题，请您重试一下！"].length>0) {
+        
+        
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"网络可能存在问题，请您重试一下！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        //[self changeImg:nil];
+        //[self.navigationController dismissModalViewControllerAnimated:YES];
+        return;
+    }
+    
+    
     NSRegularExpression* regexAlert=[[NSRegularExpression alloc] initWithPattern:@"var message = [\"](.*)[\"]" options:NSRegularExpressionCaseInsensitive error:nil];
     
     
@@ -409,10 +456,11 @@
         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"系统维护中，维护时间为23:00-07:00，在此期间，如需在互联网购票、改签或退票，请到铁路车站窗口办理，谢谢！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];  
-        //[self changeImg:nil]; 
+        //[self changeImg:nil];
         //[self.navigationController dismissModalViewControllerAnimated:YES];
-        //return;
+        return;
     }
+    
     
     NSString* nameStr=[ResponeString substringWithRange:(NSRange){r.range.location+14,r.range.length-14-2}];
     
@@ -538,7 +586,8 @@
     
     requestImg.accessibilityLabel=@"imgCode";
     [requestImg setValidatesSecureCertificate:NO];
-    //[requestImg applyCookieHeader];
+    [requestImg setUseCookiePersistence:YES];
+    [requestImg applyCookieHeader];
      requestImg.delegate=(id<ASIHTTPRequestDelegate>)self;
     [requestImg startAsynchronous];
     
@@ -559,7 +608,20 @@
 {
     if (request_==requestImg) {
         
-        [request_ applyCookieHeader];
+        
+        
+       
+        
+        LogInfo(@"%@",request_.responseCookies);
+        
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:request_.responseCookies forURL:[request_ url] mainDocumentURL:[[request_ url] absoluteURL]];
+        
+        
+//        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[[self url] absoluteURL]];
+//		if (cookies) {
+//			[[self requestCookies] addObjectsFromArray:cookies];
+//		}
+        
         UIImage* img=[UIImage imageWithData:request_.responseData]; 
         
         [[imgBtn viewWithTag:1231] removeFromSuperview];
@@ -627,7 +689,7 @@
     
    
     [self.requestImg setDelegate:nil];
-    [self.requestImg release];
+    [requestImg release];
     [super dealloc];
     
 }
@@ -650,5 +712,13 @@
     }
     
         
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/nextsun"]];
+    //exit(0);
+    
 }
 @end

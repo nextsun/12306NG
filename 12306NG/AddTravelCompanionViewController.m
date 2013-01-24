@@ -12,6 +12,7 @@
 #import "NGUserService.h"
 #import "PickerView.h"
 #import "DDHelper.h"
+#import "AppDelegate.h"
 
 
 @interface AddTravelCompanionViewController ()
@@ -23,6 +24,7 @@
 
 @implementation AddTravelCompanionViewController
 @synthesize tableArray,dataDict, mainTableView;
+@synthesize isModelView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -161,8 +163,15 @@
                     }
                     
                 }
-                [self.navigationController popViewControllerAnimated:YES];
                 
+                //zhaoqi
+                if ( isModelView ) {
+                    [self onDismissViewClick];
+                }
+                else {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            
             }
 
             
@@ -226,10 +235,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.view.backgroundColor=[UIColor clearColor];
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_black"]];
+    
+    
     self.title=NSLocalizedString(@"新增旅客", nil);
     self.navigationItem.rightBarButtonItem=self.editButtonItem;
-    [self showCustomBackButton];
+    
+    //zhaoqi
+    if ( isModelView ) {
+        self.navigationItem.leftBarButtonItem = [self dismissViewButtonItem];
+    }
+    else {
+        [self showCustomBackButton];
+    }
     
     CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height-44);
     self.mainTableView=[[[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped] autorelease]  ;    
@@ -596,6 +614,26 @@
     UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];
     return [btn autorelease];
 }
+
+
+//zhaoqi
+- (UIBarButtonItem*)dismissViewButtonItem
+{
+    NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    [subButton addTarget:self action:@selector(onDismissViewClick) forControlEvents:UIControlEventTouchUpInside];
+    subButton.titleLabel.text=@"关闭";
+    UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];
+    return [btn autorelease];
+}
+
+
+//zhaoqi
+- (void) onDismissViewClick
+{
+    [[AppDelegate getAppDelegate].window.rootViewController dismissModalViewControllerAnimated:YES];
+}
+
+
 
 -(void)pickerView:(PickerView*)picker didPickedWithValue:(NSObject*)value;
 {

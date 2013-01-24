@@ -79,6 +79,7 @@
         
         UIButton* okBtn=[[UIButton alloc] initWithFrame:CGRectMake(268, 1, 42, 42)];
         [self addSubview:okBtn];
+        okBtn.tag=101;
         [okBtn setShowsTouchWhenHighlighted:YES];
         [okBtn setImage:[UIImage imageNamed:@"btn_020@2x.png"] forState:UIControlStateNormal];
         [okBtn addTarget:self action:@selector(locate:) forControlEvents:UIControlEventTouchUpInside];
@@ -125,6 +126,9 @@
         [rootC release];
         
     }
+    if (![self.dataArray count]>0) {
+        [((UIButton*)[self viewWithTag:101]) setEnabled:NO];
+    }
     
     
 }
@@ -151,12 +155,8 @@
     [self.layer addAnimation:animation forKey:@"TSLocateView"];
     [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:kDuration];
     
-    
-    //    if(self.delegate) {
-    //        [self.delegate actionSheet:self clickedButtonAtIndex:0];
-    //    }
-    
-    if(self.delegate&&[self.delegate respondsToSelector:@selector(pickerViewCancle:)]) {
+     
+    if(self.delegate){
         [self.delegate pickerViewCancle:self];
     }
 
@@ -186,6 +186,11 @@
     [self.layer addAnimation:animation forKey:@"TSLocateView"];
     [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:kDuration];
     if(self.delegate&&[self.delegate respondsToSelector:@selector(pickerView:didPickedWithValue:)]) {
+        
+        
+        
+        
+        
         [self.delegate pickerView:self didPickedWithValue:[dataArray objectAtIndex:[picker selectedRowInComponent:0]]];
     }
     

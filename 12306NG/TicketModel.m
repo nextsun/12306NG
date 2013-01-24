@@ -13,6 +13,7 @@
 @synthesize businessSeat,specialSeat,AOneSeat,BOneSeat,isFrom,isTO;
 
 @synthesize orderString;
+@synthesize beginSalesString;
 - (void)dealloc 
 {
     self.number = nil;
@@ -34,6 +35,7 @@
     self.AOneSeat = nil;
     self.BOneSeat = nil;
     self.orderString=nil;
+    self.beginSalesString=nil;
     
     [super dealloc];
 

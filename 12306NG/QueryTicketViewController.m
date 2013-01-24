@@ -26,11 +26,15 @@
 
 @interface QueryTicketViewController ()
 //- (void) jsonpaste:(NSDictionary *)results;
+@property(nonatomic,retain)NSMutableArray* stationResultArray;
+@property(nonatomic,retain)NSString* trainNO;
+
 -(void)CheckAndProcessResponeData:(NSData*)data;
 @end
 
 @implementation QueryTicketViewController
-
+@synthesize stationResultArray;
+@synthesize trainNO;
 @synthesize HUD,trainNumberArray,xpathParser;
 
 - (void)dealloc 
@@ -46,6 +50,7 @@
 	if (self) {
 		self.title = NSLocalizedString(@"Second", @"Second");
 		self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        trainNO=@"";
 	}
 	return self;
 }
@@ -55,13 +60,15 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	//self.view.backgroundColor=[UIColor whiteColor];
+	self.view.backgroundColor=[UIColor clearColor];
 	//[self.navigationController setNavigationBarHidden:YES];
 	self.title=@"查询";
     
     
     beginStation=[GlobalClass sharedClass].startStation;
     endStatation=[GlobalClass sharedClass].endStation ;
+    queryDate=[GlobalClass sharedClass].dateString;
+    
     
     NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     [subButton addTarget:self action:@selector(queryTickets:) forControlEvents:UIControlEventTouchUpInside];
@@ -104,6 +111,25 @@
 {
 	[super viewDidDisappear:animated];
 	
+}
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    UITableViewCell* cell= [mainTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+	
+	if (cell) {
+		
+		if ((UILabel*)[cell.contentView viewWithTag:1001]) {
+			
+            
+			[(UILabel*)[cell.contentView viewWithTag:1001 ] setText:[GlobalClass sharedClass].dateString];
+            queryDate=[GlobalClass sharedClass].dateString;
+		}
+	}
+    
+    
 }
 -(void)tap:(id)sender
 {
@@ -171,8 +197,8 @@
 	
 	HUD=[[MBProgressHUD alloc] initWithView:self.view];
 	HUD.mode = MBProgressHUDModeIndeterminate;
-	HUD.labelText = @"  亲，正在努力为你查询...    ";
-	HUD.margin = 10.f;
+	HUD.labelText = @" 亲，正在努力为您查询... ";
+	HUD.margin = 30.f;
 	HUD.yOffset = -120.f;
 	[self.view addSubview:HUD];
 	[HUD showWhileExecuting:@selector(requestData) onTarget:self withObject:nil animated:YES];
@@ -186,23 +212,84 @@
 -(void)requestData
 {
 	
+    //(Request-Line)	GET /otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-01-19&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=WHN&orderRequest.train_no=240000G50700&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00 HTTP/1.1
+    //Host	dynamic.12306.cn
+//    User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+//    Accept	text/plain, */*
+//  Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+//  Accept-Encoding	gzip, deflate
+//  Connection	keep-alive
+//  Content-Type	application/x-www-form-urlencoded
+//  X-Requested-With	XMLHttpRequest
+//  Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+//  Cookie	JSESSIONID=9315798C04796B32E95E9F2C45919049; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2413035786.62495.0000
+    
+    
+    
+    NSString* strF=@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=%@&orderRequest.from_station_telecode=%@&orderRequest.to_station_telecode=%@&orderRequest.train_no=%@&trainPassType=QB&trainClass=QB#D#Z#T#K#QT#&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=";
+	
+    
+    //https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-02-09&orderRequest.from_station_telecode=WCN&orderRequest.to_station_telecode=HKN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00
+    
+	//NSString* strF=@"date=%@&fromstation=%@&tostation=%@&starttime=%@";
+	NSString* urlStr=[NSString stringWithFormat:strF,queryDate,beginStation.stationCode,endStatation.stationCode,trainNO];
 
-	ASIFormDataRequest* req=[[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"http://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryLeftTicket"]];    
+    urlStr=[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    urlStr=[urlStr stringByAppendingString:[queryTimeString stringByReplacingOccurrencesOfString:@":" withString:@"%3A" ]];
+    
+    
+
+	ASIHTTPRequest* req=[[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:urlStr]];
+
+//    
+//    [req setPostBody:[NSMutableData dataWithData:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [req setRequestMethod:@"GET"];
+    
+//    (Request-Line)	GET /otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-01-21&orderRequest.from_station_telecode=WCN&orderRequest.to_station_telecode=HKN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00 HTTP/1.1
+//        Host	dynamic.12306.cn
+//        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+//        Accept	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+//        Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+//        Accept-Encoding	gzip, deflate
+//        Connection	keep-alive
+//        Cookie	JSESSIONID=D0F2F9ACD13B7D58E69BF95CA0738EAE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=1490616586.22560.0000; BIGipServerportal=3168010506.17183.0000
+    
+    
+    
+//    (Request-Line)	GET /otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-01-21&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=SHH&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00 HTTP/1.1
+//        Host	dynamic.12306.cn
+//        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+//        Accept	text/plain, */*
+//          Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+//          Accept-Encoding	gzip, deflate
+//          Connection	keep-alive
+//          Content-Type	application/x-www-form-urlencoded
+//          X-Requested-With	XMLHttpRequest
+//          Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+//          Cookie	JSESSIONID=D0F2F9ACD13B7D58E69BF95CA0738EAE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=1490616586.22560.0000; BIGipServerportal=3168010506.17183.0000
+    
 	req.delegate=(id<ASIHTTPRequestDelegate>)self;
+    
 	[req setValidatesSecureCertificate:NO];
-	[req addRequestHeader:@"Accept" value:@"application/json,text/javascript,*/*"];
-//	[req addRequestHeader:@"Referer" value:@"http://dynamic.12306.cn/otsquery/query/queryRemanentTicketAction.do?method=init"];
+    [req setUseCookiePersistence:YES];
+    [req applyCookieHeader];
+    
+	[req addRequestHeader:@"Accept" value:@"text/plain, */*"];
+	[req addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init"];
 	[req addRequestHeader:@"Accept-Language" value:@"zh-CN"];
 	[req addRequestHeader:@"User-Agent" value:@" Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"];
-	[req addRequestHeader:@"Content-Type" value:@"application/x-www-form-urlencoded; charset=UTF-8"];
-	[req addRequestHeader:@"Accept-Encoding" value:@" gzip, deflate"];
+	[req addRequestHeader:@"Content-Type" value:@"application/x-www-form-urlencoded"];
+	[req addRequestHeader:@"Accept-Encoding" value:@"gzip, deflate"];
 	[req addRequestHeader:@"X-Requested-With" value:@"XMLHttpRequest"];
-	[req addRequestHeader:@"Host" value:@" dynamic.12306.cn"];
-	[req addRequestHeader:@"Content-Length" value:@"72"];
+	[req addRequestHeader:@"Host" value:@"dynamic.12306.cn"];
+//	[req addRequestHeader:@"Content-Length" value:@"72"];
 	[req addRequestHeader:@"Connection" value:@" Keep-Alive"];
-	[req addRequestHeader:@"Pragma" value:@" Keep-Alive"];
-	[req addRequestHeader:@"Cache-Control" value:@" no-cache"];
+//	[req addRequestHeader:@"Pragma" value:@" Keep-Alive"];
+//	[req addRequestHeader:@"Cache-Control" value:@" no-cache"];
+//    
 	 
+    
 //    
 //	req.requestCookies=[NSMutableArray arrayWithArray:[CookiesHelper sharedCookiesHelper].cookies];
 //
@@ -211,18 +298,10 @@
 	//NSString* str=@"orderRequest.train_date=2013-01-10&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=SHH&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00";
 	
     
-    NSString* strF=@"orderRequest.train_date=%@&orderRequest.from_station_telecode=%@&orderRequest.to_station_telecode=%@&orderRequest.train_no=&trainPassType=QB&trainClass=QB#D#Z#T#K#QT#&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00:00--24:00";
-	
-
-	//NSString* strF=@"date=%@&fromstation=%@&tostation=%@&starttime=%@";
-	NSString* str=[NSString stringWithFormat:strF,queryDate,beginStation.stationCode,endStatation.stationCode];
-	//NSString* str=[NSString stringWithFormat:strF,@"2012-12-31",@"00:00--24:00"];
+ 	//NSString* str=[NSString stringWithFormat:strF,@"2012-12-31",@"00:00--24:00"];
 	
 //	str=[str stringByReplacingOccurrencesOfString:@":" withString:@"%3A"];
 //	str=[str stringByReplacingOccurrencesOfString:@"#" withString:@"%23"];
-	
-
-	[req setPostBody:[NSMutableData dataWithData:[str dataUsingEncoding:NSUTF8StringEncoding]]]; 
 	
 	[req startSynchronous];
 	
@@ -242,6 +321,12 @@
 {
 	
 	if (!data||[data length]==0) {
+        
+        
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"没有任何车次" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        
 		return;
 	}
 	NSString* ResponeString= [NSString stringWithCString:[data bytes] encoding:NSUTF8StringEncoding];
@@ -263,9 +348,26 @@
 
 - (void) jsonpaste:(NSString *)results
 {
-    if ([results hasPrefix:@"0,"]) {
+       
+    NSRange range=  [results rangeOfString:@"网络可能存在问题，请您重试一下"];
+    
+    if (range.length>0) {
+        
+        
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"网络可能存在问题，请您重试一下" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+        
+     }
+
+    if (![results hasPrefix:@"0,"]) {
         return;
     }
+
+    
+    
+    
 
     //解析数据 
     //1,G105,北京南07:30,上海虹桥13:07,05:37,24,--,145,454,--,--,--,--,--,--,--,\\n
@@ -323,7 +425,7 @@
             } 
         }
         ticketModel.fromLocation = [[[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:0]stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
-        ticketModel.fromTime = [[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:1];
+        ticketModel.fromTime = [[[mstr componentsSeparatedByString:@"<br>"] objectAtIndex:1] stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
         
         //解析发站和发站时间
         NSString *childTitle2 = [trainNumChildArray objectAtIndex:3];
@@ -394,7 +496,7 @@
         if (rAlert.range.length>0) {
             
             int pos=2;
-            NSString* msg=[tmpOrderString substringWithRange:(NSRange){rAlert.range.location+pos,rAlert.range.length-pos-3}];
+            NSString* msg=[tmpOrderString substringWithRange:(NSRange){rAlert.range.location+pos,rAlert.range.length-pos-2}];
             
              ticketModel.orderString=msg;
         
@@ -402,6 +504,27 @@
     }else
     {
          ticketModel.orderString=@"";
+        NSRegularExpression* regexAlert=[[NSRegularExpression alloc] initWithPattern:@"<a class='btn130' style='text-decoration:none;'>(.*)</a>" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSTextCheckingResult* rAlert=  [regexAlert firstMatchInString:tmpOrderString options:0 range:(NSRange){0,tmpOrderString.length}];
+        [regexAlert release];
+        
+        if (rAlert.range.length>0) {
+            
+            int pos=48;
+            NSString* msg=[tmpOrderString substringWithRange:(NSRange){rAlert.range.location+pos,rAlert.range.length-pos-4}];
+            
+            if ([[msg stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""] isEqualToString:@"预订"]) {
+                msg=@"";
+            }
+            
+            ticketModel.beginSalesString=msg;
+            
+            
+        }else
+        {
+            ticketModel.beginSalesString=@"";
+        }
+ 
     }
         
         
@@ -426,7 +549,9 @@
     }
     
     QueryTicketResultViewController *queryTicketResultVC = [[QueryTicketResultViewController alloc] init];
-    queryTicketResultVC.trainNumberArray = self.trainNumberArray;
+    queryTicketResultVC.trainNumberArrayAll = self.trainNumberArray;
+    queryTicketResultVC.trainNo=trainNO;
+    queryTicketResultVC.startTimeStr=queryTimeString;
     [self.navigationController pushViewController:queryTicketResultVC animated:YES];
     [queryTicketResultVC release];
 }
@@ -605,13 +730,15 @@
 				[cellTitle setText:@"出发日期"];
 				[cell.contentView addSubview:cellTitle];
 				
-				NSDateFormatter *formater = [[NSDateFormatter alloc] init];
-				formater.dateFormat = @"yyyy-MM-dd";
-				queryDate=[formater stringFromDate:[[NSDate dateWithTimeIntervalSinceNow:0] dateAfterDay:19]];
+//				NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+//				formater.dateFormat = @"yyyy-MM-dd";
+				queryDate=[GlobalClass sharedClass].dateString;
 				[cellValue setText:queryDate];
+                
+                
 				
 				//[cellValue sizeToFit];
-				[formater release];
+				//[formater release];
 				[cell.contentView addSubview:cellValue];
 				[cellValue release];
 				
@@ -644,9 +771,9 @@
 			case 3:
 			{
 				
+				
+				
 				queryTimeString=@"00:00--24:00";
-				
-				
 				[cellTitle setText:@"出发时间"];
 				[cell.contentView addSubview:cellTitle];
 				[cellValue setText:@"00:00--24:00"];
@@ -665,6 +792,7 @@
 				
 				[cellValue setText:@""];
 				[cell.contentView addSubview:cellValue];
+                cellValue.frame=CGRectMake(tableView.frame.size.width-220, 0, 170, 50);
 				
 				break;
 			}
@@ -747,7 +875,7 @@
 			
 			
 			
-			NSMutableArray* stationResultArray=[self getStationArray];
+			self.stationResultArray=[self getStationArray];
 			
 			
 			NSMutableArray* stationShowArray=[NSMutableArray array];
@@ -766,7 +894,7 @@
 				
 				
 			}
-			[stationShowArray insertObject:@"全部" atIndex:0];
+			[stationShowArray insertObject:@"         全部" atIndex:0];
 			
 			
 			
@@ -841,10 +969,12 @@
 		
 		if ((UILabel*)[cell.contentView viewWithTag:1001]) {
 			queryDate=[[date stringWithFormat:@"YYYY-MM-dd"] retain];
+            [GlobalClass sharedClass].dateString=queryDate;
 			[(UILabel*)[cell.contentView viewWithTag:1001 ] setText:[date stringWithFormat:@"YYYY-MM-dd"]];
 		} 
 	}
 }
+
 -(void)pickerView:(PickerView*)picker didPickedWithValue:(NSObject*)value
 {
 	NSIndexPath* indexPath;
@@ -860,6 +990,39 @@
 		
 	}else {
 		indexPath=[NSIndexPath indexPathForRow:4 inSection:0];
+        
+        
+        NSString* s=(NSString*)value;
+        
+        if ([s isEqualToString:@"         全部"]) {
+            self.trainNO=@"";
+        }else
+        {
+            
+            for (NSMutableDictionary* dict in self.stationResultArray) {
+                  if ([s isEqualToString:[NSString stringWithFormat:@"%@(%@%@->%@%@)",
+                                       [dict objectForKey:@"value"],
+                                       [dict objectForKey:@"start_station_name"],
+                                       [dict objectForKey:@"start_time"],
+                                       [dict objectForKey:@"end_station_name"],
+                                       [dict objectForKey:@"end_time"]
+                                       ]]) {
+                      
+                      self.trainNO=[dict objectForKey:@"id"];
+                      break;
+                    
+                }
+            }
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+        
 		
 		
 	}
@@ -876,7 +1039,13 @@
 		mainTableView.contentOffset=CGPointMake(0, 0);
 	}];
 }
-
+-(void)pickerViewCancle:(PickerView*)picker
+{
+    [UIView animateWithDuration:0.3 animations:^{
+		mainTableView.contentOffset=CGPointMake(0, 0);
+	}];
+    
+}
 
 -(void)loginClick:(id)sender
 {
@@ -923,9 +1092,15 @@
 	
 	
 	
-	ASIFormDataRequest* req=[[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryststrainall"]];    
+	ASIFormDataRequest* req=[[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryststrainall"]];
 	req.delegate=(id<ASIHTTPRequestDelegate>)self;
-	[req setValidatesSecureCertificate:NO];
+	
+    
+    [req setCachePolicy:ASIDoNotReadFromCacheCachePolicy];
+    [req setValidatesSecureCertificate:NO];
+    [req setUseCookiePersistence:YES];
+    [req applyCookieHeader];
+    
 	[req addRequestHeader:@"Accept" value:@"application/json,text/javascript,*/*"];
 	[req addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init"];
 	[req addRequestHeader:@"Accept-Language" value:@"zh-CN"];

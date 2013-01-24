@@ -12,7 +12,7 @@
 #import "ASIHTTPRequest.h"
 
 #import "GlobalClass.h"
-
+#import "iVersion.h"
 #import "LoginViewController.h"
 #import "UserCenterViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -22,6 +22,14 @@
 @synthesize loginView=_loginView;
 @synthesize userCenterViewController=_userCenterViewController;
 
+
+
++ (void)initialize
+{
+    //example configuration
+    [iVersion sharedInstance].appStoreID = 594813046;
+    //[iVersion sharedInstance].remoteVersionsPlistURL = @"http://example.com/versions.plist";
+}
 - (void)dealloc
 {
     [_window release];
@@ -33,13 +41,16 @@
 {
     
     //[self test2];
-  
     
-//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAutoLogin"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-//    [self test1];
     
-
+    //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAutoLogin"];
+    //    [[NSUserDefaults standardUserDefaults] synchronize];
+    //    [self test1];
+    
+   // NSIndexPath* p=[self arrayIndexToDataDictPath:4];
+   // LogInfo(@"(%d,%d)",p.section,p.row);
+    
+    
     
     [[GlobalClass sharedClass] loadConfig];
     
@@ -48,14 +59,14 @@
     
     //BOOL isAutoLogin= [[[NSUserDefaults standardUserDefaults] objectForKey:@"isAutoLogin"] boolValue];
     BOOL isAutoLogin=NO;
-
+    
     NSString* userName= [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     
     
     
     if (isAutoLogin&&userName&&![userName isEqualToString:@""]) {
         
-         self.userCenterViewController=[[[UserCenterViewController alloc] init]autorelease];   
+        self.userCenterViewController=[[[UserCenterViewController alloc] init]autorelease];
         UINavigationController* navController=[[UINavigationController alloc] initWithRootViewController:self.userCenterViewController];
         //[navController.navigationBar setTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"banner"]]];
         [navController.navigationBar setTintColor:([UIColor colorWithPatternImage:[UIImage imageNamed:@"bluebutton"]])];
@@ -64,10 +75,10 @@
         [navController release];
     }else {
         
-        self.loginView = [[[LoginViewController alloc] init] autorelease];    
+        self.loginView = [[[LoginViewController alloc] init] autorelease];
         UINavigationController* navController=[[UINavigationController alloc] initWithRootViewController:self.loginView];
         [navController.navigationBar setTintColor:MAIN_NAV_COLOR];
-         [navController setNavigationBarHidden:YES];
+        [navController setNavigationBarHidden:YES];
         self.window.rootViewController = navController;
         [navController release];
     }
@@ -78,6 +89,15 @@
     [self.window makeKeyAndVisible];
     
     
+    UIImageView* maskView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default"]];
+    maskView.frame=self.window.bounds;
+    [self.window addSubview:maskView];
+    [UIView animateWithDuration:0.5 animations:^{
+        maskView.frame=CGRectMake(0, -480, 320, 480);
+        maskView.layer.opacity=0;
+    } completion:^(BOOL finished) {
+        [maskView removeFromSuperview];
+    }];
     
     
     
@@ -95,7 +115,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -120,11 +140,11 @@
     self.userCenterViewController=[[[UserCenterViewController alloc] init]autorelease];
     UINavigationController* navController=[[UINavigationController alloc] initWithRootViewController:self.userCenterViewController];
     [navController.navigationBar setTintColor:MAIN_NAV_COLOR];
-     self.window.rootViewController = navController;
+    self.window.rootViewController = navController;
     [navController release];
     
     self.loginView.view.frame=CGRectOffset(self.loginView.view.frame, 0, 20);
-    [self.window.rootViewController.view addSubview:self.loginView.view];    
+    [self.window.rootViewController.view addSubview:self.loginView.view];
     
     
     
@@ -136,12 +156,12 @@
     
 }
 -(void)didLoginOut
-{ 
+{
     
     [ASIHTTPRequest clearSession];
-    self.loginView = [[[LoginViewController alloc] init]autorelease]; 
+    self.loginView = [[[LoginViewController alloc] init]autorelease];
     self.loginView.view.frame=CGRectOffset( self.loginView.view.frame, 0, -480);
-    [self.userCenterViewController.navigationController.view addSubview:self.loginView.view];  
+    [self.userCenterViewController.navigationController.view addSubview:self.loginView.view];
     
     [UIView animateWithDuration:0.8 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.loginView.view.frame=CGRectOffset(self.loginView.view.frame, 0, 460);
@@ -152,14 +172,20 @@
         [navController setNavigationBarHidden:YES];
         self.window.rootViewController = navController;
         [navController release];
-    }];    
+    }];
+}
+
+//zhaoqi
++ (AppDelegate*)getAppDelegate
+{
+    return (AppDelegate*)[UIApplication sharedApplication].delegate;
 }
 
 -(void)test1
 {
     
-    NSString* html=[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"userinfo" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];;    
-    HTMLParser* parse=[[HTMLParser alloc] initWithString:html  error:nil];            
+    NSString* html=[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"userinfo" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];;
+    HTMLParser* parse=[[HTMLParser alloc] initWithString:html  error:nil];
     HTMLNode* body=parse.body;
     
     NSArray* arr=[body findChildrenOfClass:@"pim_font"];
@@ -174,7 +200,7 @@
             NSArray* tdArray=[nodeTR findChildTags:@"td"];
             if ([tdArray count]>1) {
                 
-                HTMLNode* nodeTD= [tdArray objectAtIndex:0]; 
+                HTMLNode* nodeTD= [tdArray objectAtIndex:0];
                 HTMLNode* nodeTD2=[tdArray objectAtIndex:1];
                 NSString* name=[nodeTD contents];
                 NSString* value=[nodeTD2 contents];
@@ -194,10 +220,70 @@
 
 -(void)test2
 {
-   NSString* str=@"%E8%AF%B7%E8%BE%93%E5%85%A5%E6%B1%89%E5%AD%97%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D";
+    NSString* str=@"%E8%AF%B7%E8%BE%93%E5%85%A5%E6%B1%89%E5%AD%97%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D";
     
-  LogInfo(@"%@",   [str stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+    LogInfo(@"%@",   [str stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
     
     
 }
+
+
+-(void)test3
+{
+    
+    NSString* retString=[[NSString alloc] initWithContentsOfFile:@"" encoding:NSUTF8StringEncoding error:nil];
+    
+    NSRegularExpression* regexAlert2=[[NSRegularExpression alloc] initWithPattern:@"<input type=[\"]hidden[\"] name=[\"]leftTicketStr[\"] id=[\"]left_ticket[\"]([\r\n].*)value=[\"](.*)[\"] />" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSTextCheckingResult* rAlert2=  [regexAlert2 firstMatchInString:retString options:NSRegularExpressionDotMatchesLineSeparators range:(NSRange){0,retString.length}];
+    [regexAlert2 release];
+    
+    if (rAlert2.range.length>0) {
+        
+        int pos=70-5+1;
+        NSString* msg=[retString substringWithRange:(NSRange){rAlert2.range.location+pos,rAlert2.range.length-pos-2-2}];
+        if (![msg isEqualToString:@""]) {
+            
+            
+            //            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            //            [alert show];
+            //            [alert release];
+            
+            
+        }
+        
+    }
+    
+    
+}
+
+
+
+
+-(NSIndexPath*)arrayIndexToDataDictPath:(NSInteger)index
+{
+    
+    NSMutableArray* passagesIsOpenArray=[NSMutableArray arrayWithObjects:[NSNumber numberWithBool:NO],[NSNumber numberWithBool:YES],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO], nil];
+    int c=0; int s=0;
+    for (int i =0; i<=index;i++) {
+        
+        
+        BOOL isOpen= [[passagesIsOpenArray objectAtIndex:s] boolValue];
+        int willAddValue=isOpen?5:1;
+            if (c+willAddValue>index) {                
+                break;
+            }
+            else
+            {
+                s++;
+                
+                c+=willAddValue;
+            }
+    }
+    return [NSIndexPath indexPathForRow:index-c inSection:s];
+    // return nil;
+    
+    
+    
+}
+
 @end

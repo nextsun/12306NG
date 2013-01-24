@@ -443,9 +443,9 @@ static NGUserService* _sharedNGUserServiceIntance;
 //         Cache-Control	no-cache
     
     
-    ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/passengerAction.do?method=getPagePassenger"]];
+    ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/passengerAction.do?method=getPagePassengerAll"]];
     
-    [request setCachePolicy:ASIUseDefaultCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
+    //[request setCachePolicy:ASIUseDefaultCachePolicy|ASIFallbackToCacheIfLoadFailsCachePolicy];
     
     [request setValidatesSecureCertificate:NO];
     [request addRequestHeader:@"Host" value:@"dynamic.12306.cn"];
@@ -479,14 +479,17 @@ static NGUserService* _sharedNGUserServiceIntance;
              LogInfo(@"returnArray:%@",arr);
             //[arr removeLastObject];
             
-            NSDictionary* dic;
+            NSDictionary* dic=nil;
             for (NSDictionary* dict in arr) {
                 if ([[dict objectForKey:@"isUserSelf"] isEqualToString:@"Y"]) {
                     dic=dict;
                     break;
                 }
             }
-            [arr removeObject:dic];
+            if (dic) {
+                [arr removeObject:dic];
+            }
+            
             
             return arr;
             
@@ -623,7 +626,9 @@ static NGUserService* _sharedNGUserServiceIntance;
         }
     }
     
-    LogInfo(@"%@",dict);    
+    LogInfo(@"%@",dict);
+    
+    [parse release];
     return dict;
     
     

@@ -11,6 +11,7 @@
 #import "JSON.h"
 //#import "WBAuthorizeWebView.h"
 #import "UIColor+Helper.h"
+#import "NSDate-Helper.h"
 
 //新浪微博
 #define kWBSDKDemoAppKey @"3040017714"
@@ -41,6 +42,7 @@ static GlobalClass* _localStatusInstance;
 
 @synthesize startStation=_startStation;
 @synthesize endStation=_endStation;
+@synthesize dateString=_dateString;
 
 +(GlobalClass*)sharedClass;
 {
@@ -78,6 +80,7 @@ static GlobalClass* _localStatusInstance;
         _endStation.stationIndex=@"8";
         _endStation.stationPinYin=@"sha";
         
+        _dateString=[[[[NSDate dateWithTimeIntervalSinceNow:0] dateAfterDay:19] stringWithFormat:@"YYYY-MM-dd"] retain];
  /*
         _weiBoEngine = [[WBEngine alloc] initWithAppKey:kWBSDKDemoAppKey appSecret:kWBSDKDemoAppSecret];
 //        [_weiBoEngine setRootViewController:self];

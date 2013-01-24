@@ -38,6 +38,7 @@
 @property(nonatomic, assign)int isTO; //是否是终点
 
 @property(nonatomic, retain)NSString* orderString; //
+@property(nonatomic, retain)NSString* beginSalesString; //
 
 
 @end

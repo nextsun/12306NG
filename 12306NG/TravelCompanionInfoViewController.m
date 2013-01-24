@@ -716,7 +716,7 @@
     for (UIView* v in [loadingView subviews]) {
         [v removeFromSuperview];
     }
-    UIActivityIndicatorView* activity=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    UIActivityIndicatorView* activity=[[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
     activity.center=CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
     [loadingView addSubview:activity];
     [activity startAnimating];
@@ -730,6 +730,7 @@
     [subButton addTarget:self action:@selector(editContent) forControlEvents:UIControlEventTouchUpInside];
     subButton.titleLabel.text=mainTableView.isEditing?@"完成":@"编辑";
     UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];
+    [subButton release];
     return [btn autorelease];
 }
 -(void)pickerView:(PickerView*)picker didPickedWithValue:(NSObject*)value;

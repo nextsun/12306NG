@@ -122,4 +122,76 @@
     return @"";
     
 }
+
++(NSMutableDictionary*)allSeatDict
+{
+    
+//    1  硬座
+//    2  软座
+//    3  硬卧
+//    4  软卧
+//    5
+//    6  高级软卧
+//    9  商务座
+//    A
+//    C
+//    F
+//    G
+//    H
+//    L
+//    M 一等座
+//    O 二等座  
+//    P 特等座
+    
+    return [NSMutableDictionary dictionaryWithObjectsAndKeys:
+            @"硬座",@"1",
+            @"软座",@"2",
+            @"硬卧",@"3",
+            @"软卧",@"4",
+            
+            @"高级软卧",@"6",
+
+            @"商务座",@"9",
+            @"一等座",@"O",
+            @"二等座",@"M",
+            @"特等座",@"P",
+            nil];
+    
+    
+    
+}
+
++(NSString*)codeForSeatTypeName:(NSString*)name 
+{
+    
+   
+    NSMutableDictionary* d=[self allSeatDict];
+    
+    for ( NSString* key in [d allKeys]) {
+        if ([[d objectForKey:key] isEqualToString:name] ) {
+            return key;
+        }
+    }
+
+    return @"未知";    
+}
++(NSString*)codeForSeatTypePrefixName:(NSString*)name
+{
+    
+    
+    NSMutableDictionary* d=[self allSeatDict];
+    
+    for ( NSString* key in [d allKeys]) {
+        if ([name hasPrefix: [d objectForKey:key]] ) {
+            return key;
+        }
+    }
+    
+    return @"未知";
+}
++(NSString*)nameForSeatTypeCode:(NSString*)code
+{
+    return [[self allSeatDict] objectForKey:code];
+}
+
 @end

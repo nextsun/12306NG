@@ -177,7 +177,7 @@
             [segSexControl addTarget:self action:@selector(changeSex:) forControlEvents:UIControlEventValueChanged];
             segSexControl.selectedSegmentIndex=[[self.dataDict objectForKey:[cellDict objectForKey:@"id"]] isEqualToString:@"M"]?0:1;
             cell.accessoryView=segSexControl;
-            //[segControl release];
+            [segSexControl release];
             
             
         }
@@ -267,6 +267,7 @@
     
     [lb setText:section==0?@"基本信息":section==1?@"联系方式":@"个人信息"];
     [v addSubview:lb];
+    [lb release];
     return [v autorelease];
     
     

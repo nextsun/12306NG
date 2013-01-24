@@ -25,6 +25,7 @@
     
     StationInfo* startStation;
     StationInfo* endStation;
+    NSString* dateString;
 }
 @property(nonatomic,strong)NSMutableArray* dataArray;
 @property(nonatomic,strong)NSMutableArray* towerDataArray;
@@ -39,6 +40,7 @@
 
 @property(nonatomic,retain)StationInfo* startStation;
 @property(nonatomic,retain)StationInfo* endStation;
+@property(nonatomic,retain)NSString* dateString;
 +(GlobalClass*)sharedClass;
 +(void)showHTMLDoc:(NSString*)htmlString;
 -(void)loadConfig;

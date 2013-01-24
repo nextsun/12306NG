@@ -1,4 +1,67 @@
 
+
+3456ACFGHL
+
+
+1  硬座
+2  软座
+3  硬卧
+4  软卧
+5  
+6  高级软卧
+9  商务座
+A
+C
+F
+G
+H
+L
+M 一等座
+O 二等座  
+P 特等座
+
+
+
+{"D":[{"end_station_name":"","end_time":"","id":"4","start_station_name":"","start_time":"","value":"软卧"},{"end_station_name":"","end_time":"","id":"6","start_station_name":"","start_time":"","value":"高级软卧"},{"end_station_name":"","end_time":"","id":"9","start_station_name":"","start_time":"","value":"商务座"},{"end_station_name":"","end_time":"","id":"M","start_station_name":"","start_time":"","value":"一等座"},{"end_station_name":"","end_time":"","id":"O","start_station_name":"","start_time":"","value":"二等座"},{"end_station_name":"","end_time":"","id":"P","start_station_name":"","start_time":"","value":"特等座"},{"end_station_name":"","end_time":"","id":"Q","start_station_name":"","start_time":"","value":"观光座"},{"end_station_name":"","end_time":"","id":"S","start_station_name":"","start_time":"","value":"一等包座"}],"Z":[{"end_station_name":"","end_time":"","id":"1","start_station_name":"","start_time":"","value":"硬座"},{"end_station_name":"","end_time":"","id":"2","start_station_name":"","start_time":"","value":"\350\275\257座"},{"end_station_name":"","end_time":"","id":"3","start_station_name":"","start_time":"","value":"硬卧"},{"end_station_name":"","end_time":"","id":"4","start_station_name":"","start_time":"","value":"软卧"},{"end_station_name":"","end_time":"","id":"6","start_station_name":"","start_time":"","value":"高级软卧"}],"T":[{"end_station_name":"","end_time":"","id":"1","start_station_name":"","start_time":"","value":"硬座"},{"end_station_name":"","end_time":"","id":"2","start_station_name":"","start_time":"","value":"软座"},{"end_station_name":"","end_time":"","id":"3","start_station_name":"","start_time":"","value":"硬卧"},{"end_station_name":"","end_time":"","id":"4","start_station_name":"","start_time":"","value":"软卧"},{"end_station_name":"","end_time":"","id":"6","start_station_name":"","start_time":"","value":"高级软卧"}],"K":[{"end_station_name":"","end_time":"","id":"1","start_station_name":"","start_time":"","value":"硬座"},{"end_station_name":"","end_time":"","id":"2","start_station_name":"","start_time":"","value":"软座"},{"end_station_name":"","end_time":"","id":"3","start_station_name":"","start_time":"","value":"硬卧"},{"end_station_name":"","end_time":"","id":"4","start_station_name":"","start_time":"","value":"软卧"},{"end_station_name":"","end_time":"","id":"6","start_station_name":"","start_time":"","value":"高级软卧"}],"QT":[{"end_station_name":"","end_time":"","id":"1","start_station_name":"","start_time":"","value":"硬座"},{"end_station_name":"","end_time":"","id":"2","start_station_name":"","start_time":"","value":"软座"},{"end_station_name":"","end_time":"","id":"3","start_station_name":"","start_time":"","value":"硬卧"},{"end_station_name":"","end_time":"","id":"4","start_station_name":"","start_time":"","value":"软卧"},{"end_station_name":"","end_time":"","id":"6","start_station_name":"","start_time":"","value":"高级软卧"}]}
+
+(Request-Line)	POST /otsweb/order/querySingleAction.do?method=submutOrderRequest HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+Cookie	JSESSIONID=F7F4283DF13E9B7725144A0AB2AE1EB4; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2413035786.62495.0000
+Content-Type	application/x-www-form-urlencoded
+Content-Length	721
+
+
+station_train_code=K2076&train_date=2013-01-18&seattype_num=&from_station_telecode=WCN&to_station_telecode=HKN&include_student=00&from_station_telecode_name=%E6%AD%A6%E6%98%8C&to_station_telecode_name=%E6%B1%89%E5%8F%A3&round_train_date=2013-01-18&round_start_time_str=00%3A00--24%3A00&single_round_type=1&train_pass_type=QB&train_class_arr=QB%23D%23Z%23T%23K%23QT%23&start_time_str=00%3A00--24%3A00&lishi=00%3A19&train_start_time=16%3A13&trainno4=62000K207601&arrive_time=16%3A32&from_station_name=%E6%AD%A6%E6%98%8C&to_station_name=%E6%B1%89%E5%8F%A3&from_station_no=06&to_station_no=07&ypInfoDetail=1*****30274*****00261*****00013*****0023&mmStr=7CFFD7A5F3C6FA6651178D7D8E700669C27131C3318F0090217565BB&locationCode=Q7
+
+
+
+
+
+
+
+(Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=init HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+Cookie	JSESSIONID=F7F4283DF13E9B7725144A0AB2AE1EB4; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2413035786.62495.0000
+Cache-Control	max-age=0
+
+
+
+
+
+
+
 (Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=2013-02-04&train_no=270000260441&station=2601&seat=3&from=BJP&to=LFP&ticket=1001053128400935001310010500793006150064 HTTP/1.1
 Host	dynamic.12306.cn
 User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
@@ -33,6 +96,54 @@ Cache-Control	no-cache
 
 
 org.apache.struts.taglib.html.TOKEN=ee2420fcec0f6ace0479038450305782&leftTicketStr=1001053128400935001310010500793006150064&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&checkbox1=1&orderRequest.train_date=2013-02-04&orderRequest.train_no=270000260441&orderRequest.station_train_code=2601&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=LFP&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=04%3A22&orderRequest.end_time=05%3A15&orderRequest.from_station_name=%E5%8C%97%E4%BA%AC&orderRequest.to_station_name=%E5%BB%8A%E5%9D%8A%E5%8C%97&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=3%2Cundefined%2C1%2C%E9%93%81%E8%B7%AF%2C1%2C110101198011111114%2C18912345678%2CY&oldPassengers=%E9%93%81%E8%B7%AF%2C1%2C110101198011111114&passenger_1_seat=3&passenger_1_ticket=1&passenger_1_name=%E9%93%81%E8%B7%AF&passenger_1_cardtype=1&passenger_1_cardno=110101198011111114&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=86jk&orderRequest.reserve_flag=A&tFlag=dc
+
+
+
+
+org.apache.struts.taglib.html.TOKEN:a9a86b2f98f4591cd17833d113666c93
+leftTicketStr:1000803218400840002110008007213005900147
+textfield:中文或拼音首字母
+checkbox0:0
+checkbox1:1
+orderRequest.train_date:2013-02-05
+orderRequest.train_no:580000K52408
+orderRequest.station_train_code:K524
+orderRequest.from_station_telecode:WCN
+orderRequest.to_station_telecode:HKN
+orderRequest.seat_type_code:
+orderRequest.ticket_type_order_num:
+orderRequest.bed_level_order_num:000000000000000000000000000000
+orderRequest.start_time:05:34
+orderRequest.end_time:05:53
+orderRequest.from_station_name:武昌
+orderRequest.to_station_name:汉口
+orderRequest.cancel_flag:1
+orderRequest.id_mode:Y
+passengerTickets:1,undefined,1,张三,1,110101198011111114,11111111111,Y
+oldPassengers:张三,1,110101198011111114
+passenger_1_seat:1
+passenger_1_ticket:1
+passenger_1_name:张三
+passenger_1_cardtype:1
+passenger_1_cardno:110101198011111114
+passenger_1_mobileno:11111111111
+checkbox9:Y
+passengerTickets:1,undefined,1,李四哈哈,1,110101199011111119,18912345678,Y
+oldPassengers:李四哈哈,1,110101199011111119
+passenger_2_seat:1
+passenger_2_ticket:1
+passenger_2_name:李四哈哈
+passenger_2_cardtype:1
+passenger_2_cardno:110101199011111119
+passenger_2_mobileno:18912345678
+checkbox9:Y
+oldPassengers:
+checkbox9:Y
+oldPassengers:
+checkbox9:Y
+randCode:7m27
+orderRequest.reserve_flag:A
+tFlag:dc
 
 
 {"checkHuimd":"Y","check608":"Y","msg":"","errMsg":"Y"}
@@ -73,6 +184,9 @@ Cache-Control	no-cache
 
 
 org.apache.struts.taglib.html.TOKEN=ee2420fcec0f6ace0479038450305782&leftTicketStr=1001053128400935001310010500793006150064&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&checkbox1=1&orderRequest.train_date=2013-02-04&orderRequest.train_no=270000260441&orderRequest.station_train_code=2601&orderRequest.from_station_telecode=BJP&orderRequest.to_station_telecode=LFP&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=04%3A22&orderRequest.end_time=05%3A15&orderRequest.from_station_name=%E5%8C%97%E4%BA%AC&orderRequest.to_station_name=%E5%BB%8A%E5%9D%8A%E5%8C%97&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=3%2Cundefined%2C1%2C%E9%93%81%E8%B7%AF%2C1%2C110101198011111114%2C18912345678%2CY&oldPassengers=%E9%93%81%E8%B7%AF%2C1%2C110101198011111114&passenger_1_seat=3&passenger_1_ticket=1&passenger_1_name=%E9%93%81%E8%B7%AF&passenger_1_cardtype=1&passenger_1_cardno=110101198011111114&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=86jk&orderRequest.reserve_flag=A
+
+
+org.apache.struts.taglib.html.TOKEN=6ac926298d0e1d028f4b3e013525f345&leftTicketStr=1000803056400840000410008000963005900043&checkbox1=1&orderRequest.train_date=2013-02-08&orderRequest.train_no=580000K52408&orderRequest.station_train_code=K524&orderRequest.from_station_telecode=WCN&orderRequest.to_station_telecode=HKN&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=05%3A34&orderRequest.end_time=05%3A53&orderRequest.from_station_name=%E6%AD%A6%E6%98%8C&orderRequest.to_station_name=%E6%B1%89%E5%8F%A3&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=1%2C0%2C1%2C%E5%BC%A0%E4%B8%89%2C1%2C110101198011111114%2C11111111111%2CY&oldPassengers=%E5%BC%A0%E4%B8%89%2C1%2C110101198011111114%2CY&passenger_1_seat=1&passenger_1_ticket=1&passenger_1_name=%E5%BC%A0%E4%B8%89&passenger_1_cardtype=1&passenger_1_cardno=110101198011111114&passenger_1_mobileno=11111111111&checkbox9=Y&randCode=erfs&orderRequest.reserve_flag=A
 
 {"errMsg":"Y"}
 

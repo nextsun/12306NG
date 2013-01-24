@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
+#import "ChooseTravelCompanionViewController.h"
 
-@interface BookingTicketViewController : UITableViewController
+@interface BookingTicketViewController : UITableViewController<UITextFieldDelegate,ChooseTravelCompanionDelegate>
 {
     NSMutableArray* tableArray;
     //UITableView* mainTableView;
@@ -17,13 +19,34 @@
     BOOL isKeyBoardShow;
     
      
-    NSMutableArray* userListArray;
+    //NSMutableArray* userListArray;
     //UITableView* userListTableView;
     BOOL isUserListTableLoaded;
     
     NSString* orderString;
+    
+    NSString* tokenString;
+    NSString* leftTicketsString;
+    
+    UITextField* textCode;
+    
+    UIButton* imgBtn;
+
+    ASIHTTPRequest* requestImg;
+    
+    NSMutableArray* seatArray;
+    
+    NSMutableArray* passagesArray;
+    
+    NSMutableArray* passagesIsOpenArray;
+    
+    BOOL isInit;
+    
+    
+
 
 
 }
 @property(nonatomic,retain)NSString* orderString;
+
 @end

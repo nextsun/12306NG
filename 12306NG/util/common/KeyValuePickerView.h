@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PickerView.h"
 
-@interface KeyValuePickerView : UIView
-
+@interface KeyValuePickerView : PickerView
+{
+    
+    //NSString* valueField;
+    NSString* textField;
+}
+//@property(nonatomic,retain)NSString* valueField;
+@property(nonatomic,retain)NSString* textField;
 @end

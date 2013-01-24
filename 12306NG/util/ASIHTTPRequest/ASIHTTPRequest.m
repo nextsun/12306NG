@@ -735,6 +735,7 @@ static NSOperationQueue *sharedQueue = nil;
 {
 #if DEBUG_REQUEST_STATUS || DEBUG_THROTTLING
 	NSLog(@"Starting synchronous request %@",self);
+    NSLog(@"\nrequestCookies:\n%@",self.requestCookies);
 #endif
 	[self setRunLoopMode:ASIHTTPRequestRunLoopMode];
 	[self setInProgress:YES];
@@ -747,6 +748,11 @@ static NSOperationQueue *sharedQueue = nil;
 	}
 
 	[self setInProgress:NO];
+    
+#if DEBUG_REQUEST_STATUS || DEBUG_THROTTLING
+    NSLog(@"\nresponseCookies:\n%@",self.responseCookies);
+#endif
+    
 }
 
 - (void)start

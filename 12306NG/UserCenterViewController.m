@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "NGCustomButton.h"
+#import "iVersion.h"
 
 
 #import "UserCenterViewController.h"
@@ -30,7 +31,7 @@
 #import "FeedbackViewController.h"
 #import "AboutUsViewController.h"
 
-
+#import "BookingTicketViewController.h"
 
 @interface UserCenterViewController ()
 @property(nonatomic,retain)NSMutableArray* tableArray;
@@ -59,6 +60,7 @@
                          
                          [NSMutableArray arrayWithObjects:
                           NSLocalizedString(@"意见反馈",nil),
+                          NSLocalizedString(@"购票攻略",nil),
                           NSLocalizedString(@"软件评分",nil),
                           NSLocalizedString(@"软件升级",nil),
                           NSLocalizedString(@"关于我们",nil),nil],
@@ -177,9 +179,9 @@
 /***********************************************************************/ 
     if (indexPath.section==2&&indexPath.row==0) 
     {
-        ResidualTicketInformViewController* controller=[[ResidualTicketInformViewController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
-        [controller release];
+//        ResidualTicketInformViewController* controller=[[ResidualTicketInformViewController alloc] init];
+//        [self.navigationController pushViewController:controller animated:YES];
+//        [controller release];
     }
     else if (indexPath.section==2&&indexPath.row==1)
     {
@@ -193,9 +195,10 @@
         
         if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController* mail=[[MFMailComposeViewController alloc] init];
+           // mail.navigationItem.leftBarButtonItem=[]
         
         
-        [mail setToRecipients:@[@"920043287@qq.com"]];
+        [mail setToRecipients:@[@"12306helper@gmail.com"]];
         mail.mailComposeDelegate=(id<MFMailComposeViewControllerDelegate>)self;
          mail.navigationBar.tintColor=[UIColor blackColor];
         
@@ -213,12 +216,21 @@
     }
     else if (indexPath.section==3&&indexPath.row==2)
     {
-        //        [iVersion sharedInstance].ignoredVersion=@"1.1";
-        //        [[iVersion sharedInstance] checkForNewVersion];
-
     }
     else if (indexPath.section==3&&indexPath.row==3)
+    {        
+        [[iVersion sharedInstance] checkForNewVersion];
+
+    }
+    else if (indexPath.section==3&&indexPath.row==4)
     {
+        
+//        BookingTicketViewController* book=[[BookingTicketViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//        //book.orderString=ticketModel.orderString;
+//        [self.navigationController pushViewController:book animated:YES];
+//        [book release];
+//
+
         AboutUsViewController* controller=[[AboutUsViewController alloc] init];
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];

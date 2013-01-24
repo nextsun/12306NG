@@ -137,7 +137,7 @@
     //    [self.view addSubview:mainScrollView];
     
     
-    self.loadingView=[[UIView alloc] initWithFrame:CGRectInset(rect, 10, 10)];
+    self.loadingView=[[[UIView alloc] initWithFrame:CGRectInset(rect, 10, 10)] autorelease];
     loadingView.backgroundColor=[UIColor whiteColor];
     loadingView.layer.cornerRadius=8;
     
@@ -175,6 +175,7 @@
             activity.center=CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
             [loadingView addSubview:activity];
             [activity startAnimating];
+            [activity release];
             
             [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(loadMainTableView) userInfo:nil repeats:NO];
             
@@ -219,7 +220,7 @@
             for (UIView* v in [loadingView subviews]) {
                 [v removeFromSuperview];
             }
-            UIActivityIndicatorView* activity=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            UIActivityIndicatorView* activity=[[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
             activity.center=CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
             [loadingView addSubview:activity];
             [activity startAnimating];
@@ -260,6 +261,7 @@
                 lable.text=@"暂无数据";
                 lable.textAlignment=UITextAlignmentCenter;
                 [loadingView addSubview:lable];
+                [lable release];
             }
         //[mainScrollView scrollRectToVisible:userListTableView.frame animated:YES];
     }
@@ -281,7 +283,7 @@
         for (UIView* v in [loadingView subviews]) {
             [v removeFromSuperview];
         }
-        UIActivityIndicatorView* activity=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        UIActivityIndicatorView* activity=[[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
         activity.center=CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
         [loadingView addSubview:activity];
         [activity startAnimating];
@@ -370,6 +372,7 @@
                 lable.text=@"暂无数据";
                 lable.textAlignment=UITextAlignmentCenter;
                 [loadingView addSubview:lable];
+                [lable release];
             }
         });
     });
@@ -419,6 +422,7 @@
                 lable.text=@"暂无数据";
                 lable.textAlignment=UITextAlignmentCenter;
                 [loadingView addSubview:lable];
+                [lable release];
             }
         });
     });
@@ -650,7 +654,7 @@
             [segSexControl addTarget:self action:@selector(changeSex:) forControlEvents:UIControlEventValueChanged];
             segSexControl.selectedSegmentIndex=[[self.dataDict objectForKey:[cellDict objectForKey:@"id"]] isEqualToString:@"男"]?0:1;
             cell.editingAccessoryView=segSexControl;
-            //[segControl release];
+            [segSexControl release];
             
             
         }

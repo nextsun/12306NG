@@ -13,4 +13,9 @@
 +(NSMutableArray*)seguestStationItemsByString:(NSString*)inputString;
 +(NSString*)nameForCode:(NSString*)code withKey:(NSString*)key;
 +(NSString*)codeForName:(NSString*)name withKey:(NSString*)key;
+
+
++(NSString*)codeForSeatTypeName:(NSString*)name;
++(NSString*)nameForSeatTypeCode:(NSString*)code;
++(NSString*)codeForSeatTypePrefixName:(NSString*)name;
 @end

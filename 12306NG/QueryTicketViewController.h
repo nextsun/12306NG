@@ -25,10 +25,14 @@
 	//TFHpple *xpathParser;
 	
 	NSString* queryDate;
+    NSString* trainNO;
 	NSString* queryTimeString;
 	StationInfo* beginStation;
 	StationInfo* endStatation;
-	
+    NSMutableArray* stationResultArray;
+    
+    
+    	
 	
 }
 

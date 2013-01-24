@@ -24,6 +24,11 @@
     
     UILabel* activeLabel;
     
+    //zhaoqi
+    BOOL isModelView;
 }
+
+
+@property (nonatomic, assign) BOOL isModelView;
 
 @end

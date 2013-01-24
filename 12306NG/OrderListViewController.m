@@ -30,8 +30,15 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height-135);
+    
+    self.title=@"我的订单";
+    self.view.backgroundColor=[UIColor clearColor];
+    [self showCustomBackButton];
+    
+    
+    CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height);
     self.orderTableView=[[[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped] autorelease]  ;
+    orderTableView.autoresizingMask=UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.orderTableView];
     orderTableView.backgroundColor=[UIColor clearColor];
     orderTableView.backgroundView=nil;
@@ -40,7 +47,23 @@
     orderTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     // Do any additional setup after loading the view from its nib.
     
-    [self initData];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.view addSubview:hud];
+    hud.yOffset=-50;
+    hud.labelText = @"加载中，请稍后...";
+    [hud showWhileExecuting:@selector(initData) onTarget:self withObject:nil animated:YES];
+
+   
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+   // [hud hide:YES afterDelay:1.5];
+
+   // [self initData];
 }
 
 - (void)viewDidUnload{
@@ -54,9 +77,6 @@
 // init data info
 - (void) initData{
     totalMoney = 0.0f;
-    self.title=@"我的订单";
-    self.view.backgroundColor=[UIColor clearColor];
-    [self showCustomBackButton];
     
     orderSections = [[NSMutableArray alloc] initWithObjects:@"未 支 付 订 单",@"已 支 付 订 单", nil];
     self.orderArray   = [[OrderModel sharedOrderModel] getUnpaidOrder];
@@ -70,13 +90,11 @@
     
     self.postOrder =[self.orderArray objectAtIndex:1];
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.view addSubview:hud];
-    hud.labelText = @"加载中，请稍后...";
-    [hud show:YES];
-    [hud hide:YES afterDelay:1.5];
-    
+     
     self.successArray = [[OrderModel sharedOrderModel] getPaymentSuccessOrder];
+    
+    
+    [self.orderTableView reloadData];
 
 }
 
@@ -113,6 +131,7 @@
     
     if (indexPath.section == 0) {
         // Configure the cell.
+        [[cell textLabel] setText:@""];
         if (UNPAID) {
             NSMutableDictionary *dict = [[[NSMutableDictionary alloc] init] autorelease];
             dict = [self.orderArray objectAtIndex:2];
@@ -383,7 +402,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1&&[self.successArray count] != 0) {
         PaymentDoneViewController *done = [[PaymentDoneViewController alloc] init];
         done.orderDict = [self.successArray objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:done animated:YES];

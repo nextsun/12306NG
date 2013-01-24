@@ -12,6 +12,9 @@
 @class UserCenterViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+   
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -19,4 +22,8 @@
 @property (strong, nonatomic) UserCenterViewController *userCenterViewController;
 -(void)didLoginIn;
 -(void)didLoginOut;
+
+//zhaoqi
++ (AppDelegate*)getAppDelegate;
+
 @end

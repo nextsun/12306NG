@@ -36,9 +36,9 @@
         
         
         
-//        [datepicker setMinimumDate: [((NSDate*)[NSDate dateWithTimeIntervalSinceNow:0]) dateAfterDay:-3]];        
-//        [datepicker setMaximumDate: [((NSDate*)[NSDate dateWithTimeIntervalSinceNow:0]) dateAfterDay:12]];
-//        
+        [datepicker setMinimumDate: [((NSDate*)[NSDate dateWithTimeIntervalSinceNow:0]) dateAfterDay:-3]];        
+        [datepicker setMaximumDate: [((NSDate*)[NSDate dateWithTimeIntervalSinceNow:0]) dateAfterDay:19]];
+//
         //datepicker addTarget:self action:@selector(<#selector#>) forControlEvents:<#(UIControlEvents)#>
         
         
