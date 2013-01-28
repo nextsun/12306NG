@@ -10,6 +10,7 @@
 
 #import "HTMLParser.h"
 #import "ASIHTTPRequest.h"
+#import "Flurry.h"
 
 #import "GlobalClass.h"
 #import "iVersion.h"
@@ -42,7 +43,7 @@
     
     //[self test2];
     
-    
+    [Flurry startSession:@"TMT4M2RKFFKPP2MWCFCD"];
     //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isAutoLogin"];
     //    [[NSUserDefaults standardUserDefaults] synchronize];
     //    [self test1];

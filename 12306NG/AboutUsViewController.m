@@ -7,6 +7,7 @@
 //
 
 #import "AboutUsViewController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface AboutUsViewController ()
 
@@ -16,11 +17,8 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if ([[UIScreen mainScreen] bounds].size.height == 568.0) {
-        self = [super initWithNibName:@"AboutUsViewController_ip5" bundle:nibBundleOrNil];
-    }else{
-        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    }
+   
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -48,9 +46,46 @@
     tipsView.backgroundColor=[UIColor clearColor];
     tipsView.textColor=[UIColor lightTextColor];
     tipsView.font=[UIFont systemFontOfSize:15];
-    tipsView.text=@"   此软件能够帮助你轻松预订买火车票，该版本实现了车票查询,车票预订和个人信息管理功能，如有任何问题，可以直接联系我们\n\n  邮箱:12306helper@gmail.com\n  微博:http://weibo.com/nextsun";
+    tipsView.text=@"   此软件能够帮助你轻松预订买火车票，该版本实现了车票查询,车票预订和个人信息管理功能，如有任何问题，可以直接联系我们";
     [tipsView setUserInteractionEnabled:NO];
     [tipsView release];
+    
+    
+    
+    UIButton* btnMail=[UIButton buttonWithType:UIButtonTypeCustom];
+    btnMail.frame=CGRectMake(30, OffsetY+190, 220, 20);
+    btnMail.titleLabel.textAlignment=UITextAlignmentLeft;
+    [btnMail setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
+    [btnMail setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    btnMail.titleLabel.font=[UIFont boldSystemFontOfSize:15];
+    [btnMail setTitle:@"邮箱:12306helper@gmail.com  " forState:UIControlStateNormal];
+    //btnRegist.showsTouchWhenHighlighted=YES;
+    [btnMail addTarget:self action:@selector(onMailClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnMail];
+    
+    UIView* lineView=[[UIView alloc] initWithFrame:CGRectMake(30, 20, 180, 1)];
+    lineView.backgroundColor=[UIColor whiteColor];
+    [btnMail addSubview:lineView];
+    [lineView release];
+    
+    
+    UIButton* btnRegist=[UIButton buttonWithType:UIButtonTypeCustom];
+     btnRegist.titleLabel.textAlignment=UITextAlignmentLeft;
+    btnRegist.frame=CGRectMake(30, OffsetY+220, 220, 20);
+    [btnRegist setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
+    [btnRegist setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    btnRegist.titleLabel.font=[UIFont boldSystemFontOfSize:15];
+    [btnRegist setTitle:@"微博:http://weibo.com/nextsun" forState:UIControlStateNormal];
+    //btnRegist.showsTouchWhenHighlighted=YES;
+    [btnRegist addTarget:self action:@selector(onRegistClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnRegist];
+    
+    UIView* lineView2=[[UIView alloc] initWithFrame:CGRectMake(30, 20, 190, 1)];
+    lineView2.backgroundColor=[UIColor whiteColor];
+    [btnRegist addSubview:lineView2];
+    [lineView2 release];
+
+
 
     
     UILabel* lbAppZJ=[[UILabel alloc] initWithFrame:CGRectMake(10, 330, 320-20*2, 20)];
@@ -72,5 +107,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)onRegistClick
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/nextsun"]];
+}
 
+-(void)onMailClick
+{
+
+if ([MFMailComposeViewController canSendMail]) {
+    MFMailComposeViewController* mail=[[MFMailComposeViewController alloc] init];
+    [mail setToRecipients:@[@"12306helper@gmail.com"]];
+    mail.mailComposeDelegate=(id<MFMailComposeViewControllerDelegate>)self;
+    mail.navigationBar.tintColor=[UIColor blackColor];
+    [self presentModalViewController:mail animated:YES];
+    
+}
+}
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    if (result==MFMailComposeResultFailed) {
+        
+    }
+    [controller dismissModalViewControllerAnimated:YES];
+}
 @end

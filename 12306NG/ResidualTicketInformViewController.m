@@ -16,11 +16,9 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if ([[UIScreen mainScreen] bounds].size.height == 568.0) {
-        self = [super initWithNibName:@"ResidualTicketInformViewController_ip5" bundle:nibBundleOrNil];
-    }else{
-        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    }
+
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
         // Custom initialization
     }

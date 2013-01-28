@@ -634,23 +634,42 @@
         
     }
     
-    
+    [self.view endEditing:YES];
     if (![self checkForm]) {
         return;
     };
     
     
+    MBProgressHUD* HUD=[[MBProgressHUD alloc] initWithView:self.view];
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    HUD.labelText = @"  订单提交中...  ";
+    HUD.margin = 30.f;
+    HUD.yOffset = -45.f;
+    [self.view addSubview:HUD];
+    [HUD showWhileExecuting:@selector(doSubmit) onTarget:self withObject:nil animated:YES];
     
+    [HUD release];
+
+    
+    
+     
+    
+}
+
+
+-(void)doSubmit
+{
     
     
     if (![self checkOrderInfo]) {
         [self reloadCheckCode];
         return;
     }
-    [self confirmPassengerAction];    
+    sleep(1);
+    [self confirmPassengerAction];
+    sleep(1);
     [self confirmSingleForQueueOrderInfo];
-    
-    
+
 }
 
 -(void)onAddNewCustomClick
@@ -748,6 +767,8 @@
          pm.mobile_no,@"phone",
           nil];
         
+        LogInfo(@"%@",d);
+        
         [self.passagesArray addObject:d];
         [self.passagesIsOpenArray addObject:[NSNumber numberWithBool:YES]];
         
@@ -832,7 +853,7 @@
         return NO;
     }
     
-    [self.view endEditing:YES];
+    
      for (NSMutableDictionary* pInfo in self.passagesArray) {
         
         
@@ -1013,22 +1034,13 @@
         
         
     }
-    
-//    
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
-//    
-//    
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
-//    
-//    
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
-//    
-//    
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
+    while (i<5) {
+        
+        i++;
+        [request addPostValue:@"" forKey:@"oldPassengers"];
+        [request addPostValue:@"Y" forKey:@"checkbox9"];
+    }
+
     
     
     [request setPostValue:textCode.text forKey:@"randCode"];
@@ -1153,7 +1165,10 @@
     NSMutableDictionary* retDict=[responeString JSONValue];
     
     NSString* retString=[retDict objectForKey:@"errMsg"];
-    if ([retString isEqualToString:@"Y"]) {
+    NSString* retString2=[retDict objectForKey:@"checkHuimd"];
+    NSString* retString3=[retDict objectForKey:@"check608"];
+    NSString* retString4=[retDict objectForKey:@"msg"];
+    if ([retString isEqualToString:@"Y"]&&[retString2 isEqualToString:@"Y"]&&[retString3 isEqualToString:@"Y"]) {
         
 //        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预定成功，请进行支付" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
 //        [alert show];
@@ -1165,7 +1180,7 @@
     }
     else
     {
-        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:retString delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:retString4 delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
        
@@ -1200,12 +1215,14 @@
     NSString* strF=@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=%@&train_no=%@&station=%@&seat=%@&from=%@&to=%@&ticket=%@";
 	
     
+    NSString* seatString=[[self.passagesArray objectAtIndex:0] objectForKey:@"xibie"];
+    
 	//NSString* strF=@"date=%@&fromstation=%@&tostation=%@&starttime=%@";
 	NSString* urlStr=[NSString stringWithFormat:strF,
                       [GlobalClass sharedClass].dateString,
                       [arrOrder objectAtIndex:3],
                       [arrOrder objectAtIndex:0],
-                      @"1",
+                      seatString,
                       [arrOrder objectAtIndex:4],
                       [arrOrder objectAtIndex:5],
                       leftTicketsString,nil
@@ -1426,12 +1443,15 @@
         
     }
     
-//    
+//
+    while (i<5) {
+     
+        i++;
+    [request addPostValue:@"" forKey:@"oldPassengers"];
+    [request addPostValue:@"Y" forKey:@"checkbox9"];
+    }
     
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
-//    
-//   
+//
 //    [request addPostValue:@"" forKey:@"oldPassengers"];
 //     [request addPostValue:@"Y" forKey:@"checkbox9"];
 //    
@@ -1572,11 +1592,11 @@
     NSString* retString=[retDict objectForKey:@"errMsg"];
     if ([retString isEqualToString:@"Y"]) {
         
-        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预定成功，请进行支付" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预订成功，请尽快在PC上登录12306完成支付!\n（手机支付即将推出）" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         
-        [self.navigationController popToRootViewControllerAnimated:YES];
+       //[self.navigationController popToRootViewControllerAnimated:YES];
         
     }
     else
@@ -1584,6 +1604,7 @@
         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:retString delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
+        [self reloadCheckCode];
         
         //[self.navigationController popToRootViewControllerAnimated:YES];
         
@@ -2049,8 +2070,8 @@
    
     
     
-    NSString* urlString=[NSString stringWithFormat:@"https://dynamic.12306.cn/otsweb/passCodeAction.do?rand=randp&%u",arc4random()];
-     LogInfo(@"%@",urlString);
+    NSString* urlString=@"https://dynamic.12306.cn/otsweb/passCodeAction.do?rand=randp";
+   //  LogInfo(@"%@",urlString);
     
     self.requestImg=[ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString ]] ;
     requestImg.accessibilityLabel=@"imgCode";
@@ -2058,8 +2079,8 @@
     [requestImg setValidatesSecureCertificate:NO];
     [requestImg setUseCookiePersistence:YES];
     [requestImg applyCookieHeader];
-    
-    [requestImg addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init"];
+//    
+//    [requestImg addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init"];
     
     requestImg.delegate=(id<ASIHTTPRequestDelegate>)self;
     [requestImg startAsynchronous];

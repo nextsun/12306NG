@@ -216,6 +216,9 @@
     }
     else if (indexPath.section==3&&indexPath.row==2)
     {
+        NSString *str = [NSString stringWithFormat: @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Utilities+Travel&id=%@",
+                         @"594813046" ];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     }
     else if (indexPath.section==3&&indexPath.row==3)
     {        

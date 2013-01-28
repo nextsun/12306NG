@@ -37,7 +37,7 @@
 -(void)checkVersion
 {
     
-    NSDate* dateEnd= [NSDate dateFromString:@"2013-02-05" withFormat:@"YYYY-MM-dd"];
+    NSDate* dateEnd= [NSDate dateFromString:@"2013-02-05" withFormat:@"yyyy-MM-dd"];
     
     
     NSDate* dateNow=  [NSDate dateWithTimeIntervalSinceNow:0];
@@ -65,7 +65,7 @@
     
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_black"]];
     
-   // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkVersion) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkVersion) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     
     
@@ -145,7 +145,7 @@
     
     
       
-    //[self checkVersion];
+    [self checkVersion];
 
 
 }
