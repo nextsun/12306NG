@@ -1,0 +1,128 @@
+Request URL:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?PrePayC2
+Request Method:POST
+Status Code:200 OK
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Charset:ISO-8859-1,utf-8;q=0.7,*;q=0.3
+Accept-Encoding:gzip,deflate,sdch
+Accept-Language:en-US,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Content-Length:343
+Content-Type:application/x-www-form-urlencoded
+Cookie:Cookie_NetPay_CardPwd_CMB=LastPayWay:CreditCard; Cookie_NetPay_Main_CMB=CallerId:CardPwd_Pay_Entry; pgv_pvi=2584926208; WTFPC=id=292f900f09610765a031358526242147:lv=1358526242147:ss=1358526242147
+Host:netpay.cmbchina.com
+Origin:https://epay.12306.cn
+Referer:https://epay.12306.cn/pay/webBusiness
+User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11
+Query String Parametersview URL encoded
+PrePayC2:
+Form Dataview URL encoded
+Amount:102.50
+MerchantCode:|QOpU/Dfy*K1/Nu*Dh2lZFLFE7xqZ/ZzvDImPAQDhForDNvy9|ea7a8cf3aa3ad786b6bedf9229a0a44e6d26f193
+BillNo:W2013012647708584
+Date:20130126
+MerchantUrl:http://epay.12306.cn/pay/payResponse
+CoNo:006958
+BranchID:0010
+MerchantPara:TRANS_ID=W2013012647708584|bankId=03080000|ExpireTime=20130126182809
+Response Headersview source
+Cache-Control:private
+Content-Length:10438
+Content-Type:text/html; charset=gb2312
+Date:Sat, 26 Jan 2013 10:22:18 GMT
+X-AspNet-Version:2.0.50727
+X-Powered-By:ASP.NET
+
+
+
+
+Request URL:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?PC_Pay_Mobile
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Content-Type:application/x-www-form-urlencoded
+Origin:https://netpay.cmbchina.com
+Referer:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?PrePayC2
+User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11
+Query String Parametersview URL encoded
+PC_Pay_Mobile:
+Form Dataview URL encoded
+ClientNo:AD4B88EC91DED170BE3B42FA64F11AEF339311490159994700561886
+SerialNo:0759394732
+
+
+Request URL:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MobilePayProc
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Content-Type:application/x-www-form-urlencoded
+Origin:https://netpay.cmbchina.com
+Referer:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?PC_Pay_Mobile
+User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11
+Query String Parametersview URL encoded
+MobilePayProc:
+Form Dataview URL encoded
+AcctType:C
+CardNo:1111
+MobileNo:18912345678
+ClientNo:AD4B88EC91DED170BE3B42FA64F11AEF348877571749961800563060
+SerialNo:9748218440
+DynaCode:3574
+objinfo:
+Info:
+ExInfo:AhxBS1JvaWcwemFRb0lSSm45Nk16R2pmS09ObHc9AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAo8R5CRTiklsh8lg-oBf3AE-sTHaohoFzdjZmXLGzz
+cjqfwh9haA2hjd9vwMf5PmXBK-WCzrsuljtpVwItgo2laCVkrlUAMtE8zArb2e6N
+rQTANN7tR*aFeS3WpcillD5*Fd5MiFZUS9YT8oyg04u-s4MH7RbcexsOWUkGQBHP
+GsYW174LSSGOxNwPlDtSHKf8JVHOsuWq*nYP4oCA9VTC4zVSAYZ0dsX2tmGQFlxQ
+tyUInoKuQV3NXhPx-yEF118uHHlvW68oDDB5dcwhR9U*--3zSRdrQjSsLSsx66Fx
+VTD-ue61hQVuheSxhlpJ4DC1WC0vyWMQoirk8xIoAMo2-6VnENE1ZvZrnhjQ8EKL
+mUOZh0QJICNHdGCYuGZrq7VsHEv5
+
+
+
+Request URL:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MobilePayProc
+Request Method:POST
+Status Code:200 OK
+Request Headersview source
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Charset:ISO-8859-1,utf-8;q=0.7,*;q=0.3
+Accept-Encoding:gzip,deflate,sdch
+Accept-Language:en-US,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Content-Length:684
+Content-Type:application/x-www-form-urlencoded
+Cookie:Cookie_NetPay_CardPwd_CMB=LastPayWay:CreditCard; Cookie_NetPay_Main_CMB=CallerId:Mobile_Pay_Entry; Cookie_NetPay_Mobile_CMB=LastPayWay:MobilePayCommonCard; pgv_pvi=2584926208; WTFPC=id=292f900f09610765a031358526242147:lv=1358526242147:ss=1358526242147
+Host:netpay.cmbchina.com
+Origin:https://netpay.cmbchina.com
+Referer:https://netpay.cmbchina.com/netpayment/BaseHttp.dll?PC_Pay_Mobile
+User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11
+Query String Parametersview URL encoded
+MobilePayProc:
+Form Dataview URL encoded
+AcctType:A
+CardNo:1111
+MobileNo:18912345678
+ClientNo:AD4B88EC91DED170BE3B42FA64F11AEF348877571749961800563060
+SerialNo:9748218440
+DynaCode:2027
+objinfo:
+Info:
+ExInfo:AhxBS1JvaWcwemFRb0lSSm45Nk16R2pmS09ObHc9AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAo8R5CRTi7JMh8lg-oBf3AE-sTHaohoFzdjZmXLGzz
+cjqfwh9haA2hjd9vwMf5PmXBK-WCzrsuljtpVwItgo2laCVkrlUAMtE8zArb2e6N
+rQTANN7tR*aFeS3WpcillD5*Fd5MiFZUS9YT8oyg04u-s4MH7RbcexsOWUkGQBHP
+GsYW174LSSGOxNwPlDtSHKf8JVHOsuWq*nYP4oCA9VTC4zVSAYZ0dsX2tmGQFlxQ
+tyUInoKuQV3NXhPx-yEF118uHHlvW68oDDB5dcwhR9U*--3zSRdrQjSsLSsx66Fx
+VTD-ue61R9chzT*zH1ykM6Qz-18X4mMQoirk8xIoAMo2-6VnENE1ZvZrnhjQ8EKL
+mUOZh0QJICNHdGCYuGZrq7VsHEv5
+Response Headersview source
+Cache-Control:private
+Content-Length:1731
+Content-Type:text/html; charset=gb2312
+Date:Sat, 26 Jan 2013 10:30:47 GMT
+X-AspNet-Version:2.0.50727
+X-Powered-By:ASP.NET
+
+
+https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MfcISAPICommand=TestPrePayWAP&BranchID=0755&CoNo=000000&BillNo=123456&Amount=10.00&Date=20130129&MerchantUrl=&MerchantPara=

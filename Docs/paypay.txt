@@ -1,0 +1,447 @@
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>中国铁路电子支付平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="pages/web/css/bank.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://www.12306.cn/mormhweb/images/favicon.ico"/> 
+<link   rel="bookmark"   href="http://www.12306.cn/mormhweb/images/favicon.ico">
+<script type="text/javascript">
+var issubmit=false;
+document.oncontextmenu=function(){return false;}
+function formsubmit(bankId){
+	//if(!issubmit){
+		issubmit=true;
+		document.getElementsByName("bankId")[0].value=bankId;
+		document.getElementsByName("myform")[0].submit();
+	//}
+}
+</script>
+</head>
+<body>
+
+<div class="box1">
+   <iframe marginHeight="0" src="pages/web/mb.html" frameBorder="0" width="100%" scrolling="no" height="147"></iframe>
+</div>
+
+
+<div class="box1">
+  <div class="nav1">
+    <div class="nav3"><span class="nav3_1">&gt;&gt; 应付金额：</span><span class="nav3_5">8元</span></div>
+    <div class="nav5">请选择网上银行</div>
+  </div>
+  <div class="nav1">
+    <div class="bank1">
+    
+<form action="/pay/webBusiness" method="post" name="myform">
+    <input type="hidden" value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+CjxQYXlSZXE+PGludGVyZmFjZU5h
+bWU+UEFZX1NFUlZMRVQ8L2ludGVyZmFjZU5hbWU+PGludGVyZmFjZVZlcnNpb24+MS4wPC9pbnRl
+cmZhY2VWZXJzaW9uPjxvcmRlckRhdGU+MjAxMzAxMjgxNDQ1MzM8L29yZGVyRGF0ZT48b3JkZXJU
+aW1lb3V0RGF0ZT4yMDEzMDEyODE1MzAyNzwvb3JkZXJUaW1lb3V0RGF0ZT48b3JkZXJJZD4xRTI0
+NDAxMzE5NjAwMTAwMTE0NDUzMzAyNjwvb3JkZXJJZD48YW1vdW50PjgwMDwvYW1vdW50PjxhcHBJ
+ZD4wMDAxPC9hcHBJZD48Y3VyVHlwZT4xNTY8L2N1clR5cGU+PG9yZGVyUmVtYXJrLz48bWVyVVJM
+Pmh0dHA6Ly9keW5hbWljLjEyMzA2LmNuL290c3BheS8vb3JkZXIvZU5vdGlmeUFjdGlvbi5kbz9t
+ZXRob2Q9ZXBheVN0YXR1cyZhbXA7dXNlcl9uYW1lPWFYQm9iMjVsZEdWemRBPT0mYW1wO3NlcXVl
+bmNlX25vPVJUSTBOREF4TXpFNU5nPT0mYW1wO3BheU9yZGVySUQ9TVVVeU5EUXdNVE14T1RZd01E
+RXdNREV4TkRRMU16TXdNalk9JmFtcDtyZWRpcmVjdFVSTD1hSFIwY0hNNkx5OWtlVzVoYldsakxq
+RXlNekEyTG1OdUwyOTBjM2RsWWk4dmIzSmtaWEl2WlU1dmRHbG1lVUZqZEdsdmJpNWtiejl0DQpa
+WFJvYjJROWNYVmxjbmxOZVU5eVpHVnlVM1JoZEdsakpuTmxjWFZsYm1ObFgyNXZQVVV5TkRRd01U
+TXhPVFk9JmFtcDtwYXlTdGFydD1NUT09JmFtcDtiYXRjaF9ubz1NU009JmFtcDtsb2dpbl9pZD1N
+VmxNTW5oMmVqUnViM1F6WW00d2JqVmpiVWt6VFVVM00zbHlZekpwJmFtcDt0b3VyX2ZsYWc9Wm1N
+PSZhbXA7cmV0dXJuX3RvdGFsPSZhbXA7cmV0dXJuX2Nvc3Q9JmFtcDtvbGRfdGlja2V0X3ByaWNl
+PSZhbXA7cGF5X21vZGU9JmFtcDtjaGFubmVsPVJRPT08L21lclVSTD48YXBwVVJMPmh0dHBzOi8v
+MTAuMS4yMTQuMTM1OjQ0My9vdHNwYXkvb3JkZXIvZU5vdGlmeUFjdGlvbi5kbz9tZXRob2Q9ZXBh
+eU5vdGlmeTwvYXBwVVJMPjxpbm5lclVSTD5odHRwOi8vMTAuMS4xOTkuMTA2OjgyMDAvb3Rzd3Mv
+cGF5Q2FsbEJhY2s8L2lubmVyVVJMPjxtZXJWQVI+YVhCb2IyNWxkR1Z6ZERveFdVd3llSFo2Tkc1
+dmRETmliakJ1TldOdFNUTk5SVGN6ZVhKak1tazZSVEkwTkRBeE16RTVOam94SXpveA0KT2pFNE9U
+QXdNREF3TURBeE9qbzZPam82T2pwbVl6cEY8L21lclZBUj48dHJhbnNUeXBlPjAxPC90cmFuc1R5
+cGU+PC9QYXlSZXE+" name="tranData" />
+	<input type="hidden" value="01" name="transType" />
+	<input type="hidden" value="1" name="channelId" />
+	<input type="hidden" value="0001" name="appId" />	
+	<input type="hidden" value="LohQzpX+u+mRUwN/B2JYf9CzXS55SBb6X9sxj+2z0rvnEum4Ov5rCmFU8jR7mSYfvrzWQ52CIYzr
+Hee/IncIWqX/du9UeoBaUyA68V+sW3p1qkPpGDnz0bzGYsr15/vY42JPtZmkKU0DlisfEHQJS7Gi
+I0wkDX5eifaBdqaGFhU=" name="merSignMsg" />
+	<input type="hidden" value="119.161.163.226" name="merCustomIp" />		
+	<input type="hidden" value="20130128153027" name="orderTimeoutDate" />	
+	<input type="hidden" name="bankId" />	
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_gsyh2.gif" width="130" height="52" title="工商银行" onclick="javascript:formsubmit('01020000');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_nyyh2.gif" width="130" height="52" title="农业银行" onclick="javascript:formsubmit('01030000');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zgyh2.gif" width="130" height="52" title="中国银行" onclick="javascript:formsubmit('01040000');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zsyh2.gif" width="130" height="52" title="招商银行" onclick="javascript:formsubmit('03080000');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zgyl.gif" width="130" height="52" title="中国银联" onclick="javascript:formsubmit('00011000');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_ztytk.gif" width="130" height="52" title="中铁银通卡" onclick="javascript:formsubmit('00011001');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_jsyh2.gif" width="130" height="52" title="建设银行" onclick="javascript:formsubmit('01050000');"  style="cursor:pointer;"/>
+     </div></div>     
+
+</form>
+    </div>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <marquee  width="550" ONMOUSEOUT="this.start()" ONMOUSEOVER="this.stop()" scrollamount=4 scrolldelay=100 >
+    
+	
+	</marquee>
+	
+                           
+                            
+  </div>
+  <!-- div class="nav1">
+    <div class="btn1"></div>
+    <div class="btn3"><a href="#" onclick="formsubmit();"><img src="pages/web/img/btn3.gif" /></a></div>
+  </div-->
+</div>
+
+<div class="box1">
+  <div class="footer1">
+    <div class="f_desc">
+      <ul>
+        <li>请您选择支付银行。建议使用中国工商银行、中国农业银行、中国银行、招商银行、中国建设银行的银行卡，支付请直接点击相应银行的按钮；如果您使用其他银行的银行卡，请点击“中国银联”按钮。</li>
+		<li>您点击支付银行后，将进入银行页面。请遵守相关银行规定进行操作。您在银行页面上进行的任何操作及其产生的任何法律后果，将按照您与银行之间签订的合同处理。本网站不承担任何责任。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="box1">
+  <div class="f_ver"><br />
+    <a target="_blank" href="http://www.12306.cn/mormhweb/gljd/gywm/">关于我们</a> | <a target="_blank" href="http://www.12306.cn/mormhweb/gljd/wzls/">网站声明</a><br />
+     版权所有 &copy; 2008-2015 铁道部信息技术中心 中国铁道科学研究院<br />
+  <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备10009636号</a></div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<html>
+<head>
+<title>招商银行网上支付[SZC]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv= "Page-Enter" content= "blendTrans(Duration=1) ">
+<meta http-equiv= "Page-Exit" content= "blendTrans(Duration=1) ">
+
+<link href="styles/Menu.css" rel="stylesheet" type="text/css"/>
+<link href="styles/NetPay.css" rel="stylesheet" type="text/css"/>
+
+<script src="jsLib/Menu.js"></script>
+<script src="jsLib/CommonUtils.js"></script>
+<script src="jsLib/CookieClass.js"></script>
+<script src="jsLib/DynaForm.js"></script>
+<script src="jsLib/DynaXmlHttp.js"></script>
+<script src="jsLib/FuncTrigger.js"></script>
+<script src="jsLib/NetPay.js"></script>
+<script src="jsLib/NetPay_Main.js"></script>
+
+<!--fix png24 issue for ie6-->
+<!--[if IE 6]>
+	<script type="text/javascript" src="jsLib/iepngfix_tilebg.js"></script>
+	<style type="text/css">.imgTitleLogo,.imgBillBottom,.divPayAreaTopRight
+	{ behavior: url(styles/iepngfix.htc) }
+	</style>
+<![endif]-->
+
+<script type="text/javascript">
+    var httpPath = "https://netpay.cmbchina.com/netpayment/BaseHttp.dll?";
+    var clientNo = "B0A1C4963C3B85D8A29D6D2B3EE3F31B544824343745264401088745";
+    var serialNo = "6056186173";
+    var appPath = "/netpayment";
+    var HasLicex = true;
+    var browserId = "mac-safari";
+
+    var cdno = "jJdc5II*Ms8ck4jLD0yT883YCOM=";
+    var sessionInfo = "uskUu9bd80wodDAwRmWyQGw0mKHb-xTPWHzBQVIfhrGJIcwKZrOTkFLqiH4A9me9mRh6tHdtnwyTmUGUD3Mtn5Zzd0Qu6pQEz1iH*BURg9XhpyoTqSBTZZHXcplRWPlIHbPo1rrUCWDzfiP3UGRqsAQSpAWrUzX3H-8g-U0lcafe01pYOhVfTgTuIpLaSwbz4Jqq*M0MXufwSh3KNbXYXAlCGpDYs4Nlunq-R88WGA__";
+    //var opt="#1#https://netpay.cmbchina.com/netpayment/BaseHttp.dll?GetInfo?data=0010,006958,2013-01-28,0154603744,8.00";
+
+</script>		
+</head>
+<body class="bodyPayMain" onload="InitPage()">
+	<div id="divMask" class="divMask" style="display:none" >
+			<iframe src="images/blank.html" class="iframe" frameborder="no" scrolling="no"></iframe>
+	</div>
+	<!--网盾下载提示-->
+ 	<div id="divWP" class="WPDiv" style="display:none">
+		<div style="height:9px">
+			<div class="WPTitleLeft"></div>
+			<div class="WPTitleMid">温馨提示</div>
+			<div class="WPTitleRight"></div>
+		</div>
+	  <div style="width:100%; background-color:#FFFFFF;">
+	  	<div class="WPBackgroundLeft"></div>
+			<div class="WPBackgroundMid" align="center">
+				<div align="left" class="WPBackgroundMidContent">
+					<div style="margin-left:48px;padding-top:15px">
+						<span class="content">&nbsp;&nbsp;您尚未安装“一网通网盾”，建议您<a href="http://app.cmbchina.com/webprotect/download.htm" target="_blank" class="content">立即下载</a>并安装。</span><br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="btnDialog" onClick="DismissWP();">关闭</span>
+					</div>
+				</div>
+			</div>		
+			<div class="WPBackgroundRight"></div>
+		</div>
+		<div>
+			<div class="WPBackgroundBottomLeft"></div>
+			<div class="WPBackgroundBottomMid"></div>
+			<div class="WPBackgroundBottomRight"></div>
+		</div>
+	</div>
+
+	
+	<div style="width:100%; background-image:url(images/bg_top.png);background-repeat:repeat-x">
+		<div align="center">
+			<div style="width:992px;height:550px; overflow:hidden;white-space:nowrap;">				
+			<!--Title-->
+				<div style="height:134px;width:100%;" align="center">
+					<div class="divTitleLogo">
+						<img src="images/img_title_logo.png" class="imgTitleLogo" title="招商银行网上支付" />
+					</div>
+					<div style="float:right;margin-top:65px;" valign="middle">
+						<a href="#" class="aTopLink" style="background-image:url(images/icon_service.gif);text-decoration:none;color:#FFFFFF;padding-bottom:4px;" onClick="fLoginICS();" onmouseover="TopLinkMouseOver(this)" onmouseout="TopLinkMouseOut(this)">在线客服</a>
+						<a href="http://www.cmbchina.com/personalbank/netpay/Faq.htm" class="aTopLink" style="background-image:url(images/icon_qa.gif);text-decoration:none;color:#FFFFFF;padding-bottom:4px;" target="_blank" onmouseover="TopLinkMouseOver(this)" onmouseout="TopLinkMouseOut(this)">常见问题</a>
+						<a href="http://www.cmbchina.com/personalbank/netpay/CmbPay.htm?Manage" class="aTopLink" style="background-image:url(images/icon_manage.gif);text-decoration:none;color:#FFFFFF;padding-bottom:4px;" target="_blank" onmouseover="TopLinkMouseOver(this)" onmouseout="TopLinkMouseOut(this)">支付管理</a>
+						<a href='http://site.cmbchina.com/download/CMBSecurityPlugin.dmg' class="aTopLink" style="background-image:url(images/icon_download.gif);text-decoration:none;color:#FFFFFF;padding-bottom:4px;" onClick="if(!true){alert('对不起，您的浏览器不支持安全控件。');return false;}" target="_blank" onmouseover="TopLinkMouseOver(this)" onmouseout="TopLinkMouseOut(this)">控件下载</a>
+					</div>
+				</div>
+				<!--订单-->	
+				<div class="divBillArea">
+					<div class="divBillAreaBg">
+						<div class="divBillAreaTitle">
+							我的订单
+						</div>
+						<div class="divBillContent" style="height:76px;">
+							<table cellspacing="0" cellpadding="0" style="width:100%; height:100%; text-align:left;">
+								<tr>
+									<td class="billContentName">&nbsp;&nbsp;金&nbsp;&nbsp;&nbsp;&nbsp;额：</td>
+									<td class="billContent" style="padding-right:20px;color:#F83D0B" align="left"><span class="billContentAmount">8.00</span><span style="font-weight:normal;">&nbsp;元</span></td>
+								</tr>
+								<tr>
+									<td class="billContentName">&nbsp;&nbsp;商&nbsp;&nbsp;&nbsp;&nbsp;户：</td>
+									<td class="billContent" style="color:#F83D0B;font-weight:bold;font-size:16px"> 铁道部资金清算中心</td>
+								</tr>
+							</table>
+						</div>
+						<div class="divBillContent" style="height:323px">
+							<table cellspacing="0" cellpadding="0" style="width:100%; height:165px; text-align:left;">
+				<!--				<tr>
+									<td class="billContentName">&nbsp;&nbsp;商户编号：</td>
+									<td class="billContent">8.00</td>
+								</tr>-->
+								<tr>
+									<td class="billContentName">&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;期：</td>
+									<td class="billContent">2013-01-28</td>
+								</tr>
+								<tr> 
+									<td class="billContentName">&nbsp;&nbsp;订单号：</td>
+									<td class="billContent"><span>0154603744</span><span id="linkSubBill" style="display:none">(<a href="#" title="点击查看批量支付子订单详细信息" onClick="GetSubBill()">明细</a>)</span></td>
+								</tr>
+								<tr>
+									<td class="billContentName">&nbsp;&nbsp;币&nbsp;&nbsp;&nbsp;&nbsp;种：</td>
+									<td class="billContent">人民币</td>
+								</tr>
+						<!--		<tr>
+									<td class="billContentName">&nbsp;&nbsp;备&nbsp;&nbsp;注：</td>
+									<td class="billContent">木有备注请删除该行</td>
+								</tr>-->
+								
+								<tr>
+								    <td colspan="2"></td>
+								</tr>
+							</table>
+							<div class="billBottom">
+								<img src="images/bg_billarea_bottom.png" class="imgBillBottom" title="招商银行网上支付" />
+							</div>
+						</div>			
+	        </div>
+	        <div style="float:left;width:3px;height:443px;background-image:url(images/bg_middle_line.png);background-repeat:repeat-y">
+					</div>
+				</div>
+				<!--	<div style="width:8px; vertical-align:top; background-image:url(images/pay_bgMiddle.gif); float:left"></div>-->					
+				<div class="divPayArea">
+				 		<div style="height:16px;width:712px;" align="left">
+				 			<table  cellspacing="0" cellpadding="0" style="width:712px">
+				 				<tr style="height:16px;">
+				 					<td style="width:686px;background-color:#E5EFFE;"></td>
+				 					<td style="width:26px"><img class="divPayAreaTopRight"  src="images/bg_payarea_top_right.png" /></td>
+				 				</tr>
+				 			</table>
+				 		</div>
+				 		<!--菜单-->
+						<div style="vertical-align:top;height:61px"> 	
+							<table width="100%" cellspacing="0" cellpadding="0">
+								<tr>
+								  <td style="vertical-align:top; width:100%" ><ul id='menu'><li><a href="#" id="CardPwd_Pay_Entry" priority=10 onclick="StoreCallerId();CallFunc('PC_Pay_CardPwd','FORM',null);" onfocus=this.blur()>卡号密码支付</a></li><li><a href="#" id="Mobile_Pay_Entry" priority=8 onclick="StoreCallerId();CallFunc('PC_Pay_Mobile','FORM',null);" onfocus=this.blur()>手机号码支付</a></li></ul></td>
+								</tr>
+							</table>
+						</div>
+						
+					<!--支付区-->
+						<div id="divMain" class="divPayInputArea">
+							<table width="100%" cellspacing="0" cellpadding="0" align="left" border="0">
+								<tr>
+									<td>
+										<iframe id="mainWorkArea" name="mainWorkArea" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" width="100%" height="360px" src="images/blank.html"></iframe>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			<!--滚动说明-->
+			<div class="divRollMessage3">
+				<div class="divRollMessage2">
+					<div class="divRollMessage1">
+						 <script language="javascript">createLayer()</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<span style="visibility:hidden">
+			
+				<object id="NetPaySafeCtl" type="application/x-cmbedit" width="0px" height="0px" maxLength ="16" passwdCtrl="false"><a href='http://site.cmbchina.com/download/CMBSecurityPlugin.dmg' onClick="if(!true){alert('对不起，您的浏览器不支持安全控件，请使用手机支付。');return false;}" target="_blank">请点击这里，安装安全控件</a></object>
+			<script language="javascript">
+				function init_SE_NetPaySafeCtl()
+				{
+					try{
+						document.getElementById("NetPaySafeCtl").MaxLength = "16" ;
+						if(!false)
+						{
+							document.getElementById("NetPaySafeCtl").PasswdCtrl = false;
+						}
+						document.getElementById("NetPaySafeCtl").Info = "jJdc5II*Ms8ck4jLD0yT883YCOM=";
+						document.getElementById("NetPaySafeCtl").Lic = "jJdc5II*Ms8ck4jLD0yT883YCOM=";
+						document.getElementById("NetPaySafeCtl").SessionInfo = "uskUu9bd80wodDAwRmWyQGw0mKHb-xTPWHzBQVIfhrGJIcwKZrOTkFLqiH4A9me9mRh6tHdtnwyTmUGUD3Mtn5Zzd0Qu6pQEz1iH*BURg9XhpyoTqSBTZZHXcplRWPlIHbPo1rrUCWDzfiP3UGRqsAQSpAWrUzX3H-8g-U0lcafe01pYOhVfTgTuIpLaSwbz4Jqq*M0MXufwSh3KNbXYXAlCGpDYs4Nlunq-R88WGA__";
+					}catch(err)
+					{
+					}
+				}
+				
+				if (window.addEventListener) 
+				{//For FireFox
+					window.addEventListener("load", init_SE_NetPaySafeCtl, "false");
+				}				
+				</script>
+			
+		</span>
+	</div>
+</body>
+</html>
+
+
+https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MfcISAPICommand=TestPrePayWAP&BranchID=0755&CoNo=000000&BillNo=0154603744&Amount=8.00&Date=20130128&MerchantUrl=&MerchantPara=
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=GB2312" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma"  content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>招商银行手机支付[SZC]</title>
+<link href="images/PhoneImg/WorkArea.css" type="text/css" rel="Stylesheet" />
+
+<noscript>	
+</noscript>
+</head>
+
+<body style="width:100%; background:#FFFFFF" > 
+<div align="center" style="width:100%; background:url(images/PhoneImg/02_M.gif) repeat-x;">
+	<img src="images/PhoneImg/Logo_M.gif" alt="招商银行|手机支付"/></div>
+	<div align="center" style="width:100%;">
+
+	<form name="prepayfm" id="prepayfm" method="post" action="https://netpay.cmbchina.com/netpayment/BaseHttp.dll">
+		<input name="MfcISAPICommand" value="MB_Pay_HTM" type="hidden" />
+		<input name="ClientNo" value="B0A1C4963C3B85D8A29D6D2B3EE3F31B418609061956722701094944" type="hidden" />
+		<input name="SerialNo" value="4343093862" type="hidden" />
+	<table class="tb_Block" cellspacing="1"  cellpadding="3">
+
+	<tr><td class="td_RowHead" colspan="2" align="left">订单内容</td></tr>
+	<tr><td class="td_AlternateLeftContent"  align="left" width="20%">订单：</td><td class="td_LeftContent">0154603744</td></tr>
+	<tr><td class="td_AlternateLeftContent"  align="left" width="20%">日期：</td><td class="td_LeftContent">20130128</td></tr>
+	<tr><td class="td_AlternateLeftContent"  align="left" width="20%">支付金额：</td><td class="td_LeftContent">8.00</td></tr>
+	<tr><td class="td_AlternateLeftContent"  align="left" width="20%">商户名称：</td><td class="td_LeftContent">TestMerchant</td></tr>
+	<tr><td class="td_RowHead" colspan="2" align="left">请填写支付信息</td></tr>
+	<tr><td class="td_AlternateLeftContent" align="left"  colspan="2">卡类型：</td></tr>
+	<tr><td class="td_LeftContent" align="left"  colspan="2">
+		<select name="AcctType" id="AcctType" size="1" style="width:70%;">
+					<option selected="selected" value="C">信用卡</option>
+					<option value="A">一卡通</option>
+		  </select>
+		</td>
+	</tr>
+	<tr><td class="td_AlternateLeftContent" align="left"  colspan="2">手机号：</td></tr>
+		<tr><td class="td_LeftContent" align="left"  colspan="2">
+		<input name="MobileNo" type="text"  pattern="[0-9]*" title="手机号"  maxlength="11" id="MobileNo" value="" style="width:70%;"/>
+		</td>
+	</tr>
+	<tr><td class="td_AlternateLeftContent" align="left"  colspan="2">卡号后四位：</td></tr>
+		<tr><td class="td_LeftContent" align="left"  colspan="2">
+		<input name="CardNo" type="text"  pattern="[0-9]*" title="卡号后四位"  maxlength="4" id="CardNo" value="" style="width:70%;" />
+		</td>
+	</tr>
+	<tr><td class="td_AlternateLeftContent" align="left"  colspan="2">验证码：<!--<img src="https://netpay.cmbchina.com/netpayment/BaseHttp.dll?SessionWbmp?ClientNo=B0A1C4963C3B85D8A29D6D2B3EE3F31B418609061956722701094944&amp;SerialNo=4343093862" alt="验证码" />		            或-->
+			<img src="https://netpay.cmbchina.com/netpayment/BaseHttp.dll?SessionPng?ClientNo=B0A1C4963C3B85D8A29D6D2B3EE3F31B418609061956722701094944&amp;SerialNo=4343093862" alt="验证码" />
+		</td></tr>
+	<tr><td class="td_LeftContent" align="left"  colspan="2">
+		<input name="RndNo" type="text"  pattern="[0-9]*" maxlength="4" id="RndNo" value=""  style="width:70%;"/>
+		</td>
+	</tr>
+	</table>
+		<div style="text-align:center;">
+		<script language="javascript">
+		if(history.length>0)
+		{
+			document.write("<input id=\"DoPrev\" class=\"bt_oksubmit\" type=\"button\" onClick=\"javascript:history.go(-1);\" value=\"<<上一步\" />");
+		}
+		</script>
+		<input class="bt_oksubmit" type="submit" value="下一步>>" /></div>
+
+	</form>
+
+	</div>		
+</body>
+</html>

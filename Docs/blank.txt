@@ -1,0 +1,9 @@
+https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-02-09&orderRequest.from_station_telecode=WHN&orderRequest.to_station_telecode=HAN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00
+
+/otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-01-24&orderRequest.from_station_telecode=WHN&orderRequest.to_station_telecode=HAN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00
+
+
+/otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-02-09&orderRequest.from_station_telecode=WHN&orderRequest.to_station_telecode=HAN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00
+
+
+https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-02-09&orderRequest.from_station_telecode=WHN&orderRequest.to_station_telecode=HAN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00

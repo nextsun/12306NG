@@ -1,0 +1,315 @@
+(Request-Line)	GET /otsweb/order/querySingleAction.do?method=queryLeftTicket&orderRequest.train_date=2013-01-24&orderRequest.from_station_telecode=WHN&orderRequest.to_station_telecode=HAN&orderRequest.train_no=&trainPassType=QB&trainClass=QB%23D%23Z%23T%23K%23QT%23&includeStudent=00&seatTypeAndNum=&orderRequest.start_time_str=00%3A00--24%3A00 HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	text/plain, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+
+
+method	queryLeftTicket
+orderRequest.train_date	2013-01-24
+orderRequest.from_station_telecode	WHN
+orderRequest.to_station_telecode	HAN
+orderRequest.train_no	
+trainPassType	QB
+trainClass	QB#D#Z#T#K#QT#
+includeStudent	00
+seatTypeAndNum	
+orderRequest.start_time_str	00:00--24:00
+
+0,<span id='id_55000K151240' class='base_txtdiv' onmouseover=javascript:onStopHover('55000K151240#HKN#HAN') onmouseout='onStopOut()'>K1513</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;00:11,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:11,07:00,--,--,--,--,--,<font color='darkgray'>无</font>,2,--,3,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('K1513#07:00#00:11#55000K151240#HKN#HAN#07:11#汉口#宜昌东#07#14#1*****31314*****00001*****00033*****0002#91F6B654FB82207A7A539ACEC748688CA1EC34CCCDB5E56F0EBDD1A1#H2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n1,<span id='id_5a000K125602' class='base_txtdiv' onmouseover=javascript:onStopHover('5a000K125602#WCN#HAN') onmouseout='onStopOut()'>K1256</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;04:16,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;08:10,03:54,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,5,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('K1256#03:54#04:16#5a000K125602#WCN#HAN#08:10#武昌#宜昌东#18#22#1*****30054*****00001*****00003*****0000#CD5B2A9E2908F1E70307C0952F2B3EF978EB38A560B09A302D493669#H2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n2,<span id='id_6500000Z2406' class='base_txtdiv' onmouseover=javascript:onStopHover('6500000Z2406#WCN#HAN') onmouseout='onStopOut()'>Z24</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;06:16,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;08:36,02:20,--,--,--,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('Z24#02:20#06:16#6500000Z2406#WCN#HAN#08:36#武昌#宜昌东#02#03#4*****00703*****0588#5D4032078917AE9374353B555A509674EDC5FDC29AE202429A3F3722#Q7')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n3,<span id='id_39000D581102' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D581102#HKN#HAN') onmouseout='onStopOut()'>D5811</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;06:21,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;08:20,01:59,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5811#01:59#06:21#39000D581102#HKN#HAN#08:20#汉口#宜昌东#01#05#O*****0421O*****3069M*****0125#95E6AEB54A5273B5B87A08815279257CE8F9F3841609CF073B95CABC#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n4,<span id='id_24000000Z305' class='base_txtdiv' onmouseover=javascript:onStopHover('24000000Z305#HKN#HAN') onmouseout='onStopOut()'>Z3</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;06:42,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;08:56,02:14,--,--,--,--,--,<font color='#008800'>有</font>,--,<font color='#008800'>有</font>,--,--,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('Z3#02:14#06:42#24000000Z305#HKN#HAN#08:56#汉口#宜昌东#02#04#4*****01932*****0110#BB64190B544EB20BB4A8B25306543057B69ADB6411FABE814F667E8D#P3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n5,<span id='id_39000D581302' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D581302#HKN#HAN') onmouseout='onStopOut()'>D5813</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;06:53,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;09:02,02:09,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5813#02:09#06:53#39000D581302#HKN#HAN#09:02#汉口#宜昌东#01#06#O*****0386M*****0106O*****3068#FE2767744D9FC1E51ACB0028951C371DDA669FD74F19D7B1A8E9ACAB#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n6,<span id='id_39000D581502' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D581502#HKN#HAN') onmouseout='onStopOut()'>D5815</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:20,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;09:20,02:00,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5815#02:00#07:20#39000D581502#HKN#HAN#09:20#汉口#宜昌东#01#05#O*****0415O*****3068M*****0098#34BEBD1F1BEB8EA360361A01DBC26C5446B2EB971CB19929778E85B4#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n7,<span id='id_39000D581702' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D581702#HKN#HAN') onmouseout='onStopOut()'>D5817</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:32,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;09:32,02:00,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5817#02:00#07:32#39000D581702#HKN#HAN#09:32#汉口#宜昌东#01#05#O*****0828M*****0218O*****3136#E4BA9237D273929C7EA2564710EDDDA96C807465FE5F711EB51D56B4#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n8,<span id='id_39000D571202' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D571202#WCN#HAN') onmouseout='onStopOut()'>D5712</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;07:55,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;10:07,02:12,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5712#02:12#07:55#39000D571202#WCN#HAN#10:07#武昌#宜昌东#01#05#O*****0530M*****0155O*****3136#D3FE5C2B472A7CF10279368A65903C1ED552B139A22FD75835F53E29#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n9,<span id='id_39000D581902' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D581902#HKN#HAN') onmouseout='onStopOut()'>D5819</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;08:24,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;10:23,01:59,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5819#01:59#08:24#39000D581902#HKN#HAN#10:23#汉口#宜昌东#01#05#O*****0288O*****3068M*****0075#0058ACD6E2EFE395892C1431E81292C843EDFB2074D7DFC17BF31EDE#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n10,<span id='id_39000D583301' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D583301#HKN#HAN') onmouseout='onStopOut()'>D5833</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;09:06,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:27,02:21,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5833#02:21#09:06#39000D583301#HKN#HAN#11:27#汉口#宜昌东#01#08#O*****0667O*****3278M*****0218#DC8DF35C7365E4727F8837011BA403E77BDEFE0434D7D1FB1A12D599#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n11,<span id='id_39000D582103' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D582103#HKN#HAN') onmouseout='onStopOut()'>D5821</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;09:56,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:40,01:44,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5821#01:44#09:56#39000D582103#HKN#HAN#11:40#汉口#宜昌东#01#03#O*****0708M*****0203O*****3278#A5CB57FAC150B5CB6932DABC6D8A2C56FFD0AD72DEDDFA87F6EFB4FE#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n12,<span id='id_4e000D585202' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000D585202#WHN#HAN') onmouseout='onStopOut()'>D5852</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;10:25,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:52,02:27,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5852#02:27#10:25#4e000D585202#WHN#HAN#12:52#武汉#宜昌东#01#06#O*****0713M*****0209O*****3136#BAAD5AA810C81B90A618BCE9E46010E82119C53A09B9C7153E563D94#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n13,<span id='id_39000D570202' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D570202#WCN#HAN') onmouseout='onStopOut()'>D5702</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;10:28,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:43,02:15,--,--,<font color='#008800'>有</font>,<font color='darkgray'>无</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5702#02:15#10:28#39000D570202#WCN#HAN#12:43#武昌#宜昌东#01#06#O*****0000M*****0043O*****3382#2899433560543DCE0CB9616DA84DBD5A4B2578DBA994AE29427D421C#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n14,<span id='id_5l000D307741' class='base_txtdiv' onmouseover=javascript:onStopHover('5l000D307741#HKN#HAN') onmouseout='onStopOut()'>D3077</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:18,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;13:19,02:01,--,--,<font color='#008800'>有</font>,19,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D3077#02:01#11:18#5l000D307741#HKN#HAN#13:19#汉口#宜昌东#07#11#O*****0020O*****3112M*****0050#8F94CA9A973972C02CF837BFC4AEC6D54C4D2359E29D5588B519EFC0#H3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n15,<span id='id_57000D325200' class='base_txtdiv' onmouseover=javascript:onStopHover('57000D325200#WHN#HAN') onmouseout='onStopOut()'>D3252</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:22,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;13:48,02:26,--,--,3,<font color='#008800'>有</font>,--,--,--,--,--,15,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D3252#02:26#11:22#57000D325200#WHN#HAN#13:48#武汉#宜昌东#06#11#O*****0035O*****3015M*****0004#07554BA449D38D11B94A7044DBD4E00CBF7EF53F5EC7810F93DF52DC#G1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n16,<span id='id_560000K52951' class='base_txtdiv' onmouseover=javascript:onStopHover('560000K52951#WCN#HAN') onmouseout='onStopOut()'>K532</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:28,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;17:24,05:56,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n17,<span id='id_39000K808802' class='base_txtdiv' onmouseover=javascript:onStopHover('39000K808802#WCN#HAN') onmouseout='onStopOut()'>K8088</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;11:40,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;16:19,04:39,--,--,--,--,--,11,<font color='#008800'>有</font>,--,<font color='darkgray'>无</font>,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('K8088#04:39#11:40#39000K808802#WCN#HAN#16:19#武昌#宜昌东#01#07#1*****30384*****00111*****00003*****0185#3F4FE9DD36310D13F961D190350CE15B00C08E932D045C0DAE6347D0#N2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n18,<span id='id_39000D580102' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D580102#HKN#HAN') onmouseout='onStopOut()'>D5801</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:06,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;14:05,01:59,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5801#01:59#12:06#39000D580102#HKN#HAN#14:05#汉口#宜昌东#01#05#O*****0728M*****0215O*****3136#97FDF37340DDA01331CEE18343C70EFA520D3726445D0E95BD9D4AFB#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n19,<span id='id_4e000D585602' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000D585602#WHN#HAN') onmouseout='onStopOut()'>D5856</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:10,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;14:34,02:24,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5856#02:24#12:10#4e000D585602#WHN#HAN#14:34#武汉#宜昌东#01#06#O*****0272M*****0083O*****3068#BBAC1484CB16CD59E080264EE963875A6B8ECC89DD8303854E2C3C8A#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n20,<span id='id_58000K126801' class='base_txtdiv' onmouseover=javascript:onStopHover('58000K126801#WCN#HAN') onmouseout='onStopOut()'>K1268</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:30,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;16:34,04:04,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n21,<span id='id_39000D571602' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D571602#WCN#HAN') onmouseout='onStopOut()'>D5716</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:52,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;15:12,02:20,--,--,<font color='#008800'>有</font>,<font color='darkgray'>无</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5716#02:20#12:52#39000D571602#WCN#HAN#15:12#武昌#宜昌东#01#05#O*****0000M*****0099O*****3122#B0C5257D8AD5432C1D804F5983A64C3B1A2E456CF65A276F8325140B#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n22,<span id='id_5l000D307202' class='base_txtdiv' onmouseover=javascript:onStopHover('5l000D307202#HKN#HAN') onmouseout='onStopOut()'>D3073</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;12:57,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;14:57,02:00,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D3073#02:00#12:57#5l000D307202#HKN#HAN#14:57#汉口#宜昌东#14#18#O*****0000M*****0000O*****3023#3890FD3D2FE66E23DF58CEF88BBABD19D7BBB56749C815ED9C2234D8#H3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n23,<span id='id_4e000D587601' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000D587601#WHN#HAN') onmouseout='onStopOut()'>D5876</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;14:35,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;17:00,02:25,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5876#02:25#14:35#4e000D587601#WHN#HAN#17:00#武汉#宜昌东#01#06#O*****0000M*****0000O*****3165#3BE77725409166CB24D0C30555F0AF07231E62DC89C19E8E9A547262#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n24,<span id='id_39000D582502' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D582502#HKN#HAN') onmouseout='onStopOut()'>D5825</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;14:48,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;16:47,01:59,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5825#01:59#14:48#39000D582502#HKN#HAN#16:47#汉口#宜昌东#01#05#O*****0633O*****3420M*****0207#511853D6DF14DF2EC1A73B346FB0E220041A942608D7FE0D14DC9874#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n25,<span id='id_65000K109200' class='base_txtdiv' onmouseover=javascript:onStopHover('65000K109200#WCN#HAN') onmouseout='onStopOut()'>K1092</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;15:20,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:35,04:15,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n26,<span id='id_39000D582702' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D582702#HKN#HAN') onmouseout='onStopOut()'>D5827</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;15:21,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;17:20,01:59,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5827#01:59#15:21#39000D582702#HKN#HAN#17:20#汉口#宜昌东#01#05#O*****0724M*****0217O*****3278#F3802B7BA5DFC9F3A9AA947D2C313FBB9CE933E11A07CF2FE9A015CD#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n27,<span id='id_240000K61907' class='base_txtdiv' onmouseover=javascript:onStopHover('240000K61907#HKN#HAN') onmouseout='onStopOut()'>K619</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;15:46,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;21:10,05:24,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,1,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('K619#05:24#15:46#240000K61907#HKN#HAN#21:10#汉口#宜昌东#14#19#1*****30454*****00001*****00013*****0000#563D2F25DE298CB5B0A8365E9A013C9F744B5506BC032E0F97E57318#P2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n28,<span id='id_4e000D586202' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000D586202#WHN#HAN') onmouseout='onStopOut()'>D5862</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;15:57,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;18:28,02:31,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5862#02:31#15:57#4e000D586202#WHN#HAN#18:28#武汉#宜昌东#01#07#O*****0557O*****3136M*****0115#237514B567580D5546CCB9F19375F446CC75D26AA990C0337DDF0F42#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n29,<span id='id_39000K102430' class='base_txtdiv' onmouseover=javascript:onStopHover('39000K102430#WCN#HAN') onmouseout='onStopOut()'>K1024</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;16:30,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;22:25,05:55,--,--,--,--,--,5,4,--,1,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('K1024#05:55#16:30#39000K102430#WCN#HAN#22:25#武昌#宜昌东#01#07#1*****32754*****00051*****00013*****0004#510E1E0CC988CD06DFCDB8D2418FA6890C146E51E752091A6AA81CFE#N2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n30,<span id='id_39000D572202' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D572202#WCN#HAN') onmouseout='onStopOut()'>D5722</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;17:23,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:43,02:20,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5722#02:20#17:23#39000D572202#WCN#HAN#19:43#武昌#宜昌东#01#06#O*****0562O*****3136M*****0173#26E6A45133B486CD3425F7A0B1A7DFC64F89ADE7FE180B6649E66D67#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n31,<span id='id_57000D325601' class='base_txtdiv' onmouseover=javascript:onStopHover('57000D325601#WHN#HAN') onmouseout='onStopOut()'>D3256</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;17:50,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;20:14,02:24,--,--,2,19,--,--,--,--,--,<font color='darkgray'>无</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D3256#02:24#17:50#57000D325601#WHN#HAN#20:14#武汉#宜昌东#06#11#O*****0020O*****3000M*****0003#D1A8EF6E585CE8C309B3B550765BE4C8AAB6AAAB93008D0E7A592A4D#G1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n32,<span id='id_4e000D586602' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000D586602#WHN#HAN') onmouseout='onStopOut()'>D5866</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;18:06,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;20:30,02:24,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5866#02:24#18:06#4e000D586602#WHN#HAN#20:30#武汉#宜昌东#01#06#O*****0745O*****3136M*****0184#3390F661A30E2EE71FB3E67A354A4FAA42530501338EA35DD887CB27#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n33,<span id='id_5l000D308102' class='base_txtdiv' onmouseover=javascript:onStopHover('5l000D308102#HKN#HAN') onmouseout='onStopOut()'>D3081</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:02,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;21:11,02:09,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,20,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D3081#02:09#19:02#5l000D308102#HKN#HAN#21:11#汉口#宜昌东#07#12#O*****0193M*****0069O*****3020#6C4A47950DA5113E8981B3773BB30905D698B7582E40D7871CE19B83#H3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n34,<span id='id_4e0000T25004' class='base_txtdiv' onmouseover=javascript:onStopHover('4e0000T25004#WHN#HAN') onmouseout='onStopOut()'>T250</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:23,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;23:25,04:02,--,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('T250#04:02#19:23#4e0000T25004#WHN#HAN#23:25#武汉#宜昌东#01#06#1*****34911*****00732*****00003*****0000#C8A4F6B117B51A26D6BFECEF7F6017E1958581FFC5D4532285F56E34#N3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n35,<span id='id_5l000D300631' class='base_txtdiv' onmouseover=javascript:onStopHover('5l000D300631#HKN#HAN') onmouseout='onStopOut()'>D3007</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:46,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;21:33,01:47,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D3007#01:47#19:46#5l000D300631#HKN#HAN#21:33#汉口#宜昌东#04#06#O*****0143O*****3067M*****0045#F959FD771E9E18CB22F44D3CF20D09C4E73DF85F85EB030FB857B63C#H3')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n36,<span id='id_4e000D587202' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000D587202#WHN#HAN') onmouseout='onStopOut()'>D5872</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:47,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;22:11,02:24,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5872#02:24#19:47#4e000D587202#WHN#HAN#22:11#武汉#宜昌东#01#06#O*****0669M*****0208O*****3278#1B1638B37331A2E1C0FD0C0976A2B979987472033B7C8EFF1048F2D6#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n37,<span id='id_39000D572601' class='base_txtdiv' onmouseover=javascript:onStopHover('39000D572601#WCN#HAN') onmouseout='onStopOut()'>D5726</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;19:47,<img src='/otsweb/images/tips/last.gif'>&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;21:59,02:12,--,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,--,--,--,--,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('D5726#02:12#19:47#39000D572601#WCN#HAN#21:59#武昌#宜昌东#01#05#O*****0353O*****3068M*****0090#0DD341ECA6B8801153BB17C8912EE547FE630B601D31A179710E44AD#N1')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n38,<span id='id_550000K69630' class='base_txtdiv' onmouseover=javascript:onStopHover('550000K69630#HKN#HAN') onmouseout='onStopOut()'>K697</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;汉口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;21:50,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;02:14,04:24,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n39,<span id='id_4e000T671602' class='base_txtdiv' onmouseover=javascript:onStopHover('4e000T671602#WHN#HAN') onmouseout='onStopOut()'>T6716</span>,<img src='/otsweb/images/tips/first.gif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;22:25,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;03:29,05:04,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='#008800'>有</font>,--,<font color='#008800'>有</font>,<font color='#008800'>有</font>,--,<a name='btn130_2' class='btn130_2' style='text-decoration:none;' onclick=javascript:getSelected('T6716#05:04#22:25#4e000T671602#WHN#HAN#03:29#武汉#宜昌东#01#09#1*****32484*****00001*****00353*****0183#D76AC1BF53EB2130948A26285052F20C7A78F344E1210078F101B1B0#N2')>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>\n40,<span id='id_630000K35604' class='base_txtdiv' onmouseover=javascript:onStopHover('630000K35604#WCN#HAN') onmouseout='onStopOut()'>K356</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;武昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;23:39,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宜昌东&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;04:13,04:34,--,--,--,--,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<font color='darkgray'>无</font>,<font color='darkgray'>无</font>,--,<a class='btn130' style='text-decoration:none;'>预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(Request-Line)	POST /otsweb/order/querySingleAction.do?method=submutOrderRequest HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+Content-Type	application/x-www-form-urlencoded
+Content-Length	739
+
+
+station_train_code	K1513
+train_date	2013-01-24
+seattype_num	
+from_station_telecode	HKN
+to_station_telecode	HAN
+include_student	00
+from_station_telecode_name	æ­¦æ±
+to_station_telecode_name	å®æä¸
+round_train_date	2013-01-24
+round_start_time_str	00:00--24:00
+single_round_type	1
+train_pass_type	QB
+train_class_arr	QB#D#Z#T#K#QT#
+start_time_str	00:00--24:00
+lishi	07:00
+train_start_time	00:11
+trainno4	55000K151240
+arrive_time	07:11
+from_station_name	æ±å£
+to_station_name	å®æä¸
+from_station_no	07
+to_station_no	14
+ypInfoDetail	1*****31314*****00001*****00033*****0002
+mmStr	91F6B654FB82207A7A539ACEC748688CA1EC34CCCDB5E56F0EBDD1A1
+locationCode	H2
+
+
+
+
+
+Location	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+
+
+(Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=init HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Referer	https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+
+
+
+(Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=getpassengerJson HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+Pragma	no-cache
+Cache-Control	no-cache
+Content-Length	0
+
+{"passengerJson":[{"first_letter":"ZS","isUserSelf":"","mobile_no":"11111111111","old_passenger_id_no":"","old_passenger_id_type_code":"","old_passenger_name":"","passenger_flag":"0","passenger_id_no":"110101198011111114","passenger_id_type_code":"1","passenger_id_type_name":"","passenger_name":"张三","passenger_type":"1","passenger_type_name":"","recordCount":"4"},{"first_letter":"W","isUserSelf":"","mobile_no":"","old_passenger_id_no":"","old_passenger_id_type_code":"","old_passenger_name":"","passenger_flag":"0","passenger_id_no":"110101198811111112","passenger_id_type_code":"1","passenger_id_type_name":"","passenger_name":"W","passenger_type":"1","passenger_type_name":"","recordCount":"4"},{"first_letter":"CC","isUserSelf":"","mobile_no":"18912345678","old_passenger_id_no":"","old_passenger_id_type_code":"","old_passenger_name":"","passenger_flag":"0","passenger_id_no":"110101198803080002","passenger_id_type_code":"1","passenger_id_type_name":"","passenger_name":"曹操","passenger_type":"1","passenger_type_name":"","recordCount":"4"},{"first_letter":"LSHH","isUserSelf":"","mobile_no":"18912345678","old_passenger_id_no":"","old_passenger_id_type_code":"","old_passenger_name":"","passenger_flag":"0","passenger_id_no":"110101199011111119","passenger_id_type_code":"1","passenger_id_type_name":"","passenger_name":"李四哈哈","passenger_type":"1","passenger_type_name":"","recordCount":"4"}]}
+
+
+
+
+
+
+
+(Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=checkOrderInfo&rand=JCNT HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Content-Length	1240
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+Pragma	no-cache
+Cache-Control	no-cache
+
+org.apache.struts.taglib.html.TOKEN	eef27832f11b375228f913aa8a9dffa7
+leftTicketStr	1007503131402140000010075000033013800002
+textfield	ä¸­æææ¼é³é¦å­æ¯
+checkbox2	2
+orderRequest.train_date	2013-01-24
+orderRequest.train_no	55000K151240
+orderRequest.station_train_code	K1513
+orderRequest.from_station_telecode	HKN
+orderRequest.to_station_telecode	HAN
+orderRequest.seat_type_code	
+orderRequest.ticket_type_order_num	
+orderRequest.bed_level_order_num	000000000000000000000000000000
+orderRequest.start_time	00:11
+orderRequest.end_time	07:11
+orderRequest.from_station_name	æ±å£
+orderRequest.to_station_name	å®æä¸
+orderRequest.cancel_flag	1
+orderRequest.id_mode	Y
+passengerTickets	1,0,1,æ¹æ,1,110101198803080002,18912345678,Y
+oldPassengers	æ¹æ,1,110101198803080002
+passenger_1_seat	1
+passenger_1_ticket	1
+passenger_1_name	æ¹æ
+passenger_1_cardtype	1
+passenger_1_cardno	110101198803080002
+passenger_1_mobileno	18912345678
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+randCode	JCNT
+orderRequest.reserve_flag	A
+tFlag	dc
+
+
+
+
+{"checkHuimd":"Y","check608":"Y","msg":"","errMsg":"Y"}
+
+
+
+
+
+
+(Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=2013-01-24&train_no=55000K151240&station=K1513&seat=1&from=HKN&to=HAN&ticket=1007503131402140000010075000033013800002 HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+
+
+method	getQueueCount
+train_date	2013-01-24
+train_no	55000K151240
+station	K1513
+seat	1
+from	HKN
+to	HAN
+ticket	1007503131402140000010075000033013800002
+
+
+{"countT":0,"count":0,"ticket":"1*****31314*****00001*****00033*****0002","op_1":false,"op_2":false}
+
+
+
+(Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueue HTTP/1.1
+Host	dynamic.12306.cn
+User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept	application/json, text/javascript, */*
+Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding	gzip, deflate
+Connection	keep-alive
+Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With	XMLHttpRequest
+Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+Content-Length	1231
+Cookie	JSESSIONID=6FC24B505EE120A613FEC5015922A5DE; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2513699082.48160.0000
+Pragma	no-cache
+Cache-Control	no-cache
+
+
+org.apache.struts.taglib.html.TOKEN	eef27832f11b375228f913aa8a9dffa7
+leftTicketStr	1007503131402140000010075000033013800002
+textfield	ä¸­æææ¼é³é¦å­æ¯
+checkbox2	2
+orderRequest.train_date	2013-01-24
+orderRequest.train_no	55000K151240
+orderRequest.station_train_code	K1513
+orderRequest.from_station_telecode	HKN
+orderRequest.to_station_telecode	HAN
+orderRequest.seat_type_code	
+orderRequest.ticket_type_order_num	
+orderRequest.bed_level_order_num	000000000000000000000000000000
+orderRequest.start_time	00:11
+orderRequest.end_time	07:11
+orderRequest.from_station_name	æ±å£
+orderRequest.to_station_name	å®æä¸
+orderRequest.cancel_flag	1
+orderRequest.id_mode	Y
+passengerTickets	1,0,1,æ¹æ,1,110101198803080002,18912345678,Y
+oldPassengers	æ¹æ,1,110101198803080002
+passenger_1_seat	1
+passenger_1_ticket	1
+passenger_1_name	æ¹æ
+passenger_1_cardtype	1
+passenger_1_cardno	110101198803080002
+passenger_1_mobileno	18912345678
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+oldPassengers	
+checkbox9	Y
+randCode	JCNT
+orderRequest.reserve_flag	A
+
+
+
+
+
+org.apache.struts.taglib.html.TOKEN=a2fe19d302335e1d29b33a7569b81ed3
+&leftTicketStr=1007503131402140000010075000013013800002
+&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D
+&checkbox0=0
+&orderRequest.train_date=2013-01-24
+&orderRequest.train_no=55000K151240
+&orderRequest.station_train_code=K1513
+&orderRequest.from_station_telecode=HKN
+&orderRequest.to_station_telecode=HAN
+&orderRequest.seat_type_code=
+&orderRequest.ticket_type_order_num=
+&orderRequest.bed_level_order_num=000000000000000000000000000000
+&orderRequest.start_time=00%3A11
+&orderRequest.end_time=07%3A11
+&orderRequest.from_station_name=%E6%B1%89%E5%8F%A3
+&orderRequest.to_station_name=%E5%AE%9C%E6%98%8C%E4%B8%9C
+&orderRequest.cancel_flag=1
+&orderRequest.id_mode=Y
+&passengerTickets=1%2Cundefined%2C1%2C%E5%BC%A0%E4%B8%89%2C1%2C110101198011111114%2C11111111111%2CY
+&oldPassengers=%E5%BC%A0%E4%B8%89%2C1%2C110101198011111114
+&passenger_1_seat=1
+&passenger_1_ticket=1
+&passenger_1_name=%E5%BC%A0%E4%B8%89
+&passenger_1_cardtype=1
+&passenger_1_cardno=110101198011111114
+&passenger_1_mobileno=11111111111
+&checkbox9=Y
+&randCode=cb8b
+&orderRequest.reserve_flag=A
+
+
+org.apache.struts.taglib.html.TOKEN=4d0d4924219499a5147dbaf6650e58ce&leftTicketStr=1007503186402140002210075001183013800057&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&checkbox0=0&orderRequest.train_date=2013-02-10&orderRequest.train_no=55000K151240&orderRequest.station_train_code=K1513&orderRequest.from_station_telecode=HKN&orderRequest.to_station_telecode=HAN&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=00%3A11&orderRequest.end_time=07%3A11&orderRequest.from_station_name=%E6%B1%89%E5%8F%A3&orderRequest.to_station_name=%E5%AE%9C%E6%98%8C%E4%B8%9C&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=1%2C0%2C1%2C%E6%9B%B9%E6%93%8D%2C1%2C110101198803080002%2C18912345678%2CY&oldPassengers=%E6%9B%B9%E6%93%8D%2C1%2C110101198803080002&passenger_1_seat=1&passenger_1_ticket=1&passenger_1_name=%E6%9B%B9%E6%93%8D&passenger_1_cardtype=1&passenger_1_cardno=110101198803080002&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=d2c7&orderRequest.reserve_flag=A&tFlag=dc
+
+
+org.apache.struts.taglib.html.TOKEN=4d0d4924219499a5147dbaf6650e58ce&leftTicketStr=1007503186402140002210075001183013800057&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&checkbox0=0&orderRequest.train_date=2013-02-10&orderRequest.train_no=55000K151240&orderRequest.station_train_code=K1513&orderRequest.from_station_telecode=HKN&orderRequest.to_station_telecode=HAN&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=00%3A11&orderRequest.end_time=07%3A11&orderRequest.from_station_name=%E6%B1%89%E5%8F%A3&orderRequest.to_station_name=%E5%AE%9C%E6%98%8C%E4%B8%9C&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=1%2C0%2C1%2C%E6%9B%B9%E6%93%8D%2C1%2C110101198803080002%2C18912345678%2CY&oldPassengers=%E6%9B%B9%E6%93%8D%2C1%2C110101198803080002&passenger_1_seat=1&passenger_1_ticket=1&passenger_1_name=%E6%9B%B9%E6%93%8D&passenger_1_cardtype=1&passenger_1_cardno=110101198803080002&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=d2c7&orderRequest.reserve_flag=A
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+org.apache.struts.taglib.html.TOKEN=46670e265f10a4373cf5555206ea6300&leftTicketStr=1007503186402140002210075001183013800057&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&orderRequest.train_date=2013-02-10&orderRequest.train_no=55000K151240&orderRequest.station_train_code=K1513&orderRequest.from_station_telecode=HKN&orderRequest.to_station_telecode=HAN&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=00%3A11&orderRequest.end_time=07%3A11&orderRequest.from_station_name=%E6%B1%89%E5%8F%A3&orderRequest.to_station_name=%E5%AE%9C%E6%98%8C%E4%B8%9C&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=3%2C0%2C1%2C%E6%9B%B9%E6%93%8D%2C1%2C110101198803080002%2C18912345678%2CY&oldPassengers=&passenger_1_seat=3&passenger_1_ticket=1&passenger_1_name=%E6%9B%B9%E6%93%8D&passenger_1_cardtype=1&passenger_1_cardno=110101198803080002&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=uae2&orderRequest.reserve_flag=A&tFlag=dc
+
+
+org.apache.struts.taglib.html.TOKEN=46670e265f10a4373cf5555206ea6300&leftTicketStr=1007503186402140002210075001183013800057&textfield=%E4%B8%AD%E6%96%87%E6%88%96%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D&orderRequest.train_date=2013-02-10&orderRequest.train_no=55000K151240&orderRequest.station_train_code=K1513&orderRequest.from_station_telecode=HKN&orderRequest.to_station_telecode=HAN&orderRequest.seat_type_code=&orderRequest.ticket_type_order_num=&orderRequest.bed_level_order_num=000000000000000000000000000000&orderRequest.start_time=00%3A11&orderRequest.end_time=07%3A11&orderRequest.from_station_name=%E6%B1%89%E5%8F%A3&orderRequest.to_station_name=%E5%AE%9C%E6%98%8C%E4%B8%9C&orderRequest.cancel_flag=1&orderRequest.id_mode=Y&passengerTickets=3%2C0%2C1%2C%E6%9B%B9%E6%93%8D%2C1%2C110101198803080002%2C18912345678%2CY&oldPassengers=&passenger_1_seat=3&passenger_1_ticket=1&passenger_1_name=%E6%9B%B9%E6%93%8D&passenger_1_cardtype=1&passenger_1_cardno=110101198803080002&passenger_1_mobileno=18912345678&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&oldPassengers=&checkbox9=Y&randCode=uae2&orderRequest.reserve_flag=A

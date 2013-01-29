@@ -1,0 +1,13 @@
+Request Headers  Value                                                                      
+(Request-Line)   POST /pay/webBusiness HTTP/1.1                                             
+Accept           text/html, application/xhtml+xml, */*                                      
+Referer          https://epay.12306.cn/pay/payGateway                                       
+Accept-Language  zh-CN                                                                      
+User-Agent       Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)            
+Content-Type     application/x-www-form-urlencoded                                          
+Accept-Encoding  gzip, deflate                                                              
+Host             epay.12306.cn                                                              
+Content-Length   2078                                                                       
+Connection       Keep-Alive                                                                 
+Cache-Control    no-cache                                                                   
+Cookie           JSESSIONID=h26cRGndv7zC3hWKW2LpJvcXQnMPKCj2zmMdfhDFrCdpvn0sYQkG!-44088814  
