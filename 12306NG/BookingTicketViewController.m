@@ -101,21 +101,21 @@
         self.passagesIsOpenArray=[NSMutableArray  array];
         
         
-//        self.passagesArray=[NSMutableArray arrayWithObjects:
-//                            
-//                            [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                             @"0",@"index",
-//                             @"1",@"xibie",
-//                             @"1",@"piaozhong",
-//                             @"",@"passenger_name",
-//                             @"1",@"cardType",
-//                             @"",@"cardNo",
-//                             @"",@"phone",
-//                             nil],
-//                            nil];
+        //        self.passagesArray=[NSMutableArray arrayWithObjects:
+        //
+        //                            [NSMutableDictionary dictionaryWithObjectsAndKeys:
+        //                             @"0",@"index",
+        //                             @"1",@"xibie",
+        //                             @"1",@"piaozhong",
+        //                             @"",@"passenger_name",
+        //                             @"1",@"cardType",
+        //                             @"",@"cardNo",
+        //                             @"",@"phone",
+        //                             nil],
+        //                            nil];
         
         
-//        self.passagesIsOpenArray=[NSMutableArray arrayWithObjects:[NSNumber numberWithBool:YES], nil];
+        //        self.passagesIsOpenArray=[NSMutableArray arrayWithObjects:[NSNumber numberWithBool:YES], nil];
         
         isInit=YES;
     }
@@ -154,8 +154,8 @@
     
     //[self registerForKeyboardNotifications];
     
-      [self.tableView setEditing:YES];
-     self.navigationItem.rightBarButtonItem.enabled=NO;
+    [self.tableView setEditing:YES];
+    self.navigationItem.rightBarButtonItem.enabled=NO;
     
     MBProgressHUD* HUD=[[MBProgressHUD alloc] initWithView:self.view];
     HUD.mode = MBProgressHUDModeIndeterminate;
@@ -168,9 +168,9 @@
     [HUD release];
     
     
-//    UITapGestureRecognizer* tapGesture=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-//    tapGesture.delegate=(id<UIGestureRecognizerDelegate>)self;
-//    [self.view addGestureRecognizer:tapGesture];
+    //    UITapGestureRecognizer* tapGesture=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    //    tapGesture.delegate=(id<UIGestureRecognizerDelegate>)self;
+    //    [self.view addGestureRecognizer:tapGesture];
     
     
 }
@@ -223,7 +223,7 @@
             //[self.navigationController popViewControllerAnimated:YES];
         }
     }
-  
+    
     
 }
 
@@ -305,7 +305,7 @@
                 textCode.autocapitalizationType=UITextAutocapitalizationTypeNone;
                 textCode.autocorrectionType=UITextAutocorrectionTypeNo;
                 //textCode.delegate=self;
-               
+                
                 
                 textCode.returnKeyType=UIReturnKeyDone;
             }
@@ -340,7 +340,7 @@
             cell.editingAccessoryView=lb;
             [lb release];
             
-         }
+        }
     }
     
     
@@ -352,13 +352,13 @@
             NSIndexPath *dictIndexPath=[self arrayIndexToDataDictPath:indexPath.row];
             cell.textLabel.backgroundColor=[UIColor clearColor];
             
-//            @"0",@"index",
-//            @"1",@"xibie",
-//            @"1",@"piaozhong",
-//            @"",@"passenger_name",
-//            @"1",@"cardType",
-//            @"",@"cardNo",
-//            @"",@"phone",
+            //            @"0",@"index",
+            //            @"1",@"xibie",
+            //            @"1",@"piaozhong",
+            //            @"",@"passenger_name",
+            //            @"1",@"cardType",
+            //            @"",@"cardNo",
+            //            @"",@"phone",
             
             if (dictIndexPath.row==0) {
                 
@@ -374,7 +374,7 @@
                 cell.backgroundColor=[UIColor colorWithRed:0xFE/255.0 green:0xF0/255.0 blue:0xF0/255.0 alpha:1];
                 cell.editingAccessoryType=UITableViewCellAccessoryDisclosureIndicator;
                 cell.editingAccessoryView=nil;
-             }
+            }
             
             
             else if (dictIndexPath.row==1) {
@@ -414,7 +414,7 @@
                 NSString* value=[[passagesArray objectAtIndex:dictIndexPath.section] objectForKey:@"piaozhong"];
                 
                 label.text = [DDHelper nameForCode:value withKey:@"userType"];
-               
+                
                 [label release];
                 cell.editingAccessoryType=UITableViewCellAccessoryNone;
                 
@@ -422,19 +422,19 @@
             else if (dictIndexPath.row==3)
             {
                 
-                    cell.textLabel.text=@"姓     名";
-                    cell.backgroundColor=[UIColor whiteColor];
-                    cell.editingAccessoryType=UITableViewCellAccessoryNone;
-                     UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 170, 35)];
-                    textField.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
-                    textField.tag = indexPath.row;
-                    textField.borderStyle = UITextBorderStyleLine;
-                    textField.placeholder = @"旅客姓名...";
-                    textField.text = [[passagesArray objectAtIndex:dictIndexPath.section] objectForKey:@"passenger_name"];
-                    textField.font = [UIFont systemFontOfSize:14];
-                    textField.delegate = self;
-                    cell.editingAccessoryView=textField;
-                    [textField release];
+                cell.textLabel.text=@"姓     名";
+                cell.backgroundColor=[UIColor whiteColor];
+                cell.editingAccessoryType=UITableViewCellAccessoryNone;
+                UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 170, 35)];
+                textField.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
+                textField.tag = indexPath.row;
+                textField.borderStyle = UITextBorderStyleLine;
+                textField.placeholder = @"旅客姓名...";
+                textField.text = [[passagesArray objectAtIndex:dictIndexPath.section] objectForKey:@"passenger_name"];
+                textField.font = [UIFont systemFontOfSize:14];
+                textField.delegate = self;
+                cell.editingAccessoryView=textField;
+                [textField release];
                 
             }
             else if (dictIndexPath.row==4) {
@@ -443,8 +443,8 @@
                 cell.backgroundColor=[UIColor whiteColor];
                 
                 
-               
-            
+                
+                
                 UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 170, 35)];
                 label.tag = TAG_CELL_CARDTYPE;
                 label.font = [UIFont systemFontOfSize:14];
@@ -454,10 +454,10 @@
                 NSString* value=[[passagesArray objectAtIndex:dictIndexPath.section] objectForKey:@"cardType"];
                 
                 label.text = [DDHelper nameForCode:value withKey:@"idType"];
-              
+                
                 [label release];
                 cell.editingAccessoryType=UITableViewCellAccessoryNone;
-              
+                
             }
             else if (dictIndexPath.row==5) {
                 
@@ -474,8 +474,8 @@
                 textField.delegate = self;
                 cell.editingAccessoryView=textField;
                 [textField release];
-
-            
+                
+                
             }
             else if (dictIndexPath.row==6) {
                 
@@ -492,10 +492,10 @@
                 textField.delegate = self;
                 cell.editingAccessoryView=textField;
                 [textField release];
-
+                
                 
             }
-                      
+            
         }
     
     
@@ -533,7 +533,7 @@
                 [v addSubview:labelValue];
                 
                 [v addSubview:labelValue2];
-                                
+                
                 cell.accessoryView=v;
                 
                 cell.editingAccessoryView=v;
@@ -560,7 +560,7 @@
         int rowsCountToDelete=isOpen?USER_INFO_ITEMS_COUNT:1;
         NSMutableArray* indexPaths=[NSMutableArray array];
         {
-            for (int i=0; i<rowsCountToDelete; i++) {                
+            for (int i=0; i<rowsCountToDelete; i++) {
                 [indexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row+i inSection:2]];
             }
             
@@ -573,7 +573,7 @@
         [self.tableView beginUpdates];
         [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
         [self.tableView endUpdates];
-
+        
         
         
         
@@ -602,28 +602,28 @@
 }
 //-(void)removePassage:(UIButton*)btn
 //{
-//    
+//
 //    [self.passagesArray removeObjectAtIndex:btn.tag-100];
 //    //
 //    //    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:btn.tag-100 inSection:2]] withRowAnimation:UITableViewRowAnimationRight];
 //    //
 //    [self.tableView reloadData];
-//    
-//    
+//
+//
 //}
 -(void)onSubmitClick
 {
     
     //
     
-     
+    
     
     if ([self.passagesArray count]<1) {
         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"请至少选择一名乘客！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         return;
-
+        
     }
     
     if ([self.passagesArray count]>5) {
@@ -649,10 +649,10 @@
     [HUD showWhileExecuting:@selector(doSubmit) onTarget:self withObject:nil animated:YES];
     
     [HUD release];
-
     
     
-     
+    
+    
     
 }
 
@@ -669,7 +669,7 @@
     [self confirmPassengerAction];
     sleep(1);
     [self confirmSingleForQueueOrderInfo];
-
+    
 }
 
 -(void)onAddNewCustomClick
@@ -695,12 +695,12 @@
     
     
     int rowIndex=0;
-   
-//    int sectionIndex=[self.passagesArray count]-2;
-//    if (sectionIndex>=0) {
-//        rowIndex=[self rowIndexForArrDict:[NSIndexPath indexPathForRow:0 inSection:sectionIndex]];
-//    }
-     NSMutableArray* indexPaths=[NSMutableArray array];
+    
+    //    int sectionIndex=[self.passagesArray count]-2;
+    //    if (sectionIndex>=0) {
+    //        rowIndex=[self rowIndexForArrDict:[NSIndexPath indexPathForRow:0 inSection:sectionIndex]];
+    //    }
+    NSMutableArray* indexPaths=[NSMutableArray array];
     {
         for (int i=0; i<USER_INFO_ITEMS_COUNT; i++) {
             
@@ -708,31 +708,31 @@
         }
         
     }
-
+    
     [self.tableView beginUpdates];
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
     [self.tableView endUpdates];
     
-//    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:2] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
+    //    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:2] atScrollPosition:(UITableViewScrollPositionTop) animated:YES];
     
-//    [self.passagesArray insertObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                                      @"C209",@"index",
-//                                      @"1",@"xibie",
-//                                      @"1",@"piaozhong",
-//                                      @"张三",@"passenger_name",
-//                                      @"1",@"cardType",
-//                                      @"",@"cardNo",
-//                                      @"",@"phone",
-//                                      nil] atIndex:0];
-//    [self.passagesIsOpenArray insertObject:[NSNumber numberWithBool:YES] atIndex:0];
-//    
-//    [self.tableView reloadData];
+    //    [self.passagesArray insertObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+    //                                      @"C209",@"index",
+    //                                      @"1",@"xibie",
+    //                                      @"1",@"piaozhong",
+    //                                      @"张三",@"passenger_name",
+    //                                      @"1",@"cardType",
+    //                                      @"",@"cardNo",
+    //                                      @"",@"phone",
+    //                                      nil] atIndex:0];
+    //    [self.passagesIsOpenArray insertObject:[NSNumber numberWithBool:YES] atIndex:0];
+    //
+    //    [self.tableView reloadData];
     
     
-//    
-//    UIActionSheet* actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:(id<UIActionSheetDelegate>)self cancelButtonTitle:@"取消" destructiveButtonTitle:@"在同行旅客中选择" otherButtonTitles:@"新建旅客", nil];
-//    [actionSheet showInView:self.view];
-//    [actionSheet release];
+    //
+    //    UIActionSheet* actionSheet=[[UIActionSheet alloc] initWithTitle:nil delegate:(id<UIActionSheetDelegate>)self cancelButtonTitle:@"取消" destructiveButtonTitle:@"在同行旅客中选择" otherButtonTitles:@"新建旅客", nil];
+    //    [actionSheet showInView:self.view];
+    //    [actionSheet release];
     
 }
 -(void)onChoosePassageClick
@@ -757,15 +757,15 @@
     for (PassengerModel* pm in arr) {
         
         
-       NSMutableDictionary* d=   [NSMutableDictionary dictionaryWithObjectsAndKeys:
-         @"0",@"index",
-         pm.seatType,@"xibie",
-         pm.ticketType,@"piaozhong",
-         pm.passenger_name,@"passenger_name",
-         pm.passenger_id_type_code,@"cardType",
-         pm.passenger_id_no,@"cardNo",
-         pm.mobile_no,@"phone",
-          nil];
+        NSMutableDictionary* d=   [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"0",@"index",
+                                   pm.seatType,@"xibie",
+                                   pm.ticketType,@"piaozhong",
+                                   pm.passenger_name,@"passenger_name",
+                                   pm.passenger_id_type_code,@"cardType",
+                                   pm.passenger_id_no,@"cardNo",
+                                   pm.mobile_no,@"phone",
+                                   nil];
         
         LogInfo(@"%@",d);
         
@@ -854,10 +854,10 @@
     }
     
     
-     for (NSMutableDictionary* pInfo in self.passagesArray) {
+    for (NSMutableDictionary* pInfo in self.passagesArray) {
         
         
-        BOOL b=  [[pInfo objectForKey:@"xibie"] isEqualToString:@""];        
+        BOOL b=  [[pInfo objectForKey:@"xibie"] isEqualToString:@""];
         b=b||[[pInfo objectForKey:@"piaozhong"] isEqualToString:@""];
         b=b||[[pInfo objectForKey:@"passenger_name"] isEqualToString:@""];
         b=b||[[pInfo objectForKey:@"cardType"] isEqualToString:@""];
@@ -865,7 +865,7 @@
         //b=b&&[[pInfo objectForKey:@"phone"] isEqualToString:@""];
         
         
-  
+        
         if (b) {
             UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"请将乘客信息填写完整！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
@@ -880,39 +880,39 @@
         //                             @"1",@"cardType",
         //                             @"",@"cardNo",
         //                             @"",@"phone",
-         
-         if ([[pInfo objectForKey:@"cardType"] isEqualToString:@"1"]) {
-       
-         
-         NSString *regex = @"(^\\d{15}$)|(^\\d{17}([0-9]|X|x)$)";
-         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-         if ([predicate evaluateWithObject:[pInfo objectForKey:@"cardNo"]] ==FALSE) {
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请填写正确的身份证号！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-             [alert show];
-             [alert release];
-             return NO;
-         }
-         }
-         if (![[pInfo objectForKey:@"phone"] isEqualToString:@""]) {
-             
-             
-             //NSString *regex = @"(^\\d{15}$)|(^\\d{17}([0-9]|X|x)$)";
-             NSString *regex = @"^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\\d{8}$";
-             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-             if ([predicate evaluateWithObject:[pInfo objectForKey:@"phone"]] == FALSE) {
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请填写正确的手机！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                         [alert show];
-                         [alert release];
-                 return NO;
-             }
-         }
-    
-    
-    
-     }
+        
+        if ([[pInfo objectForKey:@"cardType"] isEqualToString:@"1"]) {
+            
+            
+            NSString *regex = @"(^\\d{15}$)|(^\\d{17}([0-9]|X|x)$)";
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+            if ([predicate evaluateWithObject:[pInfo objectForKey:@"cardNo"]] ==FALSE) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请填写正确的身份证号！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+                return NO;
+            }
+        }
+        if (![[pInfo objectForKey:@"phone"] isEqualToString:@""]) {
+            
+            
+            //NSString *regex = @"(^\\d{15}$)|(^\\d{17}([0-9]|X|x)$)";
+            NSString *regex = @"^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\\d{8}$";
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+            if ([predicate evaluateWithObject:[pInfo objectForKey:@"phone"]] == FALSE) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请填写正确的手机！" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+                return NO;
+            }
+        }
+        
+        
+        
+    }
     
     return YES;
-
+    
 }
 
 
@@ -926,10 +926,10 @@
     NSArray* arrOrder=[orderString componentsSeparatedByString:@"#"];
     
     
-   // checkOrderInfo
+    // checkOrderInfo
     
     
-   // ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueueOrder"]];
+    // ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueueOrder"]];
     
     ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=checkOrderInfo&rand=" stringByAppendingString:textCode.text ]]];
     
@@ -971,7 +971,7 @@
     [request setPostValue:@"中文或拼音首字母"forKey:@"textfield"];
     
     [request setPostValue:@"0" forKey:@"checkbox0"];
-
+    
     
     [request setPostValue:[GlobalClass sharedClass].dateString forKey:@"orderRequest.train_date"];
     [request setPostValue:[arrOrder objectAtIndex:3] forKey:@"orderRequest.train_no"];
@@ -997,13 +997,13 @@
         if (i>5)break;
         
         
-//        @"0",@"index",
-//        @"1",@"xibie",
-//        @"1",@"piaozhong",
-//        @"",@"passenger_name",
-//        @"1",@"cardType",
-//        @"",@"cardNo",
-//        @"",@"phone",
+        //        @"0",@"index",
+        //        @"1",@"xibie",
+        //        @"1",@"piaozhong",
+        //        @"",@"passenger_name",
+        //        @"1",@"cardType",
+        //        @"",@"cardNo",
+        //        @"",@"phone",
         
         NSString* seatTypeCode=[dict objectForKey:@"xibie"];
         NSString* ticketTypeCode=[dict objectForKey:@"piaozhong"];
@@ -1040,7 +1040,7 @@
         [request addPostValue:@"" forKey:@"oldPassengers"];
         [request addPostValue:@"Y" forKey:@"checkbox9"];
     }
-
+    
     
     
     [request setPostValue:textCode.text forKey:@"randCode"];
@@ -1170,11 +1170,11 @@
     NSString* retString4=[retDict objectForKey:@"msg"];
     if ([retString isEqualToString:@"Y"]&&[retString2 isEqualToString:@"Y"]&&[retString3 isEqualToString:@"Y"]) {
         
-//        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预定成功，请进行支付" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        [alert show];
-//        [alert release];
-//        
-//        [self.navigationController popToRootViewControllerAnimated:YES];
+        //        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预定成功，请进行支付" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        //        [alert show];
+        //        [alert release];
+        //
+        //        [self.navigationController popToRootViewControllerAnimated:YES];
         return YES;
         
     }
@@ -1183,7 +1183,7 @@
         UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:retString4 delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
-       
+        
         return NO;
         
         //[self.navigationController popToRootViewControllerAnimated:YES];
@@ -1197,20 +1197,20 @@
 
 -(BOOL)confirmPassengerAction
 {
-
-//    (Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=2013-02-08&train_no=580000K52408&station=K524&seat=1&from=WCN&to=HKN&ticket=1000803055400840000410008000963005900043 HTTP/1.1
-//        Host	dynamic.12306.cn
-//        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
-//        Accept	application/json, text/javascript, */*
-//     Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
-//     Accept-Encoding	gzip, deflate
-//     Connection	keep-alive
-//     Content-Type	application/x-www-form-urlencoded
-//     X-Requested-With	XMLHttpRequest
-//     Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
-//     Cookie	JSESSIONID=ECB492BFFC6D6F0F1F802B508303A323; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2647916810.36895.0000
-
-     NSArray* arrOrder=[orderString componentsSeparatedByString:@"#"];
+    
+    //    (Request-Line)	GET /otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=2013-02-08&train_no=580000K52408&station=K524&seat=1&from=WCN&to=HKN&ticket=1000803055400840000410008000963005900043 HTTP/1.1
+    //        Host	dynamic.12306.cn
+    //        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+    //        Accept	application/json, text/javascript, */*
+    //     Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+    //     Accept-Encoding	gzip, deflate
+    //     Connection	keep-alive
+    //     Content-Type	application/x-www-form-urlencoded
+    //     X-Requested-With	XMLHttpRequest
+    //     Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+    //     Cookie	JSESSIONID=ECB492BFFC6D6F0F1F802B508303A323; helper.regUser=; helper.regSn=03SunaaabdCebebhBABbaahFaagbaaaEaahiaagcaaebaafF; BIGipServerotsweb=2647916810.36895.0000
+    
+    NSArray* arrOrder=[orderString componentsSeparatedByString:@"#"];
     
     NSString* strF=@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=getQueueCount&train_date=%@&train_no=%@&station=%@&seat=%@&from=%@&to=%@&ticket=%@";
 	
@@ -1279,36 +1279,36 @@
     
     //系统出错啦
     
- //   NSMutableDictionary* retDict=[responeString JSONValue];
-//    
-//    NSString* retString=[retDict objectForKey:@"errMsg"];
-//    if ([retString isEqualToString:@"Y"]) {
-//        
-//        //        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预定成功，请进行支付" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        //        [alert show];
-//        //        [alert release];
-//        //
-//        //        [self.navigationController popToRootViewControllerAnimated:YES];
-//        return YES;
-//        
-//    }
-//    else
-//    {
-//        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:retString delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        [alert show];
-//        [alert release];
-//        
-//        
-//        //[self.navigationController popToRootViewControllerAnimated:YES];
-//        
-//    }
-//    
+    //   NSMutableDictionary* retDict=[responeString JSONValue];
+    //
+    //    NSString* retString=[retDict objectForKey:@"errMsg"];
+    //    if ([retString isEqualToString:@"Y"]) {
+    //
+    //        //        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"预定成功，请进行支付" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    //        //        [alert show];
+    //        //        [alert release];
+    //        //
+    //        //        [self.navigationController popToRootViewControllerAnimated:YES];
+    //        return YES;
+    //
+    //    }
+    //    else
+    //    {
+    //        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:retString delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    //        [alert show];
+    //        [alert release];
+    //
+    //
+    //        //[self.navigationController popToRootViewControllerAnimated:YES];
+    //
+    //    }
+    //
     
     return YES;
 	
 	
 	
-
+    
     
     
     
@@ -1324,25 +1324,25 @@
     // checkOrderInfo
     
     
-//    (Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueue HTTP/1.1
-//        Host	dynamic.12306.cn
-//        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
-//        Accept	application/json, text/javascript, */*
-//     Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
-//     Accept-Encoding	gzip, deflate
-//     Connection	keep-alive
-//     Content-Type	application/x-www-form-urlencoded; charset=UTF-8
-//     X-Requested-With	XMLHttpRequest
-//     Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
-//     Content-Length	1176
-//     Cookie	JSESSIONID=CA7DD88F0C7DEE233FB44EBCE6E59747; BIGipServerotsweb=1742274826.22560.0000
-//     Pragma	no-cache
-//     Cache-Control	no-cache
-//    
+    //    (Request-Line)	POST /otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueue HTTP/1.1
+    //        Host	dynamic.12306.cn
+    //        User-Agent	Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:14.0) Gecko/20100101 Firefox/14.0.1
+    //        Accept	application/json, text/javascript, */*
+    //     Accept-Language	zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+    //     Accept-Encoding	gzip, deflate
+    //     Connection	keep-alive
+    //     Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+    //     X-Requested-With	XMLHttpRequest
+    //     Referer	https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=init
+    //     Content-Length	1176
+    //     Cookie	JSESSIONID=CA7DD88F0C7DEE233FB44EBCE6E59747; BIGipServerotsweb=1742274826.22560.0000
+    //     Pragma	no-cache
+    //     Cache-Control	no-cache
+    //
     
-     ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueue"]];
+    ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=confirmSingleForQueue"]];
     
-   // ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=checkOrderInfo&rand=" stringByAppendingString:textCode.text ]]];
+    // ASIFormDataRequest* request= [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[@"https://dynamic.12306.cn/otsweb/order/confirmPassengerAction.do?method=checkOrderInfo&rand=" stringByAppendingString:textCode.text ]]];
     
     [request setValidatesSecureCertificate:NO];
     [request setUseCookiePersistence:YES];
@@ -1435,34 +1435,34 @@
         [request addPostValue:name forKey:[NSString stringWithFormat:@"passenger_%d_name",i]];
         [request addPostValue:cardTypeCode forKey:[NSString stringWithFormat:@"passenger_%d_cardtype",i]];
         [request addPostValue:cardNo forKey:[NSString stringWithFormat:@"passenger_%d_cardno",i]];
-        [request addPostValue:phone forKey:[NSString stringWithFormat:@"passenger_%d_mobileno",i]];        
+        [request addPostValue:phone forKey:[NSString stringWithFormat:@"passenger_%d_mobileno",i]];
         [request addPostValue:@"Y" forKey:@"checkbox9"];
         
-         
+        
         
         
     }
     
-//
+    //
     while (i<5) {
-     
+        
         i++;
-    [request addPostValue:@"" forKey:@"oldPassengers"];
-    [request addPostValue:@"Y" forKey:@"checkbox9"];
+        [request addPostValue:@"" forKey:@"oldPassengers"];
+        [request addPostValue:@"Y" forKey:@"checkbox9"];
     }
     
-//
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//     [request addPostValue:@"Y" forKey:@"checkbox9"];
-//    
-//    
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
-//    
-//    
-//    [request addPostValue:@"" forKey:@"oldPassengers"];
-//    [request addPostValue:@"Y" forKey:@"checkbox9"];
-//
+    //
+    //    [request addPostValue:@"" forKey:@"oldPassengers"];
+    //     [request addPostValue:@"Y" forKey:@"checkbox9"];
+    //
+    //
+    //    [request addPostValue:@"" forKey:@"oldPassengers"];
+    //    [request addPostValue:@"Y" forKey:@"checkbox9"];
+    //
+    //
+    //    [request addPostValue:@"" forKey:@"oldPassengers"];
+    //    [request addPostValue:@"Y" forKey:@"checkbox9"];
+    //
     
     
     [request setPostValue:textCode.text forKey:@"randCode"];
@@ -1596,7 +1596,7 @@
         [alert show];
         [alert release];
         
-       //[self.navigationController popToRootViewControllerAnimated:YES];
+        //[self.navigationController popToRootViewControllerAnimated:YES];
         
     }
     else
@@ -1735,9 +1735,11 @@
         NSArray* trArrays=[[body findChildTag:@"table"] findChildTags:@"tr"];
         
         if (![trArrays count]>=2) {
+            
+            [parse release];
             return NO;
         }
-        NSArray* trainLineInfoTDArray=[[trArrays objectAtIndex:0] findChildTags:@"td"];
+        //        NSArray* trainLineInfoTDArray=[[trArrays objectAtIndex:0] findChildTags:@"td"];
         
         NSArray* ticketInfoTDArray=[[trArrays objectAtIndex:1] findChildTags:@"td"];
         
@@ -1778,7 +1780,9 @@
               value,@"value",
               nil]
              ];
-         }
+        }
+        
+        [parse release];
         
         return YES;
         
@@ -2067,11 +2071,11 @@
 -(void)changeImg:(UIButton*)btn
 {
     
-   
+    
     
     
     NSString* urlString=@"https://dynamic.12306.cn/otsweb/passCodeAction.do?rand=randp";
-   //  LogInfo(@"%@",urlString);
+    //  LogInfo(@"%@",urlString);
     
     self.requestImg=[ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString ]] ;
     requestImg.accessibilityLabel=@"imgCode";
@@ -2079,8 +2083,8 @@
     [requestImg setValidatesSecureCertificate:NO];
     [requestImg setUseCookiePersistence:YES];
     [requestImg applyCookieHeader];
-//    
-//    [requestImg addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init"];
+    //
+    //    [requestImg addRequestHeader:@"Referer" value:@"https://dynamic.12306.cn/otsweb/order/querySingleAction.do?method=init"];
     
     requestImg.delegate=(id<ASIHTTPRequestDelegate>)self;
     [requestImg startAsynchronous];
@@ -2163,22 +2167,22 @@
                 
             }
             
-//            [self.passagesArray removeObjectAtIndex:arrDictPath.section];
-//            [self.passagesIsOpenArray removeObjectAtIndex:arrDictPath.section];
+            //            [self.passagesArray removeObjectAtIndex:arrDictPath.section];
+            //            [self.passagesIsOpenArray removeObjectAtIndex:arrDictPath.section];
             
             
             [self.tableView beginUpdates];
             if (!isOpen) {
-                 [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+                [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
             }
             else{
-                 [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
+                [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationBottom];
             }
-           
+            
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:2]] withRowAnimation:UITableViewRowAnimationNone];
             
             [self.tableView endUpdates];
-
+            
         }
         
         else if (arrDictPath.row==1 )
@@ -2212,15 +2216,15 @@
         }
         else if (arrDictPath.row==4 )
         {
-
+            
             [self.view endEditing:YES];
-//            KeyValuePickerView *pickerView=[[KeyValuePickerView alloc] initWithTitle:@"证件类型" delegate:self];
-//            pickerView.tag=indexPath.row;
-//            pickerView.dataArray=seatArray;
-//            pickerView.textField=@"text";
-//            pickerView.delegate=(id<PickerViewDelegate>)self;
-//            [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
-//            [pickerView release];
+            //            KeyValuePickerView *pickerView=[[KeyValuePickerView alloc] initWithTitle:@"证件类型" delegate:self];
+            //            pickerView.tag=indexPath.row;
+            //            pickerView.dataArray=seatArray;
+            //            pickerView.textField=@"text";
+            //            pickerView.delegate=(id<PickerViewDelegate>)self;
+            //            [pickerView showInView:self.navigationController.view withRect:[[tableView cellForRowAtIndexPath:indexPath] convertRect:CGRectMake(100, 0, 100, 40) toView:self.navigationController.view ] ];
+            //            [pickerView release];
             
             PickerView *pickerView=[[PickerView alloc] initWithTitle:@"证件类型" delegate:self];
             pickerView.tag=indexPath.row;
@@ -2235,8 +2239,8 @@
         else if (arrDictPath.row==5 )
             
         {
-        
-         }
+            
+        }
         else if (arrDictPath.row==6 )
             
         {
@@ -2249,9 +2253,9 @@
 {
 	NSIndexPath* indexPath=[NSIndexPath indexPathForRow:picker.tag inSection:2];
 	UITableViewCell* cell= [self.tableView cellForRowAtIndexPath:indexPath];
-    NSString* showText;
+    NSString* showText=@"";
     
-    NSString* showTextValue;
+    NSString* showTextValue=@"";
 	
 	if (cell) {
 		
@@ -2259,14 +2263,14 @@
 		if (l) {
             
             if ([picker isKindOfClass:[KeyValuePickerView class]]) {
-                showText=[(NSMutableDictionary*)value objectForKey:((KeyValuePickerView*)picker).textField];                
+                showText=[(NSMutableDictionary*)value objectForKey:((KeyValuePickerView*)picker).textField];
                 showTextValue=[(NSMutableDictionary*)value objectForKey:@"value"];
                 
             }else
             {
                 showText=(NSString*)value;
                 
-                                
+                
                 //showTextValue=[DDHelper ];
             }
             
@@ -2276,18 +2280,18 @@
     
     
     NSIndexPath* arrIndex=[self arrayIndexToDataDictPath:picker.tag];
-
+    
     
     int sec=arrIndex.section;
     int row=arrIndex.row;
     
-//    @"0",@"index",
-//    @"1",@"xibie",
-//    @"1",@"piaozhong",
-//    @"",@"passenger_name",
-//    @"1",@"cardType",
-//    @"",@"cardNo",
-//    @"",@"phone",
+    //    @"0",@"index",
+    //    @"1",@"xibie",
+    //    @"1",@"piaozhong",
+    //    @"",@"passenger_name",
+    //    @"1",@"cardType",
+    //    @"",@"cardNo",
+    //    @"",@"phone",
     
     NSMutableDictionary* dict=  [self.passagesArray objectAtIndex:sec];
     
@@ -2299,11 +2303,11 @@
     }else  if (row==2)
     {
         [dict setObject:[DDHelper codeForName:showText withKey:@"userType"] forKey:@"piaozhong"];
-            
+        
     }else  if (row==3)
     {
         //[dict setObject:showText forKey:@"passenger_name"];
-     
+        
     }else  if (row==4)
     {
         [dict setObject:[DDHelper codeForName:showText withKey:@"idType"] forKey:@"cardType"];
@@ -2317,7 +2321,7 @@
     }
     
     
-
+    
     
     
 }
@@ -2432,10 +2436,10 @@
     {
         [dict setObject:textField.text forKey:@"phone"];
     }
- }
+}
 
 -(void)reloadCheckCode
 {
-   [self changeImg:nil]; 
+    [self changeImg:nil]; 
 }
 @end

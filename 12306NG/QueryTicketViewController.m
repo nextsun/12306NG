@@ -120,8 +120,11 @@
     UITableViewCell* cell= [mainTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 	
 	if (cell) {
+        
+        
+        UIView* v=  [cell.contentView viewWithTag:1001];
 		
-		if ((UILabel*)[cell.contentView viewWithTag:1001]) {
+		if ((UILabel*)v) {
 			
             
 			[(UILabel*)[cell.contentView viewWithTag:1001 ] setText:[GlobalClass sharedClass].dateString];
@@ -389,13 +392,13 @@
 //    }
    NSData *htmlData=[results dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSMutableString *mstr = [[NSMutableString alloc] init];  
-    NSRange substr;  
+    NSMutableString *mstr = [[[NSMutableString alloc] init] autorelease];
+    NSRange substr;
     //对\\n进行分隔获取列表数据
     NSArray *trainNumArray = [results componentsSeparatedByString:@"\\n"]; 
     int trainNumCount = trainNumArray.count;
     
-    self.xpathParser = [[TFHpple alloc] initWithHTMLData:htmlData]; 
+    self.xpathParser = [[[TFHpple alloc] initWithHTMLData:htmlData] autorelease];
     NSArray *elements  = [self.xpathParser searchWithXPathQuery:@"//span"];  
     
     for (int i=0; i<trainNumCount; i++) {
@@ -547,6 +550,8 @@
 
         
     }
+    
+    
     
     QueryTicketResultViewController *queryTicketResultVC = [[QueryTicketResultViewController alloc] init];
     queryTicketResultVC.trainNumberArrayAll = self.trainNumberArray;
@@ -740,7 +745,7 @@
 				//[cellValue sizeToFit];
 				//[formater release];
 				[cell.contentView addSubview:cellValue];
-				[cellValue release];
+				
 				
 				break;
 			}

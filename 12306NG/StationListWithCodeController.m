@@ -97,7 +97,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.stationArray=[[DDHelper allStations] mutableCopy];
+        self.stationArray=[[[DDHelper allStations] mutableCopy]autorelease];
         self.infoStart=[[[StationInfo alloc] init] autorelease];
         self.infoEnd=[[[StationInfo alloc] init] autorelease];
     }
@@ -128,7 +128,7 @@
 
     
     
-    self.segCtl=[[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"起点站",@"终点站",nil]];
+    self.segCtl=[[[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"起点站",@"终点站",nil]] autorelease];
    // self.segCtl=[[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:infoStart.stationName,@"To",infoEnd.stationName, nil]];
 
     segCtl.frame=CGRectMake(0, 0, 180, 30);
@@ -209,7 +209,7 @@
 	//self.searchDisplayController
     
     
-    self.resultArray=[self.stationArray mutableCopy] ;
+    self.resultArray=[[self.stationArray mutableCopy] autorelease] ;
     
     
     //segCtl.selectedSegmentIndex=self.tag-100;
@@ -219,7 +219,7 @@
 }
 - (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
 {
-    self.resultArray=[self.stationArray mutableCopy] ;
+    self.resultArray=[[self.stationArray mutableCopy] autorelease] ;
     [self.tableView1 reloadData];
 }
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -242,7 +242,7 @@
 //            }
 //        }
         
-         self.resultArray= [[DDHelper seguestStationItemsByString:searchText] mutableCopy];
+         self.resultArray= [[[DDHelper seguestStationItemsByString:searchText] mutableCopy] autorelease];
         
         [self.searchDisplayController.searchResultsTableView  reloadData];
 	}

@@ -276,7 +276,7 @@ typedef struct
         *(p + i) = (bool *)malloc(sizeof(bool) * height); 
         if (NULL == *(p + i)) 
         { 
-             CFRelease(m_DataRef);
+            CFRelease(m_DataRef);
             return @""; 
         } 
     

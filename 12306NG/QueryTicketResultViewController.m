@@ -58,7 +58,7 @@
 	if (self) {
 		// Initialization code
 
-        self.trainCodeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 45, 20)];
+        self.trainCodeLabel = [[[UILabel alloc] initWithFrame:CGRectMake(20, 10, 45, 20)]autorelease];
         [self.trainCodeLabel setTextAlignment:UITextAlignmentLeft];
         [self.trainCodeLabel setBackgroundColor:[UIColor clearColor]];
          self.trainCodeLabel.font = [UIFont systemFontOfSize:13];
@@ -66,7 +66,7 @@
         [self.contentView addSubview:self.trainCodeLabel];
         
         
-        self.fromLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, 60, 20)];
+        self.fromLocationLabel = [[[UILabel alloc] initWithFrame:CGRectMake(80, 10, 60, 20)] autorelease];
         [self.fromLocationLabel setTextAlignment:UITextAlignmentRight];
         [self.fromLocationLabel setBackgroundColor:[UIColor clearColor]];
         self.fromLocationLabel.font = [UIFont systemFontOfSize:13];
@@ -84,14 +84,14 @@
         [self.contentView addSubview:labelArrow];
         [labelArrow release];
         
-        self.toLocationLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 10, 60, 20)];
+        self.toLocationLabel = [[[UILabel alloc] initWithFrame:CGRectMake(165, 10, 60, 20)] autorelease];
         [self.toLocationLabel setTextAlignment:UITextAlignmentLeft];
         [self.toLocationLabel setBackgroundColor:[UIColor clearColor]];
         self.toLocationLabel.font = [UIFont systemFontOfSize:13];
         self.toLocationLabel.numberOfLines = 0;
         [self.contentView addSubview:self.toLocationLabel];
         
-        self.fromTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 35, 40, 20)];
+        self.fromTimeLabel = [[[UILabel alloc] initWithFrame:CGRectMake(20, 35, 40, 20)] autorelease];
         [self.fromTimeLabel setTextAlignment:UITextAlignmentLeft];
         [self.fromTimeLabel setBackgroundColor:[UIColor clearColor]];
         self.fromTimeLabel.font = [UIFont systemFontOfSize:13];
@@ -108,7 +108,7 @@
         [self.contentView addSubview:labelArrow];
         [labelArrow release];
         
-        self.toTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(75, 35, 40, 20)];
+        self.toTimeLabel = [[[UILabel alloc] initWithFrame:CGRectMake(75, 35, 40, 20)] autorelease];
         [self.toTimeLabel setTextAlignment:UITextAlignmentLeft];
         [self.toTimeLabel setBackgroundColor:[UIColor clearColor]];
         self.toTimeLabel.font = [UIFont systemFontOfSize:13];
@@ -126,7 +126,7 @@
         [labelClock release];
         
         
-        self.durationLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 35, 80, 20)];
+        self.durationLabel = [[[UILabel alloc] initWithFrame:CGRectMake(140, 35, 80, 20)] autorelease];
         [self.durationLabel setTextAlignment:UITextAlignmentLeft];
         [self.durationLabel setBackgroundColor:[UIColor clearColor]];
         self.durationLabel.font = [UIFont systemFontOfSize:13];
@@ -387,6 +387,7 @@
     
     CMPopTipView* pop=[[CMPopTipView alloc] initWithCustomView:hostView];
     
+    [hostView release];
     
 
     pop.backgroundColor=[UIColor grayColor];
@@ -497,15 +498,15 @@
 
     
     
-    NGCustomButton* prevButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 50, 50, 30)];
+    NGCustomButton* prevButton=[[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 50, 50, 30)]autorelease];
    
     [prevButton addTarget:self action:@selector(prevDay:) forControlEvents:UIControlEventTouchUpInside];
     prevButton.titleLabel.text=@"前一天";
     UIBarButtonItem* b1=[[[UIBarButtonItem alloc] initWithCustomView:prevButton] autorelease];
 
-    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+    UIBarButtonItem *spaceItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL] autorelease];
     
-    NGCustomButton* nextButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 50, 50, 30)];
+    NGCustomButton* nextButton=[[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 50, 50, 30)] autorelease];
      nextButton.autoresizingMask=UIViewAutoresizingFlexibleRightMargin;
     [nextButton addTarget:self action:@selector(nextDay:) forControlEvents:UIControlEventTouchUpInside];
     nextButton.titleLabel.text=@"后一天";
@@ -548,11 +549,12 @@
      segment.frame=CGRectMake(-8, 0, 336, HEIGHT_FOR_FILTERVIEW);
     segment.tag=101;
     [sortView addSubview:segment];
+    
     [segment setSelectedSegmentIndex:0];
     [segment addTarget:self action:@selector(onSortClick:) forControlEvents:UIControlEventValueChanged];
     segment.segmentedControlStyle=UISegmentedControlStylePlain;
 
-    
+    [segment release];
     
     
     //self.toolbarItems=[NSMutableArray arrayWithObjects:@"aaa", nil];
@@ -1029,7 +1031,7 @@
     NSArray *trainNumArray = [results componentsSeparatedByString:@"\\n"];
     int trainNumCount = trainNumArray.count;
     
-    self.xpathParser = [[TFHpple alloc] initWithHTMLData:htmlData];
+    self.xpathParser = [[[TFHpple alloc] initWithHTMLData:htmlData] autorelease];
     NSArray *elements  = [self.xpathParser searchWithXPathQuery:@"//span"];
     
     for (int i=0; i<trainNumCount; i++) {
@@ -1187,6 +1189,7 @@
         
         
     }
+    [mstr release];
     titleButton.titleLabel.text=[GlobalClass sharedClass].dateString;
     [titleButton setNeedsDisplay];
     

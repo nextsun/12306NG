@@ -7,6 +7,7 @@
 //
 
 #import "PaymentViewController.h"
+#import "CMBPayViewController.h"
 
 @interface PaymentViewController ()
 
@@ -281,6 +282,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    if (indexPath.section==0) {
+        
+        CMBPayViewController* cmbpay=[[CMBPayViewController alloc] init];
+        [self.navigationController pushViewController:cmbpay animated:YES];
+        [cmbpay release];
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{

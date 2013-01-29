@@ -41,7 +41,7 @@
     [xpathParser release];
     [data release];
     
-    return array;
+    return [array autorelease];
 }
 
 

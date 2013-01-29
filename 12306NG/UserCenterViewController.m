@@ -12,6 +12,8 @@
 #import "NGCustomButton.h"
 #import "iVersion.h"
 
+#import "CMBPayViewController.h"
+
 
 #import "UserCenterViewController.h"
 
@@ -88,14 +90,14 @@
     self.navigationItem.leftBarButtonItem=[[[UIBarButtonItem alloc] initWithCustomView:subButton] autorelease];
     [subButton release];
     
-    UILabel* lbl=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    UILabel* lbl=[[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)] autorelease];
     [lbl setText:[NSString stringWithFormat:@"[%@]",[[NSUserDefaults standardUserDefaults] objectForKey:@"userName"]]];
     lbl.textColor=[UIColor whiteColor];
     lbl.textAlignment=UITextAlignmentRight;
     lbl.backgroundColor=[UIColor clearColor];
 //    [[UIBarButtonItem alloc] initWithCustomView:lbl]
     
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:lbl];
+    self.navigationItem.rightBarButtonItem=[[[UIBarButtonItem alloc] initWithCustomView:lbl] autorelease];
     
     CGRect rect=CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height-44);
     self.mainTableView=[[[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped] autorelease]  ;    
@@ -213,6 +215,9 @@
     }
     else if (indexPath.section==3&&indexPath.row==1)
     {
+        CMBPayViewController* cmbpay=[[CMBPayViewController alloc] init];
+        [self.navigationController pushViewController:cmbpay animated:YES];
+        [cmbpay release];
     }
     else if (indexPath.section==3&&indexPath.row==2)
     {

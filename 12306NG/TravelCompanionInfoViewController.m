@@ -86,7 +86,7 @@
     
     CGRect rect2=rect;
     rect2.size.height-=0;
-    self.loadingView=[[UIView alloc] initWithFrame:CGRectInset(rect2, 10, 10)];
+    self.loadingView=[[[UIView alloc] initWithFrame:CGRectInset(rect2, 10, 10)] autorelease];
     loadingView.backgroundColor=[UIColor whiteColor];
     loadingView.layer.cornerRadius=8;
     
@@ -101,7 +101,7 @@
     for (UIView* v in [loadingView subviews]) {
         [v removeFromSuperview];
     }
-    UIActivityIndicatorView* activity=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    UIActivityIndicatorView* activity=[[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
     activity.center=CGPointMake(loadingView.frame.size.width/2, loadingView.frame.size.height/2);
     [loadingView addSubview:activity];
     [activity startAnimating];
@@ -227,6 +227,7 @@
                 lable.numberOfLines=2;
                 lable.textAlignment=UITextAlignmentCenter;
                 [loadingView addSubview:lable];
+                [lable release];
             }
             //isMainTableLoaded=YES;
         });
@@ -463,7 +464,7 @@
         segSexControl.selectedSegmentIndex=[[self.dataDict objectForKey:[cellDict objectForKey:@"id"]] isEqualToString:@"M"]?0:1;
         cell.editingAccessoryView=segSexControl;
         
-        //[segControl release];
+        [segSexControl release];
         
         UILabel* labelValue=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
         //labelName.textAlignment=UITextAlignmentCenter;

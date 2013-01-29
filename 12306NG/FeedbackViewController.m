@@ -25,7 +25,7 @@
 }
 -(UIBarButtonItem*)editButtonItem
 {
-    NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    NGCustomButton* subButton=[[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)] autorelease];
     [subButton addTarget:self action:@selector(sendClick) forControlEvents:UIControlEventTouchUpInside];
     subButton.titleLabel.text=@"发送";
     UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];

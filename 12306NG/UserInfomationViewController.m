@@ -205,6 +205,7 @@
             lable.text=@"暂无数据";
             lable.textAlignment=UITextAlignmentCenter;
             [loadingView addSubview:lable];
+            [lable release];
         }
         
         
@@ -386,7 +387,7 @@
     dispatch_async(dispatch_queue_create("getListWithUsers", nil), ^{
         self.dataDict=[[NGUserService sharedService] getUserInfo];
         
-        self.dataDictOrigin=[self.dataDict mutableCopy];
+        self.dataDictOrigin=[[self.dataDict mutableCopy] autorelease];
         dispatch_async(dispatch_get_main_queue(),^{
             
             
@@ -969,7 +970,7 @@
 -(void)editCancle
 {
     
-    self.dataDict=[self.dataDictOrigin mutableCopy];
+    self.dataDict=[[self.dataDictOrigin mutableCopy] autorelease];
     
     [mainTableView setEditing:!mainTableView.isEditing animated:NO ];
     

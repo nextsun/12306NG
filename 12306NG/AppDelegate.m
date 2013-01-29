@@ -215,6 +215,8 @@
     
     LogInfo(@"%@",dict);
     
+    [parse release];
+    
     [[[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@",dict] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] autorelease] show];
 }
 
@@ -253,8 +255,8 @@
         }
         
     }
-    
-    
+   [retString release];
+
 }
 
 

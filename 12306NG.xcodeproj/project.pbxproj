@@ -133,7 +133,9 @@
 		A452988C1695CBA300E1F81B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A452988A1695CBA300E1F81B /* Icon@2x.png */; };
 		A459D1AF16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A459D1AE16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.m */; };
 		A459D1B116907D2C00604A61 /* banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A459D1B016907D2C00604A61 /* banner@2x.png */; };
+		A461C45216B652F00000B67E /* CMBPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A461C45116B652F00000B67E /* CMBPayViewController.m */; };
 		A4B0468516A0E6E600DF7C15 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B0468416A0E6E600DF7C15 /* MessageUI.framework */; };
+		A4C6750916B6C72100A7ED88 /* webBusiness.html in Resources */ = {isa = PBXBuildFile; fileRef = A4C6750816B6C72100A7ED88 /* webBusiness.html */; };
 		A4CA6E6816AE78410012888C /* TicketsFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CA6E6716AE78410012888C /* TicketsFilterView.m */; };
 		A4CBE749168EB96A00499E12 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBE73A168EB96A00499E12 /* UIViewExt.m */; };
 		A4CBE74A168EB96A00499E12 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBE73E168EB96A00499E12 /* NSObject+SBJSON.m */; };
@@ -364,8 +366,12 @@
 		A459D1AD16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CustomBackgroundColor.h"; sourceTree = "<group>"; };
 		A459D1AE16907B4C00604A61 /* UINavigationController+CustomBackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomBackgroundColor.m"; sourceTree = "<group>"; };
 		A459D1B016907D2C00604A61 /* banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "banner@2x.png"; path = "img/banner@2x.png"; sourceTree = "<group>"; };
+		A461C45016B652F00000B67E /* CMBPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBPayViewController.h; sourceTree = "<group>"; };
+		A461C45116B652F00000B67E /* CMBPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBPayViewController.m; sourceTree = "<group>"; };
 		A4B0468416A0E6E600DF7C15 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A4BEF46D16A94DB90077CEC5 /* order.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = order.html; sourceTree = "<group>"; };
+		A4C6750716B6B42D00A7ED88 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A4C6750816B6C72100A7ED88 /* webBusiness.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = webBusiness.html; sourceTree = "<group>"; };
 		A4CA6E6716AE78410012888C /* TicketsFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketsFilterView.m; sourceTree = "<group>"; };
 		A4CA6E6A16AE79280012888C /* TicketsFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsFilterView.h; sourceTree = "<group>"; };
 		A4CBE737168EB96A00499E12 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
@@ -399,7 +405,6 @@
 		A4D054FD16B3D5530003BBF3 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		A4D054FE16B3D5530003BBF3 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		A4D70B1E16A7096F0099D6CA /* 12306NG-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "12306NG-Info.plist"; sourceTree = "<group>"; };
-		A4D70B2316A709E30099D6CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A4D70B2516A709E70099D6CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9115D168F24830081E66E /* NGUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGUserService.h; sourceTree = "<group>"; };
 		A4E9115E168F24830081E66E /* NGUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGUserService.m; sourceTree = "<group>"; };
@@ -633,6 +638,9 @@
 				0C5800C51679759C006786CF /* OrderListViewController.m */,
 				0C5800D21679772C006786CF /* NonPaymentViewController.h */,
 				0C5800D31679772D006786CF /* NonPaymentViewController.m */,
+				A461C45016B652F00000B67E /* CMBPayViewController.h */,
+				A461C45116B652F00000B67E /* CMBPayViewController.m */,
+				A4C6750816B6C72100A7ED88 /* webBusiness.html */,
 				0C5800D41679772D006786CF /* NonPaymentViewController.xib */,
 				0C5800D716797768006786CF /* NonPaymentViewController_ip5.xib */,
 				0C5800CB167975E4006786CF /* PaymentViewController.h */,
@@ -1100,6 +1108,7 @@
 				en,
 				"zh-Hant",
 				ja,
+				"zh-Hans",
 			);
 			mainGroup = 0C58002E167963BC006786CF;
 			productRefGroup = 0C58003A167963BC006786CF /* Products */;
@@ -1208,6 +1217,7 @@
 				A403EA3B16AC336C00BAED1B /* popoverBg.png in Resources */,
 				A403EA3C16AC336C00BAED1B /* popoverBg@2x.png in Resources */,
 				A403EA3D16AC336C00BAED1B /* popoverBgSimple.png in Resources */,
+				A4C6750916B6C72100A7ED88 /* webBusiness.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,6 +1303,7 @@
 				A4EABD8616AB000F005683A3 /* PassengerModel.m in Sources */,
 				A403EA2E16AC336C00BAED1B /* CMPopTipView.m in Sources */,
 				A4CA6E6816AE78410012888C /* TicketsFilterView.m in Sources */,
+				A461C45216B652F00000B67E /* CMBPayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1302,8 +1313,8 @@
 		A4D70B2416A709E30099D6CA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A4D70B2316A709E30099D6CA /* zh-Hant */,
 				A4D70B2516A709E70099D6CA /* en */,
+				A4C6750716B6B42D00A7ED88 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1319,8 +1330,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1334,7 +1345,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1348,16 +1361,18 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1367,20 +1382,20 @@
 		0C580061167963BC006786CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lei Sun";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lei Sun";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "12306NG/12306NG-Prefix.pch";
 				INFOPLIST_FILE = "12306NG/12306NG-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/12306NG/util/Flurry\"",
 				);
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "001B6E91-30E6-4DF3-884B-4DF61670F55D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "001B6E91-30E6-4DF3-884B-4DF61670F55D";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1389,20 +1404,20 @@
 		0C580062167963BC006786CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lei Sun";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lei Sun";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Mobile Group Zhejiang Co., Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "12306NG/12306NG-Prefix.pch";
 				INFOPLIST_FILE = "12306NG/12306NG-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/12306NG/util/Flurry\"",
 				);
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "001B6E91-30E6-4DF3-884B-4DF61670F55D";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "001B6E91-30E6-4DF3-884B-4DF61670F55D";
+				PROVISIONING_PROFILE = "1AE02C30-F280-432F-B814-28D2B06E88E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1AE02C30-F280-432F-B814-28D2B06E88E2";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -300,7 +300,7 @@
             [segSexControl addTarget:self action:@selector(changeSex:) forControlEvents:UIControlEventValueChanged];
             segSexControl.selectedSegmentIndex=[[self.dataDict objectForKey:[cellDict objectForKey:@"id"]] isEqualToString:@"M"]?0:1;
             cell.accessoryView=segSexControl;
-            //[segControl release];
+            [segSexControl release];
             
             
         }
@@ -608,7 +608,7 @@
 
 -(UIBarButtonItem*)editButtonItem
 {
-    NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    NGCustomButton* subButton=[[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)] autorelease];
     [subButton addTarget:self action:@selector(onSubmitClick) forControlEvents:UIControlEventTouchUpInside];
     subButton.titleLabel.text=@"保存";
     UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];
@@ -619,7 +619,7 @@
 //zhaoqi
 - (UIBarButtonItem*)dismissViewButtonItem
 {
-    NGCustomButton* subButton=[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+    NGCustomButton* subButton=[[[NGCustomButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)] autorelease];
     [subButton addTarget:self action:@selector(onDismissViewClick) forControlEvents:UIControlEventTouchUpInside];
     subButton.titleLabel.text=@"关闭";
     UIBarButtonItem* btn=[[UIBarButtonItem alloc] initWithCustomView:subButton];
