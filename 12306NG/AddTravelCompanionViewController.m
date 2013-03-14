@@ -476,7 +476,6 @@
     if (textField.returnKeyType==UIReturnKeyNext) {
         
         int tag=textField.tag+1;
-        NSLog(@"%d",textField.tag);
         for (UIView* subView in self.mainTableView.subviews) {
             if ([subView isKindOfClass:[UITableViewCell class]]) {
                 

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MGTileMenuController.h"
 
-@interface UserCenterViewController : UIViewController
+@interface UserCenterViewController : UIViewController<MGTileMenuDelegate, UIGestureRecognizerDelegate>
 {
     NSMutableArray* tableArray;
     UITableView* mainTableView;
 }
+
+@property (strong, nonatomic) MGTileMenuController *tileController;
 
 @end

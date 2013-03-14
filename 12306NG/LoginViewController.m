@@ -34,27 +34,27 @@
     }
     return self;
 }
--(void)checkVersion
-{
-    
-    NSDate* dateEnd= [NSDate dateFromString:@"2013-02-05" withFormat:@"yyyy-MM-dd"];
-    
-    
-    NSDate* dateNow=  [NSDate dateWithTimeIntervalSinceNow:0];
-    
-    if ([dateNow timeIntervalSinceDate:dateEnd]>=0) {
-        
-        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"测试版已到期，请联系作者" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        alert.tag=2013;
-        
-        [alert show];
-        [alert release];
-        
-    }
-    
-    
-
-}
+//-(void)checkVersion
+//{
+//    
+//    NSDate* dateEnd= [NSDate dateFromString:@"2013-02-05" withFormat:@"yyyy-MM-dd"];
+//    
+//    
+//    NSDate* dateNow=  [NSDate dateWithTimeIntervalSinceNow:0];
+//    
+//    if ([dateNow timeIntervalSinceDate:dateEnd]>=0) {
+//        
+//        UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"测试版已到期，请联系作者" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        alert.tag=2013;
+//        
+//        [alert show];
+//        [alert release];
+//        
+//    }
+//    
+//    
+//
+//}
 
 - (void)viewDidLoad
 {
@@ -64,8 +64,6 @@
     // Do any additional setup after loading the view from its nib.
     
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"background_black"]];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkVersion) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     
     
@@ -143,10 +141,6 @@
     [self.view addGestureRecognizer:tapGesture];
     
     
-    
-      
-    [self checkVersion];
-
 
 }
 //- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer

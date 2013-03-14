@@ -154,7 +154,7 @@
     NSMutableArray* allSelectedPassengers = [NSMutableArray array];
     for ( PassengerModel* passenger in passengers ) {
         if ( passenger.selectedFlag ) {
-            NSLog(@"%@",passenger);
+            
             [allSelectedPassengers addObject:passenger];
         }
     }
@@ -606,8 +606,7 @@
     //X-Requested-With	XMLHttpRequest
 
     NSString* responseString = request.responseString;
-    NSLog(@"%@",responseString);
-    
+  
     id json = [responseString JSONValue];
     if ( [json isKindOfClass:[NSDictionary class]] ) {
         NSDictionary* dic = (NSDictionary*) json;

@@ -647,7 +647,7 @@
 	if (listView.tag<10000) {
 		return;
 	}
-	NSLog(@"%d",listView.tag);
+	//NSLog(@"%d",listView.tag);
 	int section=(listView.tag-10000)/100;
 	int row=(listView.tag-10000)%100;
 	
@@ -664,11 +664,11 @@
 }
 - (void)listStationView:(StationListWithCodeController *)listView didSelectWithValue:(StationInfo*)stationInfo
 {
-	NSLog(@"listStationView %d",listView.tag);
+	//NSLog(@"listStationView %d",listView.tag);
 	if (listView.tag<10000) {
 		return;
 	}
-	NSLog(@"%d",listView.tag);
+	//NSLog(@"%d",listView.tag);
 	int section=(listView.tag-10000)/100;
 	int row=(listView.tag-10000)%100;
 	
@@ -680,14 +680,14 @@
         [GlobalClass sharedClass].startStation=beginStation;
          [[GlobalClass sharedClass] SaveConfig];
         
-		NSLog(@"beginStation %@",beginStation.stationName);
+		//NSLog(@"beginStation %@",beginStation.stationName);
 		
 	}else if (section==0&&row==2) {
         [endStatation release];
 		endStatation=[stationInfo retain];
         [GlobalClass sharedClass].endStation=endStatation;
          [[GlobalClass sharedClass] SaveConfig];
-		NSLog(@"endStatation %@",endStatation.stationName);
+		//NSLog(@"endStatation %@",endStatation.stationName);
 	}
 	UITableViewCell* cell= [mainTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section]];
 	
@@ -831,7 +831,7 @@
 		{
 			StationListWithCodeController* list=[[StationListWithCodeController alloc]init];
             list.infoStart=[GlobalClass sharedClass].startStation;
-			NSLog(@"tag %d ",10000+indexPath.section*100+indexPath.row);
+			//NSLog(@"tag %d ",10000+indexPath.section*100+indexPath.row);
 			list.tag=10000+indexPath.section*100+indexPath.row;
 			list.delegate=(id<StationListWithCodeControllerDelegate>)self;
 			[self.navigationController pushViewController:list animated:YES]; 
@@ -1131,7 +1131,7 @@
 	
 	str=[str stringByReplacingOccurrencesOfString:@":" withString:@"%3A"];
 	
-	NSLog(@"%@",str);
+	//NSLog(@"%@",str);
 	
 	[req setPostBody:[NSMutableData dataWithData:[str dataUsingEncoding:NSUTF8StringEncoding]]]; 
 	

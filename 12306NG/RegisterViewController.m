@@ -376,7 +376,7 @@
     if (textField.returnKeyType==UIReturnKeyNext) {
         
         int tag=textField.tag+1;
-        NSLog(@"%d",textField.tag);
+ //       NSLog(@"%d",textField.tag);
 //        if(tag==114)
 //        {
 //            [self.view endEditing:YES];

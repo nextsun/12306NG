@@ -657,7 +657,11 @@
 -(void)viewDidUnLoad
 {
 	[super viewDidUnload];
+    
+    [titleButton release];
+    
 	[mainTableView release];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -1025,7 +1029,7 @@
     //    }
     NSData *htmlData=[results dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSMutableString *mstr = [[NSMutableString alloc] init];
+    NSMutableString *mstr = nil;
     NSRange substr;
     //对\\n进行分隔获取列表数据
     NSArray *trainNumArray = [results componentsSeparatedByString:@"\\n"];
@@ -1189,7 +1193,7 @@
         
         
     }
-    [mstr release];
+   
     titleButton.titleLabel.text=[GlobalClass sharedClass].dateString;
     [titleButton setNeedsDisplay];
     

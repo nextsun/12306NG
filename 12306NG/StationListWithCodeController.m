@@ -113,7 +113,7 @@
 {
     [super viewDidLoad];
 	
-	NSLog(@"tags is %d ",self.tag);
+	//NSLog(@"tags is %d ",self.tag);
     
     [self showCustomBackButton];
 	

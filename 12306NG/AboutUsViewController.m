@@ -8,6 +8,7 @@
 
 #import "AboutUsViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "SVWebViewController.h"
 
 @interface AboutUsViewController ()
 
@@ -109,7 +110,17 @@
 }
 -(void)onRegistClick
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/nextsun"]];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/nextsun"]];
+//    
+//    
+    NSURL *URL = [NSURL URLWithString:@"http://weibo.com/nextsun"];
+	SVWebViewController *webViewController = [[SVWebViewController alloc] initWithURL:URL];
+    
+	[self.navigationController pushViewController:webViewController animated:YES];
+    
+    [webViewController showCustomBackButton];
+    [webViewController release];
+
 }
 
 -(void)onMailClick

@@ -45,7 +45,24 @@
 //BranchID:0010
 //MerchantPara:TRANS_ID=W2013012855005358|bankId=03080000|ExpireTime=20130128165425
     
-    NSString* str=@"https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MfcISAPICommand=TestPrePayWAP&BranchID=0010&CoNo=000000&BillNo=0155005358&Amount=6.00&Date=20130129&MerchantUrl=&MerchantPara=";
+//    NSString* str=@"https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MfcISAPICommand=TestPrePayWAP&BranchID=0010&CoNo=000000&BillNo=0155005358&Amount=6.00&Date=20130129&MerchantUrl=&MerchantPara=";
+    
+    NSString* dateString=[[NSDate dateWithTimeIntervalSinceNow:0] stringWithFormat:@"yyyyMMdd"];
+    
+    
+    NSString* billNoString=@"0155005358";
+    NSString* moneyString=@"6.00";
+    
+    
+    NSString* formatString=@"https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MfcISAPICommand=TestPrePayWAP&BranchID=0010&CoNo=000000&BillNo=%@&Amount=%@&Date=%@&MerchantUrl=&MerchantPara=";
+    
+    NSString* realUrlString=[NSString stringWithFormat:formatString,billNoString,moneyString,dateString];
+    
+    
+//    
+//    NSURL *URL = [NSURL URLWithString:realUrlString];
+//    
+//    
     
     //[self.navigationController setToolbarHidden:NO];
     //self.navigationController.toolbar.barStyle=UIBarStyleBlack;
@@ -128,7 +145,7 @@
     
   // NSURL* rtl= [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"webBusiness" ofType:@"html"]];
     
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:realUrlString]]];
     
     
     webView.delegate=(id<UIWebViewDelegate>)self;
@@ -195,4 +212,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    [self.webView setDelegate:self];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.webView setDelegate:nil];
+    
+    
+}
 @end

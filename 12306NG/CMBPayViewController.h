@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 
 
-@interface CMBPayViewController : UIViewController
+@interface CMBPayViewController : UIViewController<UIWebViewDelegate>
 {
     UIWebView* webView;
     

@@ -8,6 +8,8 @@
 
 #import "PaymentViewController.h"
 #import "CMBPayViewController.h"
+#import "SVWebViewController.h"
+#import "NSDate-Helper.h"
 
 @interface PaymentViewController ()
 
@@ -284,7 +286,44 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
+    
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"即将在下个版本上线，尽情期待！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    
+    [alert show];
+    [alert release];
+    return;
+    
+    
     if (indexPath.section==0) {
+        
+        
+        
+        
+        /*
+        
+        NSString* dateString=[[NSDate dateWithTimeIntervalSinceNow:0] stringWithFormat:@"yyyyMMdd"];
+        
+       
+        NSString* billNoString=@"0155005358";
+         NSString* moneyString=@"6.00";
+        
+        
+        NSString* formatString=@"https://netpay.cmbchina.com/netpayment/BaseHttp.dll?MfcISAPICommand=TestPrePayWAP&BranchID=0010&CoNo=000000&BillNo=%@&Amount=%@&Date=%@&MerchantUrl=&MerchantPara=";
+        
+        NSString* realUrlString=[NSString stringWithFormat:formatString,billNoString,moneyString,dateString];
+        
+        
+        
+        NSURL *URL = [NSURL URLWithString:realUrlString];
+        SVWebViewController *webViewController = [[SVWebViewController alloc] initWithURL:URL];
+        
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
+        [webViewController showCustomBackButton];
+        showCustomBackButton
+        [webViewController release];
+        */
+        
         
         CMBPayViewController* cmbpay=[[CMBPayViewController alloc] init];
         [self.navigationController pushViewController:cmbpay animated:YES];
